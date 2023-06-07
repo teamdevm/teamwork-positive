@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[0.10.21, )"
             },
+            "Open-XML-SDK": {
+              "target": "Package",
+              "version": "[2.9.1, )"
+            },
             "XamlNameReferenceGenerator": {
               "target": "Package",
               "version": "[1.6.1, )"
