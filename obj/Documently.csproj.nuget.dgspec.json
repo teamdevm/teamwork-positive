@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/eve/Documents/teamwork-positive/Documently.csproj": {}
+    "/home/eve/Documents/Групповой проект/teamwork-positive/Documently.csproj": {}
   },
   "projects": {
-    "/home/eve/Documents/teamwork-positive/Documently.csproj": {
+    "/home/eve/Documents/Групповой проект/teamwork-positive/Documently.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/eve/Documents/teamwork-positive/Documently.csproj",
+        "projectUniqueName": "/home/eve/Documents/Групповой проект/teamwork-positive/Documently.csproj",
         "projectName": "Documently",
-        "projectPath": "/home/eve/Documents/teamwork-positive/Documently.csproj",
+        "projectPath": "/home/eve/Documents/Групповой проект/teamwork-positive/Documently.csproj",
         "packagesPath": "/home/eve/.nuget/packages/",
-        "outputPath": "/home/eve/Documents/teamwork-positive/obj/",
+        "outputPath": "/home/eve/Documents/Групповой проект/teamwork-positive/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/eve/.nuget/NuGet/NuGet.Config"

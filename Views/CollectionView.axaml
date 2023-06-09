@@ -1,0 +1,68 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Documently.Views.CollectionView">
+
+	<DockPanel LastChildFill="True">
+		<DockPanel Background="#F7FAFC" DockPanel.Dock="Top">
+			
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+				<Button Background="Transparent" Command="{Binding $parent[Window].DataContext.SwitchToCreate}">
+					<Image Source="{DynamicResource NewFile}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Upload}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent" Command="{Binding $parent[Window].DataContext.SwitchToEdit}">
+					<Image Source="{DynamicResource Edit}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent" Command="{Binding $parent[Window].DataContext.SwitchToFill}">
+					<Image Source="{DynamicResource Fill}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Trash}" Width="24" Height="24"/>
+				</Button>
+			</StackPanel>
+			
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Setting}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Help}" Width="24" Height="24"/>
+				</Button>
+			</StackPanel>
+			
+		</DockPanel>
+		
+		<ListBox Items="{Binding Nodes}" DockPanel.Dock="Right">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					
+						<TextBlock Text="{Binding}"/>
+					
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		
+		<StackPanel DockPanel.Dock="Left">
+			<TreeView Items="{Binding Items}"
+		  SelectedItem="{Binding Selected}">
+				<TreeView.ItemTemplate>
+					<TreeDataTemplate ItemsSource="{Binding Subfolders}">
+						<TextBlock Text="{Binding strNodeText}"/>
+					</TreeDataTemplate>
+				</TreeView.ItemTemplate>
+			</TreeView>
+		<Button Background="Transparent">
+			<StackPanel Orientation="Horizontal">
+				<Image Source="{DynamicResource Plus}" Width="24" Height="24"/>
+				<TextBlock Text="Добавить категорию" VerticalAlignment="Center"/>
+			</StackPanel>
+		</Button>
+			</StackPanel>
+	</DockPanel>
+	
+</UserControl>

@@ -1,0 +1,90 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Documently.Views.EditView">
+
+	<DockPanel LastChildFill="True">
+		<DockPanel Background="#F7FAFC" DockPanel.Dock="Top">
+			
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+				<Button Background="Transparent" Command="{Binding $parent[Window].DataContext.SwitchToPrevious}">
+					<Image Source="{DynamicResource Return}" Width="24" Height="24"/>
+				</Button>
+				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource EmptyFile}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Save}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Tag}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Undo}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Redo}" Width="24" Height="24"/>
+				</Button>
+				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource FormatPainter}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource ClearFormat}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Bold}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Italic}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Underline}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource LeftAlign}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource CenterAlign}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Justify}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Ulitem}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Orderlist}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource RightIndent}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource LeftIndent}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource LineHeight}" Width="24" Height="24"/>
+				</Button>
+				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
+			</StackPanel>
+			
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Setting}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Help}" Width="24" Height="24"/>
+				</Button>
+			</StackPanel>
+			
+		</DockPanel>
+		<TextBox AcceptsReturn="True" FontFamily="Times New Roman"/>
+	</DockPanel>
+	
+</UserControl>

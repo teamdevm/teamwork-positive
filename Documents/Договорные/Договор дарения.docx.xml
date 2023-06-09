@@ -1,0 +1,1718 @@
+<?mso-application progid="Word.Document"?>
+<pkg:package xmlns:pkg="http://schemas.microsoft.com/office/2006/xmlPackage">
+  <pkg:part pkg:name="/docProps/app.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.extended-properties+xml">
+    <pkg:xmlData>
+      <Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">
+        <Template>Normal</Template>
+        <TotalTime>24</TotalTime>
+        <Application>LibreOffice/7.5.3.2$Linux_X86_64 LibreOffice_project/50$Build-2</Application>
+        <AppVersion>15.0000</AppVersion>
+        <Pages>2</Pages>
+        <Words>384</Words>
+        <Characters>2846</Characters>
+        <CharactersWithSpaces>3195</CharactersWithSpaces>
+        <Paragraphs>40</Paragraphs>
+      </Properties>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/docProps/core.xml" pkg:contentType="application/vnd.openxmlformats-package.core-properties+xml">
+    <pkg:xmlData>
+      <cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <dcterms:created xsi:type="dcterms:W3CDTF">2023-06-07T14:39:00Z</dcterms:created>
+        <dc:creator>111 111</dc:creator>
+        <dc:description></dc:description>
+        <cp:keywords></cp:keywords>
+        <dc:language>ru-RU</dc:language>
+        <cp:lastModifiedBy>artem yaparov</cp:lastModifiedBy>
+        <dcterms:modified xsi:type="dcterms:W3CDTF">2023-06-07T20:00:00Z</dcterms:modified>
+        <cp:revision>3</cp:revision>
+        <dc:subject></dc:subject>
+        <dc:title></dc:title>
+      </cp:coreProperties>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/document.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml">
+    <pkg:xmlData>
+      <w:document xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" mc:Ignorable="w14 wp14 w15">
+        <w:body>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:before="0" w:after="50" />
+              <w:jc w:val="center" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:b />
+                <w:color w:val="333333" />
+                <w:sz w:val="32" />
+                <w:szCs w:val="40" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:color w:val="333333" />
+                <w:sz w:val="32" />
+                <w:szCs w:val="40" />
+              </w:rPr>
+              <w:t>ДОГОВОР ДАРЕНИЯ</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:before="0" w:after="50" />
+              <w:jc w:val="center" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:b />
+                <w:color w:val="333333" />
+                <w:sz w:val="32" />
+                <w:szCs w:val="40" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:color w:val="333333" />
+                <w:sz w:val="32" />
+                <w:szCs w:val="40" />
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:tbl>
+            <w:tblPr>
+              <w:tblW w:w="9070" w:type="dxa" />
+              <w:jc w:val="left" />
+              <w:tblInd w:w="0" w:type="dxa" />
+              <w:tblLayout w:type="fixed" />
+              <w:tblCellMar>
+                <w:top w:w="0" w:type="dxa" />
+                <w:left w:w="0" w:type="dxa" />
+                <w:bottom w:w="0" w:type="dxa" />
+                <w:right w:w="0" w:type="dxa" />
+              </w:tblCellMar>
+            </w:tblPr>
+            <w:tblGrid>
+              <w:gridCol w:w="4542" />
+              <w:gridCol w:w="4528" />
+            </w:tblGrid>
+            <w:tr>
+              <w:trPr></w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="4542" w:type="dxa" />
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                    <w:left w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                    <w:bottom w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                    <w:right w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:spacing w:lineRule="auto" w:line="338" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="24" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="24" />
+                    </w:rPr>
+                    <w:t xml:space="preserve">г. </w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="24" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                    <w:t>&lt;</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="24" />
+                    </w:rPr>
+                    <w:t>Город</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="24" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                    <w:t>&gt;</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="4528" w:type="dxa" />
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                    <w:left w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                    <w:bottom w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                    <w:right w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:spacing w:lineRule="auto" w:line="338" />
+                    <w:jc w:val="right" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="24" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="24" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                    <w:t>&lt;</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="24" />
+                    </w:rPr>
+                    <w:t>Дата</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="24" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                    <w:t>&gt;</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+          </w:tbl>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="24" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="24" />
+              </w:rPr>
+              <w:t>Гр. &lt;ФИО(даритель)&gt;, паспорт: серия &lt;Паспорт серия(даритель)&gt;, № &lt;Паспорт номер(даритель)&gt;, выданный &lt;Паспорт кем выдан(даритель)&gt;, проживающий по адресу: &lt;Паспорт адрес регистрации(даритель)&gt;, именуемый в дальнейшем «Даритель», с одной стороны, и гр. &lt;ФИО(одаряемый)&gt;, паспорт: серия &lt;Паспорт серия(одаряемый)&gt;, № &lt;Паспорт номер(одаряемый)&gt;, выданный &lt;Паспорт кем выдан(одаряемый)&gt;, проживающий по адресу: &lt;Паспорт адрес регистрации(одаряемый)&gt;, именуемый в дальнейшем «Одаряемый», с другой стороны, именуемые в дальнейшем «Стороны», заключили настоящий договор, в дальнейшем «Договор», о нижеследующем:</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:before="500" w:after="150" />
+              <w:jc w:val="center" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:b />
+                <w:sz w:val="24" />
+                <w:szCs w:val="24" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:sz w:val="24" />
+                <w:szCs w:val="24" />
+              </w:rPr>
+              <w:t>1. ПРЕДМЕТ ДОГОВОРА</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:lineRule="auto" w:line="288" w:before="0" w:after="150" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t>1.1. Даритель обязуется передать Одаряемому имущество (далее по тексту договора – «Дар»), указанное в приложении в собственность.</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:lineRule="auto" w:line="288" w:before="0" w:after="150" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t>1.2. Приложение № </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="24" />
+              </w:rPr>
+              <w:t>&lt;Номер приложения&gt;</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve"> является неотъемлемой частью настоящего договора.</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:before="500" w:after="150" />
+              <w:jc w:val="center" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:color w:val="333333" />
+                <w:sz w:val="24" />
+                <w:szCs w:val="24" />
+              </w:rPr>
+              <w:t>2. ПРАВА И ОБЯЗАННОСТИ СТОРОН</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:lineRule="auto" w:line="288" w:before="0" w:after="150" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">2.1. Даритель обязуется в течение </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="24" />
+              </w:rPr>
+              <w:t>&lt;Срок передачи&gt;</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve"> с момента подписания настоящего договора передать Одаряемому имущество, указанное в приложении № </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="24" />
+              </w:rPr>
+              <w:t>&lt;Номер приложения&gt;</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">. Передача имущества осуществляется по месту проживания Одаряемого. </w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:lineRule="auto" w:line="288" w:before="0" w:after="150" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t>2.2. Одаряемый вправе в любое время до передачи ему дара от него отказаться. Отказ Одаряемого от дара должен быть совершен также в письменной форме. В этом случае договор дарения считается расторгнутым с момента получения Дарителем отказа.</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:lineRule="auto" w:line="288" w:before="0" w:after="150" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t>2.3. Даритель вправе отказаться от исполнения настоящего договора, если после заключения договора имущественное или семейное положение либо состояние здоровья Дарителя изменилось настолько, что исполнение договора в новых условиях приведет к существенному снижению уровня его жизни.</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:lineRule="auto" w:line="288" w:before="0" w:after="150" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">2.4. Даритель вправе отменить дарение, если Одаряемый совершил покушение на его жизнь, жизнь кого-либо из членов его семьи или близких родственников либо умышленно причинил Дарителю телесные повреждения. </w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:lineRule="auto" w:line="288" w:before="0" w:after="150" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t>2.5. Даритель вправе потребовать в судебном порядке отмены дарения, если обращение Одаряемого с подаренной вещью, представляющей для Дарителя большую неимущественную ценность, создает угрозу ее безвозвратной утраты.</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:lineRule="auto" w:line="288" w:before="0" w:after="150" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t>2.6. Даритель вправе отменить дарение также в случае, если он переживет Одаряемого.</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:before="500" w:after="150" />
+              <w:jc w:val="center" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:color w:val="333333" />
+                <w:sz w:val="24" />
+                <w:szCs w:val="24" />
+              </w:rPr>
+              <w:t>3. ПРОЧИЕ УСЛОВИЯ</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:lineRule="auto" w:line="288" w:before="0" w:after="150" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:eastAsia="Times New Roman" w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve"> </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t>3.1. Настоящий договор вступает в силу с момента его подписания Сторонами и прекращается надлежащим исполнением.</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:lineRule="auto" w:line="288" w:before="0" w:after="150" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t>3.2. Настоящий договор составлен в двух экземплярах – по одному для каждой Стороны.</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:lineRule="auto" w:line="288" w:before="0" w:after="150" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:color w:val="333333" />
+                <w:sz w:val="22" />
+              </w:rPr>
+              <w:t>3.3. Все изменения и дополнения к настоящему договору должны быть составлены в письменной форме и подписаны Сторонами.</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:before="500" w:after="150" />
+              <w:jc w:val="center" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:b />
+                <w:color w:val="333333" />
+                <w:sz w:val="24" />
+                <w:szCs w:val="24" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:color w:val="333333" />
+                <w:sz w:val="24" />
+                <w:szCs w:val="24" />
+              </w:rPr>
+              <w:t>4. АДРЕСА И РЕКВЕЗИТЫ СТОРОН</w:t>
+            </w:r>
+          </w:p>
+          <w:tbl>
+            <w:tblPr>
+              <w:tblW w:w="9286" w:type="dxa" />
+              <w:jc w:val="left" />
+              <w:tblInd w:w="0" w:type="dxa" />
+              <w:tblLayout w:type="fixed" />
+              <w:tblCellMar>
+                <w:top w:w="0" w:type="dxa" />
+                <w:left w:w="108" w:type="dxa" />
+                <w:bottom w:w="0" w:type="dxa" />
+                <w:right w:w="108" w:type="dxa" />
+              </w:tblCellMar>
+            </w:tblPr>
+            <w:tblGrid>
+              <w:gridCol w:w="4643" />
+              <w:gridCol w:w="4643" />
+            </w:tblGrid>
+            <w:tr>
+              <w:trPr></w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="4643" w:type="dxa" />
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                    <w:left w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                    <w:bottom w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                    <w:right w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:b />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="24" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:b />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="24" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Даритель:</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:b />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="24" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:b />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="24" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>ФИО: &lt;ФИО(даритель)&gt;</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Регистрация: &lt;Паспорт адрес регистрации(даритель)&gt;</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Почтовый адрес: &lt;Почтовый адрес(даритель)&gt;</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Паспорт серия: &lt;Паспорт серия(даритель)&gt;</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Номер: &lt;Паспорт номер(даритель)&gt;</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Выдан: &lt;Паспорт где выдан(даритель)&gt;</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Кем: &lt;Паспорт кем выдан(даритель)&gt;</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t xml:space="preserve">Телефон: </w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                    <w:t>&lt;</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Телефон(даритель)</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                    <w:t>&gt;</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="4643" w:type="dxa" />
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                    <w:left w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                    <w:bottom w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                    <w:right w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:b />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="24" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:b />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="24" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Одаряемый:</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:b />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="24" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:b />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="24" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>ФИО: &lt;ФИО(одаряемый)&gt;</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Регистрация: &lt;Паспорт адрес регистрации(одаряемый)&gt;</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Почтовый адрес: &lt;Почтовый адрес(одаряемый)&gt;</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Паспорт серия: : &lt;Паспорт номер(одаряемый)&gt;</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Номер: &lt;Паспорт номер(одаряемый)&gt;</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Выдан: &lt;Паспорт где выдан(одаряемый)&gt;</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Кем: &lt;Паспорт кем выдан(одаряемый)&gt;</w:t>
+                  </w:r>
+                </w:p>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Телефон:</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                    <w:t xml:space="preserve"> &lt;</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Телефон(одаряемый)</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                    <w:t>&gt;</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+          </w:tbl>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:spacing w:before="500" w:after="150" />
+              <w:jc w:val="center" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:color w:val="333333" />
+                <w:sz w:val="24" />
+                <w:szCs w:val="24" />
+              </w:rPr>
+              <w:t>5. ПОДПИСИ СТОРОН</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:tbl>
+            <w:tblPr>
+              <w:tblW w:w="9070" w:type="dxa" />
+              <w:jc w:val="left" />
+              <w:tblInd w:w="0" w:type="dxa" />
+              <w:tblLayout w:type="fixed" />
+              <w:tblCellMar>
+                <w:top w:w="0" w:type="dxa" />
+                <w:left w:w="0" w:type="dxa" />
+                <w:bottom w:w="0" w:type="dxa" />
+                <w:right w:w="0" w:type="dxa" />
+              </w:tblCellMar>
+            </w:tblPr>
+            <w:tblGrid>
+              <w:gridCol w:w="4498" />
+              <w:gridCol w:w="4572" />
+            </w:tblGrid>
+            <w:tr>
+              <w:trPr></w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="4498" w:type="dxa" />
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                    <w:left w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                    <w:bottom w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                    <w:right w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:spacing w:lineRule="auto" w:line="338" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Даритель _________________________</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="4572" w:type="dxa" />
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                    <w:left w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                    <w:bottom w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                    <w:right w:val="single" w:sz="6" w:space="0" w:color="FFFFFF" />
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Normal" />
+                    <w:spacing w:lineRule="auto" w:line="338" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:color w:val="333333" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="18" />
+                    </w:rPr>
+                    <w:t>Одаряемый ____________________________</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+          </w:tbl>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:sectPr>
+            <w:headerReference w:type="default" r:id="rId2" />
+            <w:type w:val="nextPage" />
+            <w:pgSz w:w="11906" w:h="16838" />
+            <w:pgMar w:left="1418" w:right="1418" w:gutter="0" w:header="720" w:top="1418" w:footer="0" w:bottom="1134" />
+            <w:pgNumType w:fmt="decimal" />
+            <w:formProt w:val="false" />
+            <w:textDirection w:val="lrTb" />
+            <w:docGrid w:type="default" w:linePitch="360" w:charSpace="0" />
+          </w:sectPr>
+        </w:body>
+      </w:document>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/fontTable.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.fontTable+xml">
+    <pkg:xmlData>
+      <w:fonts xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+        <w:font w:name="Times New Roman">
+          <w:charset w:val="00" />
+          <w:family w:val="roman" />
+          <w:pitch w:val="variable" />
+        </w:font>
+        <w:font w:name="Symbol">
+          <w:charset w:val="02" />
+          <w:family w:val="roman" />
+          <w:pitch w:val="variable" />
+        </w:font>
+        <w:font w:name="Arial">
+          <w:charset w:val="00" />
+          <w:family w:val="swiss" />
+          <w:pitch w:val="variable" />
+        </w:font>
+        <w:font w:name="Liberation Serif">
+          <w:altName w:val="Times New Roman" />
+          <w:charset w:val="01" />
+          <w:family w:val="roman" />
+          <w:pitch w:val="variable" />
+        </w:font>
+        <w:font w:name="Arial">
+          <w:charset w:val="cc" />
+          <w:family w:val="swiss" />
+          <w:pitch w:val="variable" />
+        </w:font>
+        <w:font w:name="Courier New">
+          <w:charset w:val="cc" />
+          <w:family w:val="modern" />
+          <w:pitch w:val="default" />
+        </w:font>
+        <w:font w:name="Wingdings">
+          <w:charset w:val="02" />
+          <w:family w:val="auto" />
+          <w:pitch w:val="variable" />
+        </w:font>
+        <w:font w:name="Liberation Serif">
+          <w:altName w:val="Times New Roman" />
+          <w:charset w:val="01" />
+          <w:family w:val="roman" />
+          <w:pitch w:val="default" />
+        </w:font>
+        <w:font w:name="Times New Roman">
+          <w:charset w:val="cc" />
+          <w:family w:val="roman" />
+          <w:pitch w:val="variable" />
+        </w:font>
+      </w:fonts>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/header1.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml">
+    <pkg:xmlData>
+      <w:hdr xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" mc:Ignorable="w14 wp14 w15">
+        <w:tbl>
+          <w:tblPr>
+            <w:tblW w:w="4000" w:type="dxa" />
+            <w:jc w:val="left" />
+            <w:tblInd w:w="0" w:type="dxa" />
+            <w:tblLayout w:type="fixed" />
+            <w:tblCellMar>
+              <w:top w:w="0" w:type="dxa" />
+              <w:left w:w="10" w:type="dxa" />
+              <w:bottom w:w="0" w:type="dxa" />
+              <w:right w:w="10" w:type="dxa" />
+            </w:tblCellMar>
+          </w:tblPr>
+          <w:tblGrid>
+            <w:gridCol w:w="4000" />
+          </w:tblGrid>
+          <w:tr>
+            <w:trPr>
+              <w:trHeight w:val="400" w:hRule="atLeast" />
+            </w:trPr>
+            <w:tc>
+              <w:tcPr>
+                <w:tcW w:w="4000" w:type="dxa" />
+                <w:tcBorders></w:tcBorders>
+                <w:vAlign w:val="center" />
+              </w:tcPr>
+              <w:p>
+                <w:pPr>
+                  <w:pStyle w:val="Normal" />
+                  <w:snapToGrid w:val="false" />
+                  <w:rPr>
+                    <w:color w:val="BFBFBF" />
+                  </w:rPr>
+                </w:pPr>
+                <w:r>
+                  <w:rPr>
+                    <w:color w:val="BFBFBF" />
+                  </w:rPr>
+                </w:r>
+              </w:p>
+            </w:tc>
+          </w:tr>
+        </w:tbl>
+        <w:p>
+          <w:pPr>
+            <w:pStyle w:val="Normal" />
+            <w:rPr>
+              <w:color w:val="BFBFBF" />
+            </w:rPr>
+          </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:color w:val="BFBFBF" />
+            </w:rPr>
+          </w:r>
+        </w:p>
+      </w:hdr>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/settings.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.settings+xml">
+    <pkg:xmlData>
+      <w:settings xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+        <w:zoom w:percent="100" />
+        <w:defaultTabStop w:val="708" />
+        <w:autoHyphenation w:val="true" />
+        <w:compat>
+          <w:compatSetting w:name="compatibilityMode" w:uri="http://schemas.microsoft.com/office/word" w:val="11" />
+        </w:compat>
+      </w:settings>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/styles.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml">
+    <pkg:xmlData>
+      <w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="w14">
+        <w:docDefaults>
+          <w:rPrDefault>
+            <w:rPr>
+              <w:rFonts w:ascii="Liberation Serif" w:hAnsi="Liberation Serif" w:eastAsia="Noto Serif CJK SC" w:cs="Noto Sans Devanagari" />
+              <w:sz w:val="24" />
+              <w:szCs w:val="24" />
+              <w:lang w:val="ru-RU" w:eastAsia="zh-CN" w:bidi="hi-IN" />
+            </w:rPr>
+          </w:rPrDefault>
+          <w:pPrDefault>
+            <w:pPr>
+              <w:suppressAutoHyphens w:val="true" />
+            </w:pPr>
+          </w:pPrDefault>
+        </w:docDefaults>
+        <w:style w:type="paragraph" w:styleId="Normal">
+          <w:name w:val="Normal" />
+          <w:qFormat />
+          <w:pPr>
+            <w:widowControl />
+            <w:bidi w:val="0" />
+          </w:pPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
+            <w:color w:val="auto" />
+            <w:sz w:val="20" />
+            <w:szCs w:val="20" />
+            <w:lang w:val="ru-RU" w:bidi="ar-SA" w:eastAsia="zh-CN" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num2z0">
+          <w:name w:val="WW8Num2z0" />
+          <w:qFormat />
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num2z1">
+          <w:name w:val="WW8Num2z1" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num2z2">
+          <w:name w:val="WW8Num2z2" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:cs="Wingdings" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num2z3">
+          <w:name w:val="WW8Num2z3" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:cs="Symbol" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num4z0">
+          <w:name w:val="WW8Num4z0" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:cs="Symbol" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num4z1">
+          <w:name w:val="WW8Num4z1" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num4z2">
+          <w:name w:val="WW8Num4z2" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:cs="Wingdings" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num5z0">
+          <w:name w:val="WW8Num5z0" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:cs="Wingdings" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num5z1">
+          <w:name w:val="WW8Num5z1" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num5z3">
+          <w:name w:val="WW8Num5z3" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:cs="Symbol" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num6z0">
+          <w:name w:val="WW8Num6z0" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num6z2">
+          <w:name w:val="WW8Num6z2" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:cs="Wingdings" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num6z3">
+          <w:name w:val="WW8Num6z3" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:cs="Symbol" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num7z0">
+          <w:name w:val="WW8Num7z0" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:cs="Wingdings" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num7z1">
+          <w:name w:val="WW8Num7z1" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num7z3">
+          <w:name w:val="WW8Num7z3" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:cs="Symbol" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num8z0">
+          <w:name w:val="WW8Num8z0" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:cs="Symbol" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num8z1">
+          <w:name w:val="WW8Num8z1" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num8z2">
+          <w:name w:val="WW8Num8z2" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:cs="Wingdings" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num9z0">
+          <w:name w:val="WW8Num9z0" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num9z2">
+          <w:name w:val="WW8Num9z2" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:cs="Wingdings" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num9z3">
+          <w:name w:val="WW8Num9z3" />
+          <w:qFormat />
+          <w:rPr>
+            <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:cs="Symbol" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="Style14">
+          <w:name w:val="Основной шрифт абзаца" />
+          <w:qFormat />
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="Style15">
+          <w:name w:val="Верхний колонтитул Знак" />
+          <w:basedOn w:val="Style14" />
+          <w:qFormat />
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="Style16">
+          <w:name w:val="Нижний колонтитул Знак" />
+          <w:basedOn w:val="Style14" />
+          <w:qFormat />
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Heading">
+          <w:name w:val="Heading" />
+          <w:basedOn w:val="Normal" />
+          <w:next w:val="TextBody" />
+          <w:qFormat />
+          <w:pPr>
+            <w:keepNext w:val="true" />
+            <w:spacing w:before="240" w:after="120" />
+          </w:pPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Liberation Serif" w:hAnsi="Liberation Serif" w:eastAsia="Noto Sans CJK SC" w:cs="Noto Sans Devanagari" />
+            <w:sz w:val="28" />
+            <w:szCs w:val="28" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="TextBody">
+          <w:name w:val="Body Text" />
+          <w:basedOn w:val="Normal" />
+          <w:pPr>
+            <w:spacing w:lineRule="auto" w:line="276" w:before="0" w:after="140" />
+          </w:pPr>
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="List">
+          <w:name w:val="List" />
+          <w:basedOn w:val="TextBody" />
+          <w:pPr></w:pPr>
+          <w:rPr>
+            <w:rFonts w:cs="Noto Sans Devanagari" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Caption">
+          <w:name w:val="Caption" />
+          <w:basedOn w:val="Normal" />
+          <w:qFormat />
+          <w:pPr>
+            <w:suppressLineNumbers />
+            <w:spacing w:before="120" w:after="120" />
+          </w:pPr>
+          <w:rPr>
+            <w:rFonts w:cs="Noto Sans Devanagari" />
+            <w:i />
+            <w:iCs />
+            <w:sz w:val="24" />
+            <w:szCs w:val="24" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Index">
+          <w:name w:val="Index" />
+          <w:basedOn w:val="Normal" />
+          <w:qFormat />
+          <w:pPr>
+            <w:suppressLineNumbers />
+          </w:pPr>
+          <w:rPr>
+            <w:rFonts w:cs="Noto Sans Devanagari" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="HeaderandFooter">
+          <w:name w:val="Header and Footer" />
+          <w:basedOn w:val="Normal" />
+          <w:qFormat />
+          <w:pPr>
+            <w:suppressLineNumbers />
+            <w:tabs>
+              <w:tab w:val="clear" w:pos="708" />
+              <w:tab w:val="center" w:pos="4986" w:leader="none" />
+              <w:tab w:val="right" w:pos="9972" w:leader="none" />
+            </w:tabs>
+          </w:pPr>
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Header">
+          <w:name w:val="Header" />
+          <w:basedOn w:val="Normal" />
+          <w:pPr>
+            <w:tabs>
+              <w:tab w:val="clear" w:pos="708" />
+              <w:tab w:val="center" w:pos="4677" w:leader="none" />
+              <w:tab w:val="right" w:pos="9355" w:leader="none" />
+            </w:tabs>
+          </w:pPr>
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Footer">
+          <w:name w:val="Footer" />
+          <w:basedOn w:val="Normal" />
+          <w:pPr>
+            <w:tabs>
+              <w:tab w:val="clear" w:pos="708" />
+              <w:tab w:val="center" w:pos="4677" w:leader="none" />
+              <w:tab w:val="right" w:pos="9355" w:leader="none" />
+            </w:tabs>
+          </w:pPr>
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="TableContents">
+          <w:name w:val="Table Contents" />
+          <w:basedOn w:val="Normal" />
+          <w:qFormat />
+          <w:pPr>
+            <w:widowControl w:val="false" />
+            <w:suppressLineNumbers />
+          </w:pPr>
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="TableHeading">
+          <w:name w:val="Table Heading" />
+          <w:basedOn w:val="TableContents" />
+          <w:qFormat />
+          <w:pPr>
+            <w:suppressLineNumbers />
+            <w:jc w:val="center" />
+          </w:pPr>
+          <w:rPr>
+            <w:b />
+            <w:bCs />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="numbering" w:styleId="WW8Num1">
+          <w:name w:val="WW8Num1" />
+          <w:qFormat />
+        </w:style>
+        <w:style w:type="numbering" w:styleId="WW8Num2">
+          <w:name w:val="WW8Num2" />
+          <w:qFormat />
+        </w:style>
+        <w:style w:type="numbering" w:styleId="WW8Num3">
+          <w:name w:val="WW8Num3" />
+          <w:qFormat />
+        </w:style>
+        <w:style w:type="numbering" w:styleId="WW8Num4">
+          <w:name w:val="WW8Num4" />
+          <w:qFormat />
+        </w:style>
+        <w:style w:type="numbering" w:styleId="WW8Num5">
+          <w:name w:val="WW8Num5" />
+          <w:qFormat />
+        </w:style>
+        <w:style w:type="numbering" w:styleId="WW8Num6">
+          <w:name w:val="WW8Num6" />
+          <w:qFormat />
+        </w:style>
+        <w:style w:type="numbering" w:styleId="WW8Num7">
+          <w:name w:val="WW8Num7" />
+          <w:qFormat />
+        </w:style>
+        <w:style w:type="numbering" w:styleId="WW8Num8">
+          <w:name w:val="WW8Num8" />
+          <w:qFormat />
+        </w:style>
+        <w:style w:type="numbering" w:styleId="WW8Num9">
+          <w:name w:val="WW8Num9" />
+          <w:qFormat />
+        </w:style>
+      </w:styles>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/_rels/document.xml.rels" pkg:contentType="application/vnd.openxmlformats-package.relationships+xml">
+    <pkg:xmlData>
+      <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+        <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml" />
+        <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header1.xml" />
+        <Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable" Target="fontTable.xml" />
+        <Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml" />
+</Relationships>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/_rels/.rels" pkg:contentType="application/vnd.openxmlformats-package.relationships+xml">
+    <pkg:xmlData>
+      <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+        <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml" />
+        <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml" />
+        <Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml" />
+</Relationships>
+    </pkg:xmlData>
+  </pkg:part>
+</pkg:package>
