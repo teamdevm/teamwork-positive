@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/home/eve/Documents/teamwork-positive/Documently.csproj": {}
+    "C:\\Users\\User\\Desktop\\работы\\проект\\teamwork-positive\\Documently.csproj": {}
   },
   "projects": {
-    "/home/eve/Documents/teamwork-positive/Documently.csproj": {
+    "C:\\Users\\User\\Desktop\\работы\\проект\\teamwork-positive\\Documently.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/eve/Documents/teamwork-positive/Documently.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\работы\\проект\\teamwork-positive\\Documently.csproj",
         "projectName": "Documently",
-        "projectPath": "/home/eve/Documents/teamwork-positive/Documently.csproj",
-        "packagesPath": "/home/eve/.nuget/packages/",
-        "outputPath": "/home/eve/Documents/teamwork-positive/obj/",
+        "projectPath": "C:\\Users\\User\\Desktop\\работы\\проект\\teamwork-positive\\Documently.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\работы\\проект\\teamwork-positive\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/eve/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,6 +64,10 @@
               "target": "Package",
               "version": "[0.10.21, )"
             },
+            "Microsoft.VisualStudio.Threading": {
+              "target": "Package",
+              "version": "[17.6.40, )"
+            },
             "XamlNameReferenceGenerator": {
               "target": "Package",
               "version": "[1.6.1, )"
@@ -69,8 +79,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -79,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/opt/dotnet/sdk/6.0.408/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

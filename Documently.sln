@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Documently", "Documently.csproj", "{CA3E966F-23E6-481C-9807-37C5908EC41C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA3E966F-23E6-481C-9807-37C5908EC41C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA3E966F-23E6-481C-9807-37C5908EC41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA3E966F-23E6-481C-9807-37C5908EC41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA3E966F-23E6-481C-9807-37C5908EC41C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB52AF54-B643-438D-8B01-DCCA0F52FEBA}
+	EndGlobalSection
+EndGlobal

@@ -25,6 +25,16 @@
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.21" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.21" />
+    <PackageReference Include="Microsoft.VisualStudio.Threading" Version="17.6.40" />
     <PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\CollectionView.axaml.cs">
+      <DependentUpon>CollectionView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\FillView.axaml.cs">
+      <DependentUpon>FillView.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

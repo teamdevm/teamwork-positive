@@ -1,0 +1,1551 @@
+<?mso-application progid="Word.Document"?>
+<pkg:package xmlns:pkg="http://schemas.microsoft.com/office/2006/xmlPackage">
+  <pkg:part pkg:name="/docProps/app.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.extended-properties+xml">
+    <pkg:xmlData>
+      <Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">
+        <Template>Normal</Template>
+        <TotalTime>725</TotalTime>
+        <Application>LibreOffice/7.5.3.2$Linux_X86_64 LibreOffice_project/50$Build-2</Application>
+        <AppVersion>15.0000</AppVersion>
+        <Pages>1</Pages>
+        <Words>292</Words>
+        <Characters>2221</Characters>
+        <CharactersWithSpaces>2648</CharactersWithSpaces>
+        <Paragraphs>36</Paragraphs>
+      </Properties>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/docProps/core.xml" pkg:contentType="application/vnd.openxmlformats-package.core-properties+xml">
+    <pkg:xmlData>
+      <cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <dcterms:created xsi:type="dcterms:W3CDTF">2019-12-10T11:06:00Z</dcterms:created>
+        <dc:creator>1</dc:creator>
+        <dc:description>101dogovor.ru</dc:description>
+        <cp:keywords></cp:keywords>
+        <dc:language>ru-RU</dc:language>
+        <cp:lastModifiedBy>artem yaparov</cp:lastModifiedBy>
+        <dcterms:modified xsi:type="dcterms:W3CDTF">2023-06-07T20:29:00Z</dcterms:modified>
+        <cp:revision>6</cp:revision>
+        <dc:subject></dc:subject>
+        <dc:title>Договор купли-продажи автомобиля</dc:title>
+      </cp:coreProperties>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/document.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml">
+    <pkg:xmlData>
+      <w:document xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" mc:Ignorable="w14 wp14 w15">
+        <w:body>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal" />
+              <w:jc w:val="center" />
+              <w:rPr>
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="40" />
+                <w:szCs w:val="40" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="40" />
+                <w:szCs w:val="40" />
+              </w:rPr>
+              <w:t>Договор купли-продажи транспортного средства</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr></w:rPr>
+            </w:pPr>
+            <w:hyperlink r:id="rId2">
+              <w:r>
+                <w:rPr>
+                  <w:b />
+                  <w:bCs />
+                  <w:sz w:val="40" />
+                  <w:szCs w:val="40" />
+                </w:rPr>
+              </w:r>
+            </w:hyperlink>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr></w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr></w:rPr>
+            </w:r>
+          </w:p>
+          <w:tbl>
+            <w:tblPr>
+              <w:tblW w:w="10988" w:type="dxa" />
+              <w:jc w:val="left" />
+              <w:tblInd w:w="0" w:type="dxa" />
+              <w:tblLayout w:type="fixed" />
+              <w:tblCellMar>
+                <w:top w:w="0" w:type="dxa" />
+                <w:left w:w="108" w:type="dxa" />
+                <w:bottom w:w="0" w:type="dxa" />
+                <w:right w:w="108" w:type="dxa" />
+              </w:tblCellMar>
+            </w:tblPr>
+            <w:tblGrid>
+              <w:gridCol w:w="5494" />
+              <w:gridCol w:w="5494" />
+            </w:tblGrid>
+            <w:tr>
+              <w:trPr></w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="5494" w:type="dxa" />
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                    <w:left w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                    <w:bottom w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                    <w:right w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Preformatted" />
+                    <w:jc w:val="both" />
+                    <w:rPr>
+                      <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="22" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="22" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                    <w:t>&lt;</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="22" />
+                    </w:rPr>
+                    <w:t>Дата</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="22" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                    <w:t>&gt;</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="5494" w:type="dxa" />
+                  <w:tcBorders>
+                    <w:top w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                    <w:left w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                    <w:bottom w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                    <w:right w:val="single" w:sz="4" w:space="0" w:color="000000" />
+                  </w:tcBorders>
+                </w:tcPr>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Preformatted" />
+                    <w:jc w:val="right" />
+                    <w:rPr></w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="22" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                    <w:t>&lt;</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="22" />
+                    </w:rPr>
+                    <w:t>Место заключения договора</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="22" />
+                      <w:lang w:val="en-US" />
+                    </w:rPr>
+                    <w:t>&gt;</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+          </w:tbl>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>Мы, гр. &lt;ФИО(продавец)&gt;, проживающий(ая) по адресу &lt;Адрес проживания(продавец)&gt;,</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>зарегистрированный (ая) по адресу &lt;Адрес регистрации(продавец)&gt;,</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>Удостоверение личности: паспорт серии &lt;Паспорт серия(продавец)&gt; № &lt;Паспорт номер(продавец)&gt;, выдан &lt;Дата выдачи паспорта(продавец)&gt;, &lt;Паспорт кем выдан(продавец)&gt;,</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr></w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">именуемый(ая) в дальнейшем </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>"Продавец"</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">, </w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>и гр. &lt;ФИО(покупатель)&gt;, проживающий(ая) по адресу &lt;Адрес проживания(покупатель)&gt;,</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>зарегистрированный (ая) по адресу &lt;Адрес регистрации(покупатель)&gt;,</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>Удостоверение личности: паспорт серии &lt;Паспорт серия(покупатель)&gt; № &lt;Паспорт номер(покупатель)&gt;, выдан &lt;Дата выдачи паспорта(покупатель)&gt;, &lt;Паспорт кем выдан(покупатель)&gt;,</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">именуемый(ая) в дальнейшем </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>"Покупатель"</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>, заключили настоящий договор о нижеследующем:</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>1. Продавец передает в собственность покупателя (продает), а Покупатель принимает (покупает) и оплачивает транспортное средство:</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:ind w:left="540" w:hanging="0" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">Марка, модель ТС: </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>&lt;Модель ТС&gt;</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:ind w:left="540" w:hanging="0" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">Идентификационный номер (VIN): </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>&lt;Идентификационный номер(</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+                <w:lang w:val="en-US" />
+              </w:rPr>
+              <w:t>VIN</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>)&gt;</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:ind w:left="540" w:hanging="0" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">Год выпуска: </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>&lt;Год выпуска&gt;</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:ind w:left="540" w:hanging="0" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">№ </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">двигателя: </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>&lt;№ двигателя&gt;</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:ind w:left="540" w:hanging="0" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">№ </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">шасси (рамы): </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>&lt;№ шасси&gt;</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:ind w:left="540" w:hanging="0" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">№ </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">кузова: </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>&lt;№ кузова&gt;</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve"> </w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:ind w:left="540" w:hanging="0" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">Цвет: </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>&lt;Цвет авто&gt;</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:ind w:left="540" w:hanging="0" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">Пробег: </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>&lt;Пробег&gt;</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:ind w:left="540" w:hanging="0" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>Государственный регистрационный знак:</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve"> &lt;Государственный регистрационный знак&gt;</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:ind w:left="540" w:hanging="0" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">Свидетельство о регистрации ТС: </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>&lt;Свидетельство о регистрации ТС&gt;</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:ind w:left="540" w:hanging="0" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>Выдано:</w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve"> &lt;Кем выдано&gt;</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:b />
+                <w:bCs />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">2. Указанное в п. 1 транспортное средство, принадлежит Продавцу на праве собственности, что подтверждает  паспорт транспортного средства, серии &lt;Серия ТС&gt; № &lt;Номер ТС&gt;, выданный &lt;Кем выдано&gt;, &lt;Дата выдачи&gt; </w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>3. Со слов Продавца отчуждаемое транспортное средство никому не продано, не заложено, в споре и под запрещением (арестом) не состоит.</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>4. Стоимость указанного в п. 1 транспортного средства согласована Покупателем и Продавцом и составляет: &lt;Стоимость ТС(в рублях)&gt; руб.</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">5. Покупатель в оплату за приобретенное транспортное средство передал Продавцу, а Продавец получил денежные средства </w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>&lt;Величина представленной оплаты за ТС&gt;</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>6. Право собственности на транспортное средство, указанное в п. 1 договора переходит к Покупателю с момента подписания настоящего договора.</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">7. Настоящий договор составлен в трех экземплярах (по одному каждой из сторон и один для оформления в ГИБДД). </w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Preformatted" />
+              <w:jc w:val="both" />
+              <w:rPr>
+                <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:cs="Times New Roman" w:ascii="Times New Roman" w:hAnsi="Times New Roman" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Style18" />
+              <w:spacing w:before="0" w:after="120" />
+              <w:ind w:left="567" w:firstLine="1560" />
+              <w:textAlignment w:val="baseline" />
+              <w:rPr></w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b />
+                <w:color w:val="292929" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">Продавец   </w:t>
+              <w:tab />
+              <w:tab />
+              <w:tab />
+              <w:tab />
+              <w:tab />
+              <w:t xml:space="preserve">                    Покупатель</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Style18" />
+              <w:spacing w:before="0" w:after="0" />
+              <w:ind w:left="284" w:hanging="0" />
+              <w:textAlignment w:val="baseline" />
+              <w:rPr>
+                <w:color w:val="292929" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:color w:val="292929" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>Деньги  получил, транспортное  средство передал.            Деньги  передал, транспортное средство получил.</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Style18" />
+              <w:spacing w:before="0" w:after="0" />
+              <w:ind w:left="284" w:hanging="0" />
+              <w:textAlignment w:val="baseline" />
+              <w:rPr>
+                <w:color w:val="292929" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:color w:val="292929" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>_____________________________________                             ________________________________________</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Style18" />
+              <w:spacing w:before="0" w:after="0" />
+              <w:ind w:left="567" w:hanging="0" />
+              <w:textAlignment w:val="baseline" />
+              <w:rPr>
+                <w:color w:val="292929" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:color w:val="292929" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t xml:space="preserve">                            </w:t>
+            </w:r>
+            <w:r>
+              <w:rPr>
+                <w:color w:val="292929" />
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+              <w:t>(подпись и ФИО)                                                                  (подпись и ФИО)</w:t>
+            </w:r>
+          </w:p>
+          <w:tbl>
+            <w:tblPr>
+              <w:tblW w:w="10421" w:type="dxa" />
+              <w:jc w:val="left" />
+              <w:tblInd w:w="567" w:type="dxa" />
+              <w:tblLayout w:type="fixed" />
+              <w:tblCellMar>
+                <w:top w:w="0" w:type="dxa" />
+                <w:left w:w="108" w:type="dxa" />
+                <w:bottom w:w="0" w:type="dxa" />
+                <w:right w:w="108" w:type="dxa" />
+              </w:tblCellMar>
+            </w:tblPr>
+            <w:tblGrid>
+              <w:gridCol w:w="5215" />
+              <w:gridCol w:w="5206" />
+            </w:tblGrid>
+            <w:tr>
+              <w:trPr></w:trPr>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="5215" w:type="dxa" />
+                  <w:tcBorders></w:tcBorders>
+                </w:tcPr>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Style18" />
+                    <w:spacing w:before="0" w:after="0" />
+                    <w:textAlignment w:val="baseline" />
+                    <w:rPr>
+                      <w:color w:val="292929" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="22" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:color w:val="292929" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="22" />
+                    </w:rPr>
+                    <w:t>Тел.</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="22" />
+                    </w:rPr>
+                    <w:t xml:space="preserve"> &lt;Телефон(покупатель)&gt;</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="5206" w:type="dxa" />
+                  <w:tcBorders></w:tcBorders>
+                </w:tcPr>
+                <w:p>
+                  <w:pPr>
+                    <w:pStyle w:val="Style18" />
+                    <w:spacing w:before="0" w:after="0" />
+                    <w:textAlignment w:val="baseline" />
+                    <w:rPr>
+                      <w:color w:val="292929" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="22" />
+                    </w:rPr>
+                  </w:pPr>
+                  <w:r>
+                    <w:rPr>
+                      <w:color w:val="292929" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="22" />
+                    </w:rPr>
+                    <w:t xml:space="preserve">Тел.  </w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="22" />
+                    </w:rPr>
+                    <w:t>&lt;Телефон(продавец)&gt;</w:t>
+                  </w:r>
+                  <w:r>
+                    <w:rPr>
+                      <w:color w:val="292929" />
+                      <w:sz w:val="22" />
+                      <w:szCs w:val="22" />
+                    </w:rPr>
+                    <w:t xml:space="preserve">  </w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+          </w:tbl>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Style18" />
+              <w:spacing w:before="0" w:after="0" />
+              <w:ind w:left="567" w:hanging="0" />
+              <w:textAlignment w:val="baseline" />
+              <w:rPr>
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:sz w:val="22" />
+                <w:szCs w:val="22" />
+              </w:rPr>
+            </w:r>
+          </w:p>
+          <w:sectPr>
+            <w:footerReference w:type="default" r:id="rId3" />
+            <w:type w:val="nextPage" />
+            <w:pgSz w:w="11906" w:h="16838" />
+            <w:pgMar w:left="567" w:right="567" w:gutter="0" w:header="0" w:top="567" w:footer="567" w:bottom="1135" />
+            <w:pgNumType w:fmt="decimal" />
+            <w:formProt w:val="false" />
+            <w:textDirection w:val="lrTb" />
+            <w:docGrid w:type="default" w:linePitch="360" w:charSpace="1842" />
+          </w:sectPr>
+        </w:body>
+      </w:document>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/fontTable.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.fontTable+xml">
+    <pkg:xmlData>
+      <w:fonts xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+        <w:font w:name="Times New Roman">
+          <w:charset w:val="00" />
+          <w:family w:val="roman" />
+          <w:pitch w:val="variable" />
+        </w:font>
+        <w:font w:name="Symbol">
+          <w:charset w:val="02" />
+          <w:family w:val="roman" />
+          <w:pitch w:val="variable" />
+        </w:font>
+        <w:font w:name="Arial">
+          <w:charset w:val="00" />
+          <w:family w:val="swiss" />
+          <w:pitch w:val="variable" />
+        </w:font>
+        <w:font w:name="Liberation Serif">
+          <w:altName w:val="Times New Roman" />
+          <w:charset w:val="01" />
+          <w:family w:val="roman" />
+          <w:pitch w:val="variable" />
+        </w:font>
+        <w:font w:name="Times New Roman">
+          <w:charset w:val="cc" />
+          <w:family w:val="roman" />
+          <w:pitch w:val="variable" />
+        </w:font>
+        <w:font w:name="Arial">
+          <w:charset w:val="cc" />
+          <w:family w:val="swiss" />
+          <w:pitch w:val="variable" />
+        </w:font>
+        <w:font w:name="Courier New">
+          <w:charset w:val="cc" />
+          <w:family w:val="modern" />
+          <w:pitch w:val="default" />
+        </w:font>
+      </w:fonts>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/footer1.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml">
+    <pkg:xmlData>
+      <w:ftr xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" mc:Ignorable="w14 wp14 w15">
+        <w:p>
+          <w:pPr>
+            <w:pStyle w:val="Footer" />
+            <w:jc w:val="center" />
+            <w:rPr>
+              <w:color w:val="999999" />
+              <w:sz w:val="24" />
+              <w:szCs w:val="24" />
+            </w:rPr>
+          </w:pPr>
+          <w:r>
+            <w:rPr>
+              <w:color w:val="999999" />
+              <w:sz w:val="24" />
+              <w:szCs w:val="24" />
+            </w:rPr>
+          </w:r>
+        </w:p>
+      </w:ftr>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/settings.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.settings+xml">
+    <pkg:xmlData>
+      <w:settings xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+        <w:zoom w:percent="100" />
+        <w:defaultTabStop w:val="720" />
+        <w:autoHyphenation w:val="true" />
+        <w:compat>
+          <w:compatSetting w:name="compatibilityMode" w:uri="http://schemas.microsoft.com/office/word" w:val="11" />
+        </w:compat>
+      </w:settings>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/styles.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml">
+    <pkg:xmlData>
+      <w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="w14">
+        <w:docDefaults>
+          <w:rPrDefault>
+            <w:rPr>
+              <w:rFonts w:ascii="Liberation Serif" w:hAnsi="Liberation Serif" w:eastAsia="Noto Serif CJK SC" w:cs="Noto Sans Devanagari" />
+              <w:sz w:val="24" />
+              <w:szCs w:val="24" />
+              <w:lang w:val="ru-RU" w:eastAsia="zh-CN" w:bidi="hi-IN" />
+            </w:rPr>
+          </w:rPrDefault>
+          <w:pPrDefault>
+            <w:pPr>
+              <w:suppressAutoHyphens w:val="true" />
+            </w:pPr>
+          </w:pPrDefault>
+        </w:docDefaults>
+        <w:style w:type="paragraph" w:styleId="Normal">
+          <w:name w:val="Normal" />
+          <w:qFormat />
+          <w:pPr>
+            <w:widowControl />
+            <w:suppressAutoHyphens w:val="true" />
+            <w:bidi w:val="0" />
+          </w:pPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:eastAsia="Times New Roman" w:cs="Times New Roman" />
+            <w:color w:val="00000A" />
+            <w:sz w:val="20" />
+            <w:szCs w:val="20" />
+            <w:lang w:val="ru-RU" w:eastAsia="zh-CN" w:bidi="ar-SA" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="WW8Num1z0">
+          <w:name w:val="WW8Num1z0" />
+          <w:qFormat />
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="Style14">
+          <w:name w:val="Основной шрифт абзаца" />
+          <w:qFormat />
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="-">
+          <w:name w:val="Интернет-ссылка" />
+          <w:qFormat />
+          <w:rPr>
+            <w:color w:val="0000FF" />
+            <w:u w:val="single" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="Style15">
+          <w:name w:val="Посещённая гиперссылка" />
+          <w:qFormat />
+          <w:rPr>
+            <w:color w:val="800000" />
+            <w:u w:val="single" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="InternetLink">
+          <w:name w:val="Hyperlink" />
+          <w:rPr>
+            <w:color w:val="000080" />
+            <w:u w:val="single" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Heading">
+          <w:name w:val="Heading" />
+          <w:basedOn w:val="Normal" />
+          <w:next w:val="TextBody" />
+          <w:qFormat />
+          <w:pPr>
+            <w:keepNext w:val="true" />
+            <w:spacing w:before="240" w:after="120" />
+          </w:pPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Microsoft YaHei" w:cs="Mangal" />
+            <w:sz w:val="28" />
+            <w:szCs w:val="28" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="TextBody">
+          <w:name w:val="Body Text" />
+          <w:basedOn w:val="Normal" />
+          <w:pPr>
+            <w:spacing w:lineRule="auto" w:line="288" w:before="0" w:after="120" />
+          </w:pPr>
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="List">
+          <w:name w:val="List" />
+          <w:basedOn w:val="TextBody" />
+          <w:pPr></w:pPr>
+          <w:rPr>
+            <w:rFonts w:cs="Mangal" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Caption">
+          <w:name w:val="Caption" />
+          <w:basedOn w:val="Normal" />
+          <w:qFormat />
+          <w:pPr>
+            <w:suppressLineNumbers />
+            <w:spacing w:before="120" w:after="120" />
+          </w:pPr>
+          <w:rPr>
+            <w:rFonts w:cs="Noto Sans Devanagari" />
+            <w:i />
+            <w:iCs />
+            <w:sz w:val="24" />
+            <w:szCs w:val="24" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Index">
+          <w:name w:val="Index" />
+          <w:basedOn w:val="Normal" />
+          <w:qFormat />
+          <w:pPr>
+            <w:suppressLineNumbers />
+          </w:pPr>
+          <w:rPr>
+            <w:rFonts w:cs="Noto Sans Devanagari" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Style16">
+          <w:name w:val="Название" />
+          <w:basedOn w:val="Normal" />
+          <w:qFormat />
+          <w:pPr>
+            <w:suppressLineNumbers />
+            <w:spacing w:before="120" w:after="120" />
+          </w:pPr>
+          <w:rPr>
+            <w:rFonts w:cs="Mangal" />
+            <w:i />
+            <w:iCs />
+            <w:sz w:val="24" />
+            <w:szCs w:val="24" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="IndexHeading">
+          <w:name w:val="Index Heading" />
+          <w:basedOn w:val="Normal" />
+          <w:pPr>
+            <w:suppressLineNumbers />
+          </w:pPr>
+          <w:rPr>
+            <w:rFonts w:cs="Mangal" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Preformatted">
+          <w:name w:val="Preformatted" />
+          <w:basedOn w:val="Normal" />
+          <w:qFormat />
+          <w:pPr></w:pPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="HeaderandFooter">
+          <w:name w:val="Header and Footer" />
+          <w:basedOn w:val="Normal" />
+          <w:qFormat />
+          <w:pPr>
+            <w:suppressLineNumbers />
+            <w:tabs>
+              <w:tab w:val="clear" w:pos="720" />
+              <w:tab w:val="center" w:pos="4986" w:leader="none" />
+              <w:tab w:val="right" w:pos="9972" w:leader="none" />
+            </w:tabs>
+          </w:pPr>
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Header">
+          <w:name w:val="Header" />
+          <w:basedOn w:val="Normal" />
+          <w:pPr></w:pPr>
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Footer">
+          <w:name w:val="Footer" />
+          <w:basedOn w:val="Normal" />
+          <w:pPr></w:pPr>
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Style17">
+          <w:name w:val="Содержимое списка" />
+          <w:basedOn w:val="Normal" />
+          <w:qFormat />
+          <w:pPr>
+            <w:ind w:left="567" w:hanging="0" />
+          </w:pPr>
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Style18">
+          <w:name w:val="Обычный (веб)" />
+          <w:basedOn w:val="Normal" />
+          <w:qFormat />
+          <w:pPr>
+            <w:suppressAutoHyphens w:val="false" />
+            <w:spacing w:before="280" w:after="280" />
+          </w:pPr>
+          <w:rPr>
+            <w:color w:val="000000" />
+            <w:sz w:val="24" />
+            <w:szCs w:val="24" />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="TableContents">
+          <w:name w:val="Table Contents" />
+          <w:basedOn w:val="Normal" />
+          <w:qFormat />
+          <w:pPr>
+            <w:widowControl w:val="false" />
+            <w:suppressLineNumbers />
+          </w:pPr>
+          <w:rPr></w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="TableHeading">
+          <w:name w:val="Table Heading" />
+          <w:basedOn w:val="TableContents" />
+          <w:qFormat />
+          <w:pPr>
+            <w:suppressLineNumbers />
+            <w:jc w:val="center" />
+          </w:pPr>
+          <w:rPr>
+            <w:b />
+            <w:bCs />
+          </w:rPr>
+        </w:style>
+        <w:style w:type="numbering" w:styleId="WW8Num1">
+          <w:name w:val="WW8Num1" />
+          <w:qFormat />
+        </w:style>
+      </w:styles>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/_rels/document.xml.rels" pkg:contentType="application/vnd.openxmlformats-package.relationships+xml">
+    <pkg:xmlData>
+      <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+        <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml" />
+        <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="http://forms-docs.ru/Form_AutoPurchaseContract.aspx" TargetMode="External" />
+        <Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer1.xml" />
+        <Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable" Target="fontTable.xml" />
+        <Relationship Id="rId5" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml" />
+</Relationships>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/_rels/.rels" pkg:contentType="application/vnd.openxmlformats-package.relationships+xml">
+    <pkg:xmlData>
+      <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+        <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml" />
+        <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml" />
+        <Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml" />
+</Relationships>
+    </pkg:xmlData>
+  </pkg:part>
+</pkg:package>

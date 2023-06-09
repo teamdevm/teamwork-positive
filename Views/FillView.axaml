@@ -1,0 +1,68 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Documently.Views.FillView">
+	
+	<DockPanel LastChildFill="True">
+		<DockPanel Background="#F7FAFC" DockPanel.Dock="Top">
+			
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+				<Button Background="Transparent" Command="{Binding $parent[Window].DataContext.SwitchToPrevious}">
+					<Image Source="{DynamicResource Return}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Tik}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource AddRow}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource AddDataset}" Width="24" Height="24"/>
+				</Button>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource ArrowLeft}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource ArrowRight}" Width="24" Height="24"/>
+				</Button>
+			</StackPanel>
+			
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Setting}" Width="24" Height="24"/>
+				</Button>
+				<Button Background="Transparent">
+					<Image Source="{DynamicResource Help}" Width="24" Height="24"/>
+				</Button>
+			</StackPanel>
+			
+		</DockPanel>
+
+		<SplitView IsPaneOpen="True"
+           DisplayMode="Inline"
+           OpenPaneLength="600">
+			<SplitView.Pane>
+				<TextBlock Text="Заполнение шаблона"
+						   FontSize="24"
+						   FontFamily="Times New Roman"
+						   VerticalAlignment="Center"
+						   HorizontalAlignment="Center"/>
+			</SplitView.Pane>
+
+			<Grid>
+				<TextBlock Text="Предварительный просмотр"
+						   FontSize="24"
+						   FontFamily="Times New Roman"
+						   VerticalAlignment="Center"
+						   HorizontalAlignment="Center"/>
+			</Grid>
+		</SplitView>
+		
+	</DockPanel>
+	
+</UserControl>
