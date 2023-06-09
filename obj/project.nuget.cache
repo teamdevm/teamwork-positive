@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Jey4H2W3NnuGfxJMPXFRe+KyIV6zS/xT9Wz1draKIBVSfILt0ZTvGIyzDCGpqbjza5pHDlSQ3cBn0LBKI5dpSA==",
+  "dgSpecHash": "9yphiWz0QaAUNkH1VVwJruk3aH39lQoJkGqPG4co6+jlTKlexqRDlVBOua6nBUKGAe0GA7XIK9wFGflYQB/QwA==",
   "success": true,
-  "projectFilePath": "/home/eve/Documents/teamwork-positive/Documently.csproj",
+  "projectFilePath": "/home/eve/Documents/Групповой проект/teamwork-positive/Documently.csproj",
   "expectedPackageFiles": [
     "/home/eve/.nuget/packages/aspose.words/23.5.0/aspose.words.23.5.0.nupkg.sha512",
     "/home/eve/.nuget/packages/avalonia/0.10.21/avalonia.0.10.21.nupkg.sha512",
