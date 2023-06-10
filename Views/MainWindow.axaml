@@ -7,5 +7,5 @@
         Icon="/Assets/documently.png"
 		Background="#E6EFFA"
 		Content="{Binding CurWindow}"
-        Title="Документли">
+        Title="{Binding CurTitle}">
 </Window>

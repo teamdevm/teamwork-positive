@@ -3,8 +3,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 Name="Шаблон"
              x:Class="Documently.Views.EditView">
 
+	
 	<DockPanel LastChildFill="True">
 		<DockPanel Background="#F7FAFC" DockPanel.Dock="Top">
 			
