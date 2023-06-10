@@ -40,9 +40,7 @@
 		<ListBox Items="{Binding Nodes}" DockPanel.Dock="Right">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
-					
 						<TextBlock Text="{Binding}"/>
-					
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>
