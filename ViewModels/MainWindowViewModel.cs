@@ -4,6 +4,8 @@ public class MainWindowViewModel : ViewModelBase
 {
     private ViewModelBase curWindow;
     private ViewModelBase prevWindow;
+    private string curTitle;
+    private string prevTitle;
     public ViewModelBase CurWindow 
     { 
         get => curWindow; 
@@ -13,6 +15,16 @@ public class MainWindowViewModel : ViewModelBase
     {
         get => prevWindow;
         set => this.RaiseAndSetIfChanged(ref prevWindow, value);
+    }
+    public string CurTitle
+    {
+        get => curTitle;
+        set => this.RaiseAndSetIfChanged(ref curTitle, value);
+    }
+    public string PrevTitle
+    {
+        get => prevTitle;
+        set => this.RaiseAndSetIfChanged(ref prevTitle, value);
     }
 
     private CollectionViewModel collectionWindow;
@@ -27,29 +39,38 @@ public class MainWindowViewModel : ViewModelBase
         editWindow = new EditViewModel();
         fillWindow = new FillViewModel();
         CurWindow = collectionWindow;
+        CurTitle = "Коллекция шаблонов";
     }
     public void SwitchToCollect()
     {
         CurWindow = collectionWindow;
+        CurTitle = "Коллекция шаблонов";
     }
     public void SwitchToPrevious()
     {
         CurWindow = PrevWindow;
+        CurTitle = PrevTitle;
     }
     public void SwitchToCreate()
     {
         CurWindow = createWindow;
+        CurTitle = "Новый шаблон";
         PrevWindow = collectionWindow;
+        PrevTitle = "Коллекция шаблонов";
     }
     public void SwitchToEdit()
     {
         CurWindow = editWindow;
         PrevWindow = collectionWindow;
+        CurTitle = "Изменить шаблон";
+        PrevTitle = "Коллекция шаблонов";
     }
     public void SwitchToFill()
     {
         CurWindow = fillWindow;
         PrevWindow = collectionWindow;
+        CurTitle = "Заполнить шаблон";
+        PrevTitle = "Коллекция шаблонов";
     }
 
     public string Greeting => "Welcome to Avalonia!";
