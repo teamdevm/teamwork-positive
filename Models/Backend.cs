@@ -11,7 +11,7 @@ namespace Documently.Models;
 class Backend
 {
     //хз насколько оптимально это решение, особо не разбирался в вариациях
-    public static DataTable CreateTableFromWord(string pathPattern, string namePattern) 
+    public static DataTable CreateTableFromWord(string pathPattern, string namePattern)
     {
         DataTable table = new DataTable(namePattern);
         Document doc;
@@ -19,7 +19,7 @@ class Backend
         {
             doc = new Document(pathPattern); // проверку бы на открытие дока замутить
         }
-        catch (Exception ex) 
+        catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
             return null;
@@ -28,7 +28,7 @@ class Backend
         foreach (Paragraph p in doc.GetChildNodes(NodeType.Paragraph, true))
         {
             int right = p.ToString(SaveFormat.Text).IndexOf("<"), left = p.ToString(SaveFormat.Text).IndexOf(">");
-            string varStr, pStr = p.ToString(SaveFormat.Text); 
+            string varStr, pStr = p.ToString(SaveFormat.Text);
             while (right >= 0 && left >= 0)
             {
                 varStr = pStr.Substring(right, left - right + 1);
@@ -40,7 +40,7 @@ class Backend
             }
         }
 
-       return table;
+        return table;
     }
 
     public static void FillTable(DataTable table)
@@ -49,7 +49,7 @@ class Backend
         for (int i = 0; i < table.Head.Count; i++)
         {
             Console.WriteLine($"{table.Head[i]} = {i}");
-            filling[i] = i.ToString(); 
+            filling[i] = i.ToString();
         }
         table.Body.Add(filling);
     }
@@ -60,7 +60,7 @@ class Backend
     }
 
     public static string GetFileName(DataTable table)
-    { 
+    {
         Console.WriteLine("Имя для формируемых документов: ");
         string copyName;
         string name = copyName = Console.ReadLine();
@@ -81,7 +81,7 @@ class Backend
         }
         return name;
     }
-    public static void Execute ()
+    public static void Execute()
     {
         DataTable table;
         string pathToPattern = "C:\\Users\\дом\\Desktop\\ФИТ\\3 Курс\\9 триместр\\Групповая работа\\Шаблоны\\Договоры\\договор аренды квартиры.docx";
@@ -97,7 +97,7 @@ class Backend
         string readyOrNot = Console.ReadLine();
         if (readyOrNot == "Да")
         {
-            Document doc; 
+            Document doc;
             for (int i = 0; i < table.Body.Count; i++)
             {
                 doc = new Document(pathToPattern);
