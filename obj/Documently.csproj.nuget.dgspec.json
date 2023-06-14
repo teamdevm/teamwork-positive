@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/eve/Documents/Групповой проект/teamwork-positive/Documently.csproj": {}
+    "D:\\ФИТ 3 курс\\9 трим\\гит\\teamwork-positive\\Documently.csproj": {}
   },
   "projects": {
-    "/home/eve/Documents/Групповой проект/teamwork-positive/Documently.csproj": {
+    "D:\\ФИТ 3 курс\\9 трим\\гит\\teamwork-positive\\Documently.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/eve/Documents/Групповой проект/teamwork-positive/Documently.csproj",
+        "projectUniqueName": "D:\\ФИТ 3 курс\\9 трим\\гит\\teamwork-positive\\Documently.csproj",
         "projectName": "Documently",
-        "projectPath": "/home/eve/Documents/Групповой проект/teamwork-positive/Documently.csproj",
-        "packagesPath": "/home/eve/.nuget/packages/",
-        "outputPath": "/home/eve/Documents/Групповой проект/teamwork-positive/obj/",
+        "projectPath": "D:\\ФИТ 3 курс\\9 трим\\гит\\teamwork-positive\\Documently.csproj",
+        "packagesPath": "C:\\Users\\подьзователь\\.nuget\\packages\\",
+        "outputPath": "D:\\ФИТ 3 курс\\9 трим\\гит\\teamwork-positive\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/eve/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\подьзователь\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,49 +39,17 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Aspose.Words": {
-              "target": "Package",
-              "version": "[23.5.0, )"
-            },
-            "Avalonia": {
-              "target": "Package",
-              "version": "[0.10.21, )"
-            },
-            "Avalonia.Desktop": {
-              "target": "Package",
-              "version": "[0.10.21, )"
-            },
-            "Avalonia.Diagnostics": {
-              "target": "Package",
-              "version": "[0.10.21, )"
-            },
-            "Avalonia.ReactiveUI": {
-              "target": "Package",
-              "version": "[0.10.21, )"
-            },
-            "XamlNameReferenceGenerator": {
-              "target": "Package",
-              "version": "[1.6.1, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/opt/dotnet/sdk/6.0.408/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
         }
       }
     }
