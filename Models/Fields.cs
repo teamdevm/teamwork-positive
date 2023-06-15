@@ -8,7 +8,7 @@ namespace Documently.Models;
  * К этому свойству также можно добавить атрибут проверки корректности значения, подробнее:
  * https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validationattribute?view=net-6.0
  */
-class Field
+public class Field
 {
     public string Name { get; set; }
     public string Description { get; set; }
@@ -17,6 +17,13 @@ class Field
     public Field ()
     {
         Name = string.Empty;
+        Description = string.Empty;
+        Value = string.Empty;
+    }
+
+    public Field (string name)
+    {
+        Name = name;
         Description = string.Empty;
         Value = string.Empty;
     }
