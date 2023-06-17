@@ -9,28 +9,37 @@
 		<DockPanel Background="#F7FAFC" DockPanel.Dock="Top">
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-				<Button Background="Transparent" Command="{Binding $parent[Window].DataContext.SwitchToCreate}">
+				<Button Background="Transparent" 
+						Command="{Binding $parent[Window].DataContext.SwitchToCreate}"
+						ToolTip.Tip="Создать шаблон">
 					<Image Source="{DynamicResource NewFile}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
+				<Button Background="Transparent" ToolTip.Tip="Загрузить шаблон">
 					<Image Source="{DynamicResource Upload}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" Command="{Binding $parent[Window].DataContext.SwitchToEdit}">
+				<Button Background="Transparent" 
+						Command="{Binding $parent[Window].DataContext.SwitchToEdit}"
+						ToolTip.Tip="Изменить шаблон">
 					<Image Source="{DynamicResource Edit}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" Command="{Binding $parent[Window].DataContext.SwitchToFill}">
+				<Button Background="Transparent" 
+						Command="{Binding $parent[Window].DataContext.SwitchToFill}"
+						ToolTip.Tip="Заполнить шаблон">
 					<Image Source="{DynamicResource Fill}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
+				<Button Background="Transparent"
+						ToolTip.Tip="Удалить шаблон">
 					<Image Source="{DynamicResource Trash}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-				<Button Background="Transparent">
+				<Button Background="Transparent"
+						ToolTip.Tip="Настройки">
 					<Image Source="{DynamicResource Setting}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
+				<Button Background="Transparent"
+						ToolTip.Tip="Помощь">
 					<Image Source="{DynamicResource Help}" Classes="Icon"/>
 				</Button>
 			</StackPanel>

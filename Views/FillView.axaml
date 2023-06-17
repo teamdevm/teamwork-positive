@@ -9,34 +9,38 @@
 		<DockPanel Background="#F7FAFC" DockPanel.Dock="Top">
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-				<Button Background="Transparent" Command="{Binding $parent[Window].DataContext.SwitchToPrevious}">
+				<Button Background="Transparent" 
+						Command="{Binding $parent[Window].DataContext.SwitchToPrevious}"
+						ToolTip.Tip="Вернуться">
 					<Image Source="{DynamicResource Return}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" Command="{Binding GetTemplate}">
+				<Button Background="Transparent" 
+						Command="{Binding GetTemplate}"
+						ToolTip.Tip="Сохранить">
 					<Image Source="{DynamicResource Tik}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
+				<Button Background="Transparent" ToolTip.Tip="Добавить экземпляр">
 					<Image Source="{DynamicResource AddRow}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
+				<Button Background="Transparent" ToolTip.Tip="Загрузить таблицу">
 					<Image Source="{DynamicResource AddDataset}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Background="Transparent">
+				<Button Background="Transparent" ToolTip.Tip="Предыдущий">
 					<Image Source="{DynamicResource ArrowLeft}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
+				<Button Background="Transparent" ToolTip.Tip="Следующий">
 					<Image Source="{DynamicResource ArrowRight}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-				<Button Background="Transparent">
+				<Button Background="Transparent" ToolTip.Tip="Настройки">
 					<Image Source="{DynamicResource Setting}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
+				<Button Background="Transparent" ToolTip.Tip="Помощь">
 					<Image Source="{DynamicResource Help}" Classes="Icon"/>
 				</Button>
 			</StackPanel>

@@ -18,12 +18,8 @@ public class CollectionViewModel : ViewModelBase
         set
         { 
             selected = value;
-            Nodes = new ObservableCollection<string>();
+            Nodes = new ObservableCollection<string>(Directory.GetFiles(selected.strFullPath));
 
-            foreach (string path in Directory.GetFiles(selected.strFullPath))
-            {
-                Nodes.Add(Path.GetFileName(path));
-            }
         } 
     }
     public ObservableCollection<string> Nodes

@@ -25,7 +25,6 @@ public class FillViewModel : ViewModelBase
     }
     public void GetTemplate()
     {
-
         templateProcessor.Fill(fields);
     }
 }
