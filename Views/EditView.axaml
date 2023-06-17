@@ -12,76 +12,77 @@
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
 				<Button Background="Transparent" Command="{Binding $parent[Window].DataContext.SwitchToPrevious}">
-					<Image Source="{DynamicResource Return}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource Return}" Classes="Icon"/>
 				</Button>
 				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource EmptyFile}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource EmptyFile}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource Save}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource Save}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource Tag}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource Tag}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource Undo}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource Undo}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource Redo}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource Redo}" Classes="Icon"/>
 				</Button>
 				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource FormatPainter}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource FormatPainter}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource ClearFormat}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource ClearFormat}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource Bold}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource Bold}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource Italic}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource Italic}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource Underline}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource Underline}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource LeftAlign}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource LeftAlign}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource CenterAlign}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource CenterAlign}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource Justify}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource Justify}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource Ulitem}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource Ulitem}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource Orderlist}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource Orderlist}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource RightIndent}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource RightIndent}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource LeftIndent}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource LeftIndent}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource LineHeight}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource LineHeight}" Classes="Icon"/>
 				</Button>
-				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
+				
 			</StackPanel>
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource Setting}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource Setting}" Classes="Icon"/>
 				</Button>
 				<Button Background="Transparent">
-					<Image Source="{DynamicResource Help}" Width="24" Height="24"/>
+					<Image Source="{DynamicResource Help}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
 			

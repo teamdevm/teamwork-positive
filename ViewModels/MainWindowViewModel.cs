@@ -1,4 +1,7 @@
 ﻿using ReactiveUI;
+using System.Reactive;
+using System.Reactive.Linq;
+using Documently.Models;
 namespace Documently.ViewModels;
 public class MainWindowViewModel : ViewModelBase
 {
@@ -6,6 +9,10 @@ public class MainWindowViewModel : ViewModelBase
     private ViewModelBase prevWindow;
     private string curTitle;
     private string prevTitle;
+
+    public Interaction<CollectionViewModel, FillViewModel> GetTemplate { get; }
+    public ReactiveCommand<Unit, Unit> ActionGetTemplate { get; }
+
     public ViewModelBase CurWindow 
     { 
         get => curWindow; 
@@ -28,18 +35,17 @@ public class MainWindowViewModel : ViewModelBase
     }
 
     private CollectionViewModel collectionWindow;
-    private CreateViewModel createWindow;
     private EditViewModel editWindow;
     private FillViewModel fillWindow;
 
     public MainWindowViewModel() 
     { 
         collectionWindow = new CollectionViewModel();
-        createWindow = new CreateViewModel();
         editWindow = new EditViewModel();
         fillWindow = new FillViewModel();
         CurWindow = collectionWindow;
         CurTitle = "Коллекция шаблонов";
+        //ShowDialog = new Interaction<CollectionViewModel, FillViewModel>();
     }
     public void SwitchToCollect()
     {
@@ -53,7 +59,7 @@ public class MainWindowViewModel : ViewModelBase
     }
     public void SwitchToCreate()
     {
-        CurWindow = createWindow;
+        CurWindow = editWindow;
         CurTitle = "Новый шаблон";
         PrevWindow = collectionWindow;
         PrevTitle = "Коллекция шаблонов";
@@ -67,11 +73,12 @@ public class MainWindowViewModel : ViewModelBase
     }
     public void SwitchToFill()
     {
-        CurWindow = fillWindow;
+        CurWindow = new FillViewModel(new Backend(), collectionWindow.SelectedTemplate);
         PrevWindow = collectionWindow;
         CurTitle = "Заполнить шаблон";
         PrevTitle = "Коллекция шаблонов";
+
     }
 
-    public string Greeting => "Welcome to Avalonia!";
+    
 }

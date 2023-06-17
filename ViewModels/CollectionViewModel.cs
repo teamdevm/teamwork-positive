@@ -1,12 +1,14 @@
 ﻿using System.Collections.ObjectModel;
 using ReactiveUI;
 using System.IO;
+using Documently.Models;
 namespace Documently.ViewModels;
 
 public class CollectionViewModel : ViewModelBase
 {
-    public string Greeting => "Welcome to Avalonia!";
+    private ObservableCollection<string> nodes;
     private Node selected;
+    private string selectedTemplate;
     public ObservableCollection<Node> Items { get; }
     public ObservableCollection<Node> SelectedItems { get; }
     public string strFolder { get; set; }
@@ -16,14 +18,23 @@ public class CollectionViewModel : ViewModelBase
         set
         { 
             selected = value;
-            Nodes = new ObservableCollection<string>(Directory.GetFiles(selected.strFullPath));
+            Nodes = new ObservableCollection<string>();
+
+            foreach (string path in Directory.GetFiles(selected.strFullPath))
+            {
+                Nodes.Add(Path.GetFileName(path));
+            }
         } 
     }
-    public ObservableCollection<string> nodes; 
     public ObservableCollection<string> Nodes
     {
         get => nodes;
         set => this.RaiseAndSetIfChanged(ref nodes, value);
+    }
+    public string SelectedTemplate
+    {
+        get => selectedTemplate;
+        set => this.RaiseAndSetIfChanged(ref selectedTemplate, value);
     }
     public CollectionViewModel()
     {
@@ -72,5 +83,8 @@ public class CollectionViewModel : ViewModelBase
             strNodeText = Path.GetFileName(_strFullPath);
         }
     }
-
+    public void FillSelected ()
+    {
+        FillViewModel fillViewModel = new FillViewModel(new Backend(), SelectedTemplate);
+    }
 }
