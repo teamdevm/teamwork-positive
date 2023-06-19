@@ -5,52 +5,61 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Documently.Views.CollectionView">
 
-	<DockPanel LastChildFill="True">
-		<DockPanel Background="#F7FAFC" DockPanel.Dock="Top">
-			
+	<DockPanel>
+		<DockPanel DockPanel.Dock="Top">
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-				<Button Background="Transparent" 
+				<Button Classes="Fill" 
 						Command="{Binding $parent[Window].DataContext.SwitchToCreate}"
 						ToolTip.Tip="Создать шаблон">
 					<Image Source="{DynamicResource NewFile}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Загрузить шаблон">
+				<Button Classes="Fill" ToolTip.Tip="Загрузить шаблон">
 					<Image Source="{DynamicResource Upload}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" 
+				<Button Classes="Fill" 
 						Command="{Binding $parent[Window].DataContext.SwitchToEdit}"
 						ToolTip.Tip="Изменить шаблон">
 					<Image Source="{DynamicResource Edit}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" 
-						Command="{Binding $parent[Window].DataContext.SwitchToFill}"
+				<Button Classes="Fill" 
+						Command="{Binding $parent[Window].DataContext.CheckTemplate}"
 						ToolTip.Tip="Заполнить шаблон">
 					<Image Source="{DynamicResource Fill}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent"
+				<Button Classes="Fill"
 						ToolTip.Tip="Удалить шаблон">
 					<Image Source="{DynamicResource Trash}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-				<Button Background="Transparent"
+				<Button Classes="Fill"
 						ToolTip.Tip="Настройки">
+					<Button.Flyout>
+						<MenuFlyout Placement="BottomEdgeAlignedLeft">
+							<MenuItem Header="Тема">
+								<MenuItem Header="Светлая"/>
+								<MenuItem Header="Темная"/>
+							</MenuItem>
+							<MenuItem Header="Иконки">
+								<MenuItem Header="Маленькие"/>
+								<MenuItem Header="Средние"/>
+								<MenuItem Header="Большие"/>
+							</MenuItem>
+						</MenuFlyout>
+					</Button.Flyout>
 					<Image Source="{DynamicResource Setting}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent"
+				<Button Classes="Fill"
 						ToolTip.Tip="Помощь">
 					<Image Source="{DynamicResource Help}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
-			
 		</DockPanel>
-		
-		
 		
 			<SplitView IsPaneOpen="True" DisplayMode="Inline">
 				<SplitView.Pane>
-					<StackPanel Background="#E6EFFA">
+					<StackPanel>
 					<TreeView Items="{Binding Items}" SelectedItem="{Binding Selected}">
 						<TreeView.ItemTemplate>
 							<TreeDataTemplate ItemsSource="{Binding Subfolders}">
@@ -59,29 +68,24 @@
 						</TreeView.ItemTemplate>
 					</TreeView>
 				
-					<Button Background="Transparent">
+					<Button Classes="Fill">
 						<StackPanel Orientation="Horizontal">
 							<Image Source="{DynamicResource Plus}" Classes="Icon"/>
 							<TextBlock Text="Добавить категорию" VerticalAlignment="Center"/>
 						</StackPanel>
 					</Button>
-						
 					</StackPanel>
 				</SplitView.Pane>
 				
 				<ListBox Items="{Binding Nodes}" 
 						 SelectedItem="{Binding SelectedTemplate}" 
-						 DockPanel.Dock="Right"
-						 Background="#F5F5F5">
+						 DockPanel.Dock="Right">
 					<ListBox.ItemTemplate>
 						<DataTemplate>
 							<TextBlock Text="{Binding}"/>
 						</DataTemplate>
 					</ListBox.ItemTemplate>
 				</ListBox>
-
 			</SplitView>
-		
 	</DockPanel>
-	
 </UserControl>
