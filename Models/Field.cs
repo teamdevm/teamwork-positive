@@ -1,3 +1,4 @@
+using Avalonia;
 using System.ComponentModel.DataAnnotations;
 
 namespace Documently.Models;
@@ -10,6 +11,7 @@ namespace Documently.Models;
  */
 public class Field
 {
+
     public string Name { get; set; }
     public string Description { get; set; }
     public virtual string Value { get; set; }
@@ -21,7 +23,8 @@ public class Field
         Value = string.Empty;
     }
 
-    public Field (string name)
+
+    public Field(string name)
     {
         Name = name;
         Description = string.Empty;

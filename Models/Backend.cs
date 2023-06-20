@@ -6,6 +6,11 @@ using Aspose.Words.MailMerging;
 using Aspose.Words.Replacing;
 using System.Dynamic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using Aspose.Words.Drawing.Ole;
+using Aspose.Words.Fields;
+using Aspose.Words.Lists;
+using System.Drawing;
 
 namespace Documently.Models;
 
@@ -126,7 +131,7 @@ class Backend : ITemplateProcessor
     public void Setup(string name, string path, string pattern)
     {
         pathPattern = name;
-        pathToFolder = path;
+        pathToFolder = "D:\\ФИТ 3 курс\\9 трим\\доки";
         fileName = pattern;
         CheckFileName(GetFields());
     }
@@ -134,25 +139,104 @@ class Backend : ITemplateProcessor
     public ObservableCollection<Field> GetFields()
     {
         ObservableCollection<Field> table = new ObservableCollection<Field>();
-        Document doc = new Document(pathPattern); // проверку бы на открытие дока замутить
-        Field f;
-
+        Document doc = new Document(pathPattern);
+        Field f1, f2;
+        int countGroups = 0;
+        List<FieldsGroup> fieldsGroup = new List<FieldsGroup>();
         foreach (Paragraph p in doc.GetChildNodes(NodeType.Paragraph, true))
         {
             int left = p.ToString(SaveFormat.Text).IndexOf("<"), right = p.ToString(SaveFormat.Text).IndexOf(">");
             string varStr, pStr = p.ToString(SaveFormat.Text);
             while (left >= 0 && right >= 0)
             {
-                varStr = pStr.Substring(left, right - left + 1);
-                f = new Field(varStr);
-                if (!table.Contains(f))
-                    table.Add(f);
+                varStr = pStr.Substring(left+1, right-left-1);
+                string res = "", res2 = "", res3 = "";
+                char prevChar = char.MinValue, prevCh = char.MinValue; //индексы предыдущих символов
+                int ind = 0, index = 0;
+                //Разделяем название тега на слова и отделяем категорию (если есть). 
+                foreach (char c in varStr)
+                {
+                    ind++;
+                    if (res == "")
+                        res += c;
+                    //Приводим название тега в нужные регистры, если тег составной
+                    //else if (char.IsUpper(c) && char.IsLower(prevChar))
+                        //res += " " + char.ToLower(c);
+                    //Название категории (группы тега) расположено после двоеточия
+                    else if (c == ':')
+                    {
+                        res2 = varStr.Substring(ind);
+                        //Категорию также отделяем на слова, если это потребуется
+                        foreach (char ch in res2)
+                        {
+                            index++;
+                            if (res3 == "")
+                                res3 += ch;
+                           // else if (char.IsUpper(ch) && char.IsLower(prevChar))
+                               // res3 += " " + char.ToLower(ch);
+                            else
+                                res3 += ch;
+                            prevCh = ch;
+                        }
+                        break;
+                    }
+                    else
+                        res += c;
+                    prevChar = c;
+                }
+                if (countGroups == 0)//если еще не былв добавлена ни одна группа в список
+                {
+                    FieldsGroup group = new FieldsGroup();
+                    countGroups++;
+                    group.nameGroup = res3;
+                    group.nameField.Add(res);
+                    fieldsGroup.Add(group);
+                }
+                else
+                {
+                    bool bl = false;
+                    foreach (FieldsGroup FG in fieldsGroup) //если имя категории уже существует
+                    {
+                        if (FG.nameGroup == res3)
+                        {
+                            FG.nameField.Add(res);
+                            bl = true;
+                            break;
+                        }
+                    }
+                    if (bl == false) //если список не пустой и категории еще нет
+                    {
+                        FieldsGroup group = new FieldsGroup();
+                        countGroups++;
+                        group.nameGroup = res3;
+                        group.nameField.Add(res);
+                        fieldsGroup.Add(group);
+                    }
+                }
+
                 pStr = pStr.Remove(0, right + 1);
                 left = pStr.IndexOf("<");
                 right = pStr.IndexOf(">");
             }
         }
 
+        foreach (FieldsGroup fGr in fieldsGroup)
+        {
+            if (fGr.nameGroup != "")
+            {  
+                f1 = new Field(fGr.nameGroup);
+                if (!table.Contains(f1))
+                    table.Add(f1);
+            }
+
+            foreach (string s in fGr.nameField)
+            {
+                f2 = new Field(s);
+                if (!table.Contains(f2))
+                    table.Add(f2);
+            }
+        }
+        
         return table;
     }
 
