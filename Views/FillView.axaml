@@ -5,42 +5,56 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Documently.Views.FillView">
 	
-	<DockPanel LastChildFill="True">
-		<DockPanel Background="#F7FAFC" DockPanel.Dock="Top">
+	<DockPanel>
+		<DockPanel DockPanel.Dock="Top">
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-				<Button Background="Transparent" 
+				<Button Classes="Fill" 
 						Command="{Binding $parent[Window].DataContext.SwitchToPrevious}"
 						ToolTip.Tip="Вернуться">
 					<Image Source="{DynamicResource Return}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" 
+				<Button Classes="Fill" 
 						Command="{Binding GetTemplate}"
 						ToolTip.Tip="Сохранить">
 					<Image Source="{DynamicResource Tik}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Добавить экземпляр">
+				<Button Classes="Fill" ToolTip.Tip="Добавить экземпляр">
 					<Image Source="{DynamicResource AddRow}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Загрузить таблицу">
+				<Button Classes="Fill" ToolTip.Tip="Загрузить таблицу">
 					<Image Source="{DynamicResource AddDataset}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Background="Transparent" ToolTip.Tip="Предыдущий">
+				<Button Classes="Fill" ToolTip.Tip="Предыдущий">
 					<Image Source="{DynamicResource ArrowLeft}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Следующий">
+				<Button Classes="Fill" ToolTip.Tip="Следующий">
 					<Image Source="{DynamicResource ArrowRight}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-				<Button Background="Transparent" ToolTip.Tip="Настройки">
+				<Button Classes="Fill"
+						ToolTip.Tip="Настройки">
+					<Button.Flyout>
+						<MenuFlyout Placement="BottomEdgeAlignedLeft">
+							<MenuItem Header="Тема">
+								<MenuItem Header="Светлая"/>
+								<MenuItem Header="Темная"/>
+							</MenuItem>
+							<MenuItem Header="Иконки">
+								<MenuItem Header="Маленькие"/>
+								<MenuItem Header="Средние"/>
+								<MenuItem Header="Большие"/>
+							</MenuItem>
+						</MenuFlyout>
+					</Button.Flyout>
 					<Image Source="{DynamicResource Setting}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Помощь">
+				<Button Classes="Fill" ToolTip.Tip="Помощь">
 					<Image Source="{DynamicResource Help}" Classes="Icon"/>
 				</Button>
 			</StackPanel>

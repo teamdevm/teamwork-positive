@@ -10,6 +10,9 @@
 			<Setter Property="Width" Value="20"/>
 			<Setter Property="Height" Value="20"/>
 		</Style>
+		<Style Selector="Button.Fill">
+			<Setter Property="Background" Value="Transparent"/>
+		</Style>
 		<FluentTheme Mode="Light"/>
     </Application.Styles>
 	<Application.Resources>
@@ -156,6 +159,11 @@
 		<Bitmap x:Key="ClearFormat">
 			<x:Arguments>
 				<x:String>Assets/ClearFormat.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="ClearFormat Dark">
+			<x:Arguments>
+				<x:String>Assets/ClearFormat dark.png</x:String>
 			</x:Arguments>
 		</Bitmap>
 		<Bitmap x:Key="FormatPainter">

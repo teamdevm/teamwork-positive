@@ -3,79 +3,77 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-			 Name="Шаблон"
              x:Class="Documently.Views.EditView">
 
-	
-	<DockPanel LastChildFill="True">
-		<DockPanel Background="#F7FAFC" DockPanel.Dock="Top">
-			
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-				<Button Background="Transparent" 
+
+	<DockPanel>
+		<DockPanel DockPanel.Dock="Top">
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0, 0, 150, 0">
+				<Button Classes="Fill" 
 						Command="{Binding $parent[Window].DataContext.SwitchToPrevious}"
 						ToolTip.Tip="Вернуться">
 					<Image Source="{DynamicResource Return}" Classes="Icon"/>
 				</Button>
 				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
-				<Button Background="Transparent" ToolTip.Tip="Новый">
+				<Button Classes="Fill" ToolTip.Tip="Новый">
 					<Image Source="{DynamicResource EmptyFile}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Сохранить">
+				<Button Classes="Fill" ToolTip.Tip="Сохранить">
 					<Image Source="{DynamicResource Save}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Категории">
+				<Button Classes="Fill" ToolTip.Tip="Категории">
 					<Image Source="{DynamicResource Tag}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Назад">
+				<Button Classes="Fill" ToolTip.Tip="Назад">
 					<Image Source="{DynamicResource Undo}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Вперед">
+				<Button Classes="Fill" ToolTip.Tip="Вперед">
 					<Image Source="{DynamicResource Redo}" Classes="Icon"/>
 				</Button>
 				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Background="Transparent" ToolTip.Tip="Копировать формат">
+				<Button Classes="Fill" ToolTip.Tip="Копировать формат">
 					<Image Source="{DynamicResource FormatPainter}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Очистить формат">
+				<Button Classes="Fill" ToolTip.Tip="Очистить формат" IsVisible="True">
 					<Image Source="{DynamicResource ClearFormat}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Полужирный">
+				<Button Classes="Fill" ToolTip.Tip="Полужирный">
 					<Image Source="{DynamicResource Bold}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Курсив">
+				<Button Classes="Fill" ToolTip.Tip="Курсив">
 					<Image Source="{DynamicResource Italic}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Подчеркнутый">
+				<Button Classes="Fill" ToolTip.Tip="Подчеркнутый">
 					<Image Source="{DynamicResource Underline}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Выровнять по левому краю">
+				<Button Classes="Fill" ToolTip.Tip="Выровнять по левому краю">
 					<Image Source="{DynamicResource LeftAlign}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Выровнять по центру">
+				<Button Classes="Fill" ToolTip.Tip="Выровнять по центру">
 					<Image Source="{DynamicResource CenterAlign}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Выровнять по правому краю">
+				<Button Classes="Fill" ToolTip.Tip="Выровнять по правому краю">
 					<Image Source="{DynamicResource RightAlign}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Выровнять по ширине">
+				<Button Classes="Fill" ToolTip.Tip="Выровнять по ширине">
 					<Image Source="{DynamicResource Justify}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Маркированный список">
+				<Button Classes="Fill" ToolTip.Tip="Маркированный список">
 					<Image Source="{DynamicResource Ulitem}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Нумерованный список">
+				<Button Classes="Fill" ToolTip.Tip="Нумерованный список">
 					<Image Source="{DynamicResource Orderlist}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Уменьшить отступ">
+				<Button Classes="Fill" ToolTip.Tip="Уменьшить отступ">
 					<Image Source="{DynamicResource LeftIndent}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Увеличить отступ">
+				<Button Classes="Fill" ToolTip.Tip="Увеличить отступ">
 					<Image Source="{DynamicResource RightIndent}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Интервал">
+				<Button Classes="Fill" ToolTip.Tip="Интервал">
 					<Image Source="{DynamicResource LineHeight}" Classes="Icon"/>
 				</Button>
 				
@@ -83,16 +81,31 @@
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
-				<Button Background="Transparent" ToolTip.Tip="Настройки">
+				<Button Classes="Fill"
+						ToolTip.Tip="Настройки">
+					<Button.Flyout>
+						<MenuFlyout Placement="BottomEdgeAlignedLeft">
+							<MenuItem Header="Тема">
+								<MenuItem Header="Светлая"/>
+								<MenuItem Header="Темная"/>
+							</MenuItem>
+							<MenuItem Header="Иконки">
+								<MenuItem Header="Маленькие"/>
+								<MenuItem Header="Средние"/>
+								<MenuItem Header="Большие"/>
+							</MenuItem>
+						</MenuFlyout>
+					</Button.Flyout>
 					<Image Source="{DynamicResource Setting}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent" ToolTip.Tip="Помощь">
+				<Button Classes="Fill" ToolTip.Tip="Помощь">
 					<Image Source="{DynamicResource Help}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
 			
 		</DockPanel>
-		<TextBox AcceptsReturn="True" FontFamily="Times New Roman"/>
+		<TextBox AcceptsReturn="True" FontFamily="Times New Roman" FontSize="14"/>
+			
 	</DockPanel>
 	
 </UserControl>

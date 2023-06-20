@@ -1,4 +1,8 @@
 ﻿using ReactiveUI;
+using System.Reactive;
+using System.Reactive.Linq;
+using Avalonia.Controls;
+using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using Documently.Models;
 
@@ -9,7 +13,10 @@ public class FillViewModel : ViewModelBase
     private ITemplateProcessor templateProcessor;
     private ObservableCollection<Field> fields;
 
+    
     public FillViewModel () { }
+
+    
 
     public FillViewModel (ITemplateProcessor tp, string name)
     {
