@@ -107,8 +107,7 @@ public class TemplateDatabase
     public List<Template> GetTemplates ()
     {
         return templates.Query()
-            .Include(x => x.Tag)
-            .Where(x => x.Tag.Id == root.Id)
+            .Where(x => x.Category == root.Id)
             .OrderBy(x => x.Name)
             .ToList();
     }
@@ -116,8 +115,7 @@ public class TemplateDatabase
     public List<Template> GetTemplates (Category c)
     {
         return templates.Query()
-            .Include(x => x.Tag)
-            .Where(x => x.Tag.Id == c.Id)
+            .Where(x => x.Category == c.Id)
             .OrderBy(x => x.Name)
             .ToList();
     }
@@ -149,7 +147,7 @@ public class TemplateDatabase
     {
         foreach (Template t in GetTemplates(c))
         {
-            t.Tag = root;
+            t.Category = root.Id;
             templates.Update(t);
         }
     }
@@ -168,9 +166,10 @@ public class TemplateDatabase
                 child.Parent = target.Parent;
                 /* Update them in the database too */
                 categories.Update(child);
-                /* Reset the category of all templates referencing this category */
-                ResetTemplateCategory(target);
             }
+
+            /* Reset the category of all templates referencing this category */
+            ResetTemplateCategory(target);
 
             return true;
         }
