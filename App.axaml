@@ -6,7 +6,11 @@
 		<local:ViewLocator/>
 	</Application.DataTemplates>
     <Application.Styles>
-        <FluentTheme Mode="Light"/>
+        <Style Selector="Image.Icon">
+			<Setter Property="Width" Value="20"/>
+			<Setter Property="Height" Value="20"/>
+		</Style>
+		<FluentTheme Mode="Light"/>
     </Application.Styles>
 	<Application.Resources>
 		<Bitmap x:Key="Return">

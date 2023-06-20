@@ -6,7 +6,7 @@ namespace Documently.Models;
  * Интерфейс для взаимодействия с процессором шаблонов
  * Реализуйте его в своём бэкенде
  */
-interface ITemplateProcessor
+public interface ITemplateProcessor
 {
     /*
      * Настроить окружение процессора

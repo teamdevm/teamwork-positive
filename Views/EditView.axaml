@@ -11,77 +11,83 @@
 		<DockPanel Background="#F7FAFC" DockPanel.Dock="Top">
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-				<Button Background="Transparent" Command="{Binding $parent[Window].DataContext.SwitchToPrevious}">
-					<Image Source="{DynamicResource Return}" Width="24" Height="24"/>
+				<Button Background="Transparent" 
+						Command="{Binding $parent[Window].DataContext.SwitchToPrevious}"
+						ToolTip.Tip="Вернуться">
+					<Image Source="{DynamicResource Return}" Classes="Icon"/>
 				</Button>
 				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource EmptyFile}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Новый">
+					<Image Source="{DynamicResource EmptyFile}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Save}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Сохранить">
+					<Image Source="{DynamicResource Save}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Tag}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Категории">
+					<Image Source="{DynamicResource Tag}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Undo}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Назад">
+					<Image Source="{DynamicResource Undo}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Redo}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Вперед">
+					<Image Source="{DynamicResource Redo}" Classes="Icon"/>
 				</Button>
 				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource FormatPainter}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Копировать формат">
+					<Image Source="{DynamicResource FormatPainter}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource ClearFormat}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Очистить формат">
+					<Image Source="{DynamicResource ClearFormat}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Bold}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Полужирный">
+					<Image Source="{DynamicResource Bold}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Italic}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Курсив">
+					<Image Source="{DynamicResource Italic}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Underline}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Подчеркнутый">
+					<Image Source="{DynamicResource Underline}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource LeftAlign}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Выровнять по левому краю">
+					<Image Source="{DynamicResource LeftAlign}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource CenterAlign}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Выровнять по центру">
+					<Image Source="{DynamicResource CenterAlign}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Justify}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Выровнять по правому краю">
+					<Image Source="{DynamicResource RightAlign}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Ulitem}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Выровнять по ширине">
+					<Image Source="{DynamicResource Justify}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Orderlist}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Маркированный список">
+					<Image Source="{DynamicResource Ulitem}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource RightIndent}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Нумерованный список">
+					<Image Source="{DynamicResource Orderlist}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource LeftIndent}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Уменьшить отступ">
+					<Image Source="{DynamicResource LeftIndent}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource LineHeight}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Увеличить отступ">
+					<Image Source="{DynamicResource RightIndent}" Classes="Icon"/>
 				</Button>
-				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
+				<Button Background="Transparent" ToolTip.Tip="Интервал">
+					<Image Source="{DynamicResource LineHeight}" Classes="Icon"/>
+				</Button>
+				
 			</StackPanel>
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Setting}" Width="24" Height="24"/>
+				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
+				<Button Background="Transparent" ToolTip.Tip="Настройки">
+					<Image Source="{DynamicResource Setting}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Help}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Помощь">
+					<Image Source="{DynamicResource Help}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
 			

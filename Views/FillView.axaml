@@ -9,35 +9,39 @@
 		<DockPanel Background="#F7FAFC" DockPanel.Dock="Top">
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-				<Button Background="Transparent" Command="{Binding $parent[Window].DataContext.SwitchToPrevious}">
-					<Image Source="{DynamicResource Return}" Width="24" Height="24"/>
+				<Button Background="Transparent" 
+						Command="{Binding $parent[Window].DataContext.SwitchToPrevious}"
+						ToolTip.Tip="Вернуться">
+					<Image Source="{DynamicResource Return}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Tik}" Width="24" Height="24"/>
+				<Button Background="Transparent" 
+						Command="{Binding GetTemplate}"
+						ToolTip.Tip="Сохранить">
+					<Image Source="{DynamicResource Tik}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource AddRow}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Добавить экземпляр">
+					<Image Source="{DynamicResource AddRow}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource AddDataset}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Загрузить таблицу">
+					<Image Source="{DynamicResource AddDataset}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource ArrowLeft}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Предыдущий">
+					<Image Source="{DynamicResource ArrowLeft}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource ArrowRight}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Следующий">
+					<Image Source="{DynamicResource ArrowRight}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Setting}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Настройки">
+					<Image Source="{DynamicResource Setting}" Classes="Icon"/>
 				</Button>
-				<Button Background="Transparent">
-					<Image Source="{DynamicResource Help}" Width="24" Height="24"/>
+				<Button Background="Transparent" ToolTip.Tip="Помощь">
+					<Image Source="{DynamicResource Help}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
 			
@@ -47,11 +51,18 @@
            DisplayMode="Inline"
            OpenPaneLength="600">
 			<SplitView.Pane>
-				<TextBlock Text="Заполнение шаблона"
-						   FontSize="24"
-						   FontFamily="Times New Roman"
-						   VerticalAlignment="Center"
-						   HorizontalAlignment="Center"/>
+				<ScrollViewer>
+				<ItemsRepeater Items="{Binding Fields}">
+					<ItemsRepeater.ItemTemplate>
+						<DataTemplate>
+							<StackPanel Margin="24, 4">
+								<TextBlock Text="{Binding Name}"/>
+								<TextBox Watermark="Введите текст" Text="{Binding Value}"/>
+							</StackPanel>
+						</DataTemplate>
+					</ItemsRepeater.ItemTemplate>
+				</ItemsRepeater>
+				</ScrollViewer>
 			</SplitView.Pane>
 
 			<Grid>
