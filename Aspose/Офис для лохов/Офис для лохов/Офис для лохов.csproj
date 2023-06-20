@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Офис_для_лохов</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Documents - Копировать\**" />
+    <EmbeddedResource Remove="Documents - Копировать\**" />
+    <None Remove="Documents - Копировать\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspose.Cells" Version="23.6.0" />
+    <PackageReference Include="Aspose.PDF" Version="23.5.0" />
+    <PackageReference Include="Aspose.Words" Version="23.6.0" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.20.0" />
+  </ItemGroup>
+
+</Project>
