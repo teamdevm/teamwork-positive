@@ -9,13 +9,18 @@ namespace Documently.Views;
 
 public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
 {
-    public MainWindow()
+    public MainWindow () => new MainWindow(ViewModel!);
+    public MainWindow (MainWindowViewModel m)
     {
         InitializeComponent();
         this.WhenActivated(a => a(((MainWindowViewModel)DataContext).ConfirmDialogInteraction.RegisterHandler(ShowMessage)));
         this.WhenActivated(a => a(((MainWindowViewModel)DataContext).OpenDialogInteraction.RegisterHandler(ShowOpenFileWindow)));
         this.WhenActivated(a => a(((MainWindowViewModel)DataContext).GetNameInteraction.RegisterHandler(ShowMessage)));
 
+        this.WhenActivated(a => a(m.ConfirmDialogInteraction.RegisterHandler(ShowMessage)));
+        this.Closing += m.OnWindowClose;
+
+        DataContext = m;
     }
     private async Task ShowMessage(InteractionContext<MessageBoxViewModel, string> i)
     {

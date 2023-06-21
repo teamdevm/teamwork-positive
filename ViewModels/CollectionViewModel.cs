@@ -16,7 +16,7 @@ namespace Documently.ViewModels;
 
 public class CollectionViewModel : ViewModelBase
 {
-    TemplateDatabase db;
+    public TemplateDatabase db;
     Category selectedCategory;
     List<Template> templates;
     Template selectedTemplate;

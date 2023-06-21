@@ -1,6 +1,7 @@
 ﻿using ReactiveUI;
 using System.Reactive;
 using System.Reactive.Linq;
+using System.ComponentModel;
 using Avalonia;
 using Avalonia.Styling;
 using Avalonia.Controls;
@@ -101,6 +102,10 @@ public class MainWindowViewModel : ViewModelBase
         //ActionNew = ReactiveCommand.CreateFromTask(New);
         //ActionEdit = ReactiveCommand.CreateFromTask(Edit);
         //ActionRemove = ReactiveCommand.Create(Remove);
+    }
+    public void OnWindowClose (object? sender, CancelEventArgs args)
+    {
+        // Close the database here
     }
     public void SwitchToCollect()
     {
@@ -227,7 +232,7 @@ public class MainWindowViewModel : ViewModelBase
 
     public void SwitchToFill()
     {
-        CurWindow = new FillViewModel();
+        CurWindow = new FillViewModel(new Backend(), collectionWindow.db.FetchTemplate(collectionWindow.SelectedTemplate));
         PrevWindow = collectionWindow;
         CurTitle = "Заполнить шаблон";
         PrevTitle = "Коллекция шаблонов";

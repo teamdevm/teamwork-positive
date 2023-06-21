@@ -3,6 +3,7 @@ using System.Reactive;
 using System.Reactive.Linq;
 using Avalonia.Controls;
 using System.Threading.Tasks;
+using System.IO;
 using System.Collections.ObjectModel;
 using Documently.Models;
 
@@ -18,7 +19,7 @@ public class FillViewModel : ViewModelBase
 
     
 
-    public FillViewModel (ITemplateProcessor tp, string name)
+    public FillViewModel (ITemplateProcessor tp, MemoryStream name)
     {
         templateProcessor = tp;
         templateProcessor.Setup(name, "C:/Users/User/Desktop//Interface", "Test");
