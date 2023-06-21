@@ -7,7 +7,7 @@ using Avalonia.Styling;
 using Avalonia.Controls;
 using Avalonia.Themes.Fluent;
 using System.Threading.Tasks;
-
+using Documently.Models;
 namespace Documently.ViewModels;
 public class MainWindowViewModel : ViewModelBase
 {
@@ -29,7 +29,7 @@ public class MainWindowViewModel : ViewModelBase
     public ReactiveCommand<Unit, Unit> ActionNewCategory { get; }
     public ReactiveCommand<Unit, Unit> ActionNewSubCategory { get; }
 
-    //public ReactiveCommand<Unit, Unit> ActionFileSave { get; }
+    public ReactiveCommand<Unit, Unit> ActionDocSave { get; }
     //public ReactiveCommand<Unit, Unit> ActionFileSaveAs { get; }
     //public ReactiveCommand<Unit, Unit> ActionViewNext { get; }
     //public ReactiveCommand<Unit, Unit> ActionViewPrev { get; }
@@ -78,9 +78,7 @@ public class MainWindowViewModel : ViewModelBase
         CurWindow = collectionWindow;
         CurTitle = "Коллекция шаблонов";
         mode = false;
-        //Size = "20";
-        //ShowDialog = new Interaction<CollectionViewModel, FillViewModel>();
-
+        
         OpenDialogInteraction = new Interaction<FileDialogFilter, string>();
         SaveDialogInteraction = new Interaction<FileDialogFilter, string>();
         //EditDialogInteraction = new Interaction<EditWindowViewModel, Student>();
@@ -92,8 +90,8 @@ public class MainWindowViewModel : ViewModelBase
         ActionTemplateUpload = ReactiveCommand.CreateFromTask(UploadTemplate);
         ActionNewCategory = ReactiveCommand.CreateFromTask(AddCategory);
         ActionNewSubCategory = ReactiveCommand.CreateFromTask(AddSubCategory);
+        ActionDocSave = ReactiveCommand.CreateFromTask(DocSave);
 
-        //ActionFileSave = ReactiveCommand.CreateFromTask(FileSave);
         //ActionFileSaveAs = ReactiveCommand.CreateFromTask(FileSaveAs);
         //ActionViewNext = ReactiveCommand.Create(ViewNext);
         //ActionViewPrev = ReactiveCommand.Create(ViewPrev);
@@ -106,6 +104,7 @@ public class MainWindowViewModel : ViewModelBase
     public void OnWindowClose (object? sender, CancelEventArgs args)
     {
         // Close the database here
+        collectionWindow.db.Close();
     }
     public void SwitchToCollect()
     {
@@ -152,35 +151,7 @@ public class MainWindowViewModel : ViewModelBase
 
     //    return true;
     //}
-    //private async Task TemplateUpload()
-    //{
-    //    /* We accept only XML files */
-    //    FileDialogFilter xmlFilter = new FileDialogFilter()
-    //    {
-    //        Extensions = { "xml" }
-    //    };
-
-    //    /* Show dialog window and retrieve file path */
-    //    string result = await OpenDialogInteraction.Handle(xmlFilter);
-
-    //    /* If no file was selected */
-    //    if (string.IsNullOrEmpty(result)) return;
-
-    //    try
-    //    {
-    //        collectionWindow.db
-    //        Content = StudentList.Deserialize(result);
-    //        Selection = Content.First();
-    //        workingPath = result;
-    //        isSaved = true;
-    //        UpdateAll();
-    //    }
-    //    catch
-    //    {
-    //        MessageBoxViewModel msg = new MessageBoxViewModel("Файл имеет некорректный формат", MessageBoxButtons.Ok);
-    //        MessageBoxResult res = await ConfirmDialogInteraction.Handle(msg);
-    //    }
-    //}
+    
     private async Task CheckTemplate()
     {
         if (collectionWindow.SelectedTemplate is null)
@@ -232,7 +203,8 @@ public class MainWindowViewModel : ViewModelBase
 
     public void SwitchToFill()
     {
-        CurWindow = new FillViewModel(new Backend(), collectionWindow.db.FetchTemplate(collectionWindow.SelectedTemplate));
+        fillWindow = new FillViewModel(new Backend(), collectionWindow.db.FetchTemplate(collectionWindow.SelectedTemplate));
+        CurWindow = fillWindow;
         PrevWindow = collectionWindow;
         CurTitle = "Заполнить шаблон";
         PrevTitle = "Коллекция шаблонов";
@@ -244,12 +216,13 @@ public class MainWindowViewModel : ViewModelBase
         {
             if (s is FluentTheme f)
             {
-                mode = !mode;
-                if (mode)
+                Mode = !Mode;
+                if (Mode)
                     f.Mode = FluentThemeMode.Dark;
                 else
                     f.Mode = FluentThemeMode.Light;
             }
+            break;
         }
     }
 
@@ -285,6 +258,57 @@ public class MainWindowViewModel : ViewModelBase
             MessageBoxViewModel msg = new MessageBoxViewModel("Файл имеет некорректный формат", MessageBoxButtons.Ok);
             await ConfirmDialogInteraction.Handle(msg);
         }
+    }
+
+    //private async Task FileSave()
+    //{
+    //    if (string.IsNullOrEmpty(workingPath))
+    //    {
+    //        await FileSaveAs();
+    //    }
+    //    else
+    //    {
+    //        Content.Serialize(workingPath);
+    //        isSaved = true;
+    //        UpdateAll();
+    //    }
+    //}
+
+    //private async Task FileSaveAs()
+    //{
+    //    /* We accept only XML files */
+    //    FileDialogFilter xmlFilter = new FileDialogFilter()
+    //    {
+    //        Extensions = { "*" }
+    //    };
+
+    //    /* Show dialog window and retrieve file path */
+    //    string result = await SaveDialogInteraction.Handle(xmlFilter);
+
+    //    /* If no file was selected */
+    //    if (string.IsNullOrEmpty(result)) return;
+
+    //    Content.Serialize(result);
+    //    workingPath = result;
+    //    isSaved = true;
+    //    UpdateAll();
+    //}
+    public async Task DocSave()
+    {
+        /* We accept only XML files */
+        FileDialogFilter xmlFilter = new FileDialogFilter()
+        {
+            Extensions = { "*" }
+        };
+
+        /* Show dialog window and retrieve file path */
+        string result = await SaveDialogInteraction.Handle(xmlFilter);
+
+        /* If no file was selected */
+        if (string.IsNullOrEmpty(result)) return;
+
+        fillWindow.result = result;
+        fillWindow.GetTemplate();
     }
 
     private async Task AddCategory()

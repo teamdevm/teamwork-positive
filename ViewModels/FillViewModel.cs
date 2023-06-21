@@ -13,15 +13,13 @@ public class FillViewModel : ViewModelBase
 {
     private ITemplateProcessor templateProcessor;
     private ObservableCollection<Field> fields;
-
-    
+    public string result;
+    MemoryStream mem;
     public FillViewModel () { }
-
-    
-
     public FillViewModel (ITemplateProcessor tp, MemoryStream name)
     {
         templateProcessor = tp;
+        mem = name;
         templateProcessor.Setup(name, "C:/Users/User/Desktop//Interface", "Test");
         fields = templateProcessor.GetFields();
     }
@@ -33,6 +31,7 @@ public class FillViewModel : ViewModelBase
     }
     public void GetTemplate()
     {
+        templateProcessor.Setup(mem, Path.GetDirectoryName(result), Path.GetFileName(result));
         templateProcessor.Fill(fields);
     }
 }
