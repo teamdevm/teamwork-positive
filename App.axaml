@@ -28,7 +28,7 @@
 		</Bitmap>
 		<Bitmap x:Key="Return">
 			<x:Arguments>
-				<x:String>Assets/Shape.png</x:String>
+				<x:String>Assets/Home.png</x:String>
 			</x:Arguments>
 		</Bitmap>
 		<Bitmap x:Key="NewFile">

@@ -39,13 +39,13 @@
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 				<Button Classes="Fill"
 						ToolTip.Tip="Переключить тему"
-						IsVisible="{Binding !$parent[Window].DataContext.Mode}"
+						IsVisible="{Binding $parent[Window].DataContext.Mode}"
 						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
 					<Image Source="{DynamicResource Light}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill"
 						ToolTip.Tip="Переключить тему"
-						IsVisible="{Binding $parent[Window].DataContext.Mode}"
+						IsVisible="{Binding !$parent[Window].DataContext.Mode}"
 						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
 					<Image Source="{DynamicResource Dark}" Classes="Icon"/>
 				</Button>

@@ -7,8 +7,9 @@
         Title="Сообщение"
         SizeToContent="WidthAndHeight" CanResize="False">
     <StackPanel HorizontalAlignment="Center">
-        <TextBlock HorizontalAlignment="Center" Margin="64" Name="Text" Text="{Binding Message}"/>
-        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Name="Buttons">
+        <TextBlock HorizontalAlignment="Center" Margin="64" Text="{Binding Message}"/>
+		<TextBox HorizontalAlignment="Center" Margin="64" Text="{Binding Field}" IsVisible="{Binding IsVisible}"/>
+		<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Name="Buttons">
             <StackPanel.Styles>
                 <Style Selector="Button">
                     <Setter Property="Margin" Value="0,0,0,8"/>

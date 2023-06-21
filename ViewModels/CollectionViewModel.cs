@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using ReactiveUI;
 using System.IO;
 using Documently.Models;
+using System.Reactive;
+using System.Reactive.Linq;
+using Avalonia;
+using Avalonia.Styling;
+using Avalonia.Themes.Fluent;
+using Avalonia.Controls;
+using System.Threading.Tasks;
+using Documently.ViewModels;
+
 namespace Documently.ViewModels;
 
 public class CollectionViewModel : ViewModelBase
@@ -12,6 +21,9 @@ public class CollectionViewModel : ViewModelBase
     List<Template> templates;
     Template selectedTemplate;
     //MainWindowViewModel mw;
+
+    
+
     public ObservableCollection<Category> Categories => db.Categories;
 
     public Category SelectedCategory 
@@ -35,27 +47,29 @@ public class CollectionViewModel : ViewModelBase
         templates = new List<Template>();
         selectedCategory = null!;
         selectedTemplate = null!;
+        //ActionUploadTemplate = ReactiveCommand.CreateFromTask(UploadTemplate);
+
         //mw = new MainWindowViewModel();
     }
     ~CollectionViewModel()
     {
         db.Close();
     }
-    public void AddCategory()
+    public void AddCategory(string name)
     {
         //добавить диалоговое окно
         
-        db.AddCategory("новая категория");
+        db.AddCategory(name);
     }
-    public void AddSubCategory()
+    public void AddSubCategory(string name)
     {
         //добавить диалоговое окно
-        db.AddSubCategory(SelectedCategory, "новая подкатегория");
+        db.AddSubCategory(SelectedCategory, name);
     }
-    public void UploadTemplate()
+    public void UploadTemplate(string path)
     {
         //добавить диалоговое окно
-        db.AddTemplate("C:\\Users\\User\\Desktop\\работы\\проект\\teamwork-positive\\Documents\\Договорные документы\\Договор аренды квартиры.docx", SelectedCategory);
+        db.AddTemplate(path, SelectedCategory);
         Templates = db.GetTemplates(SelectedCategory);
     }
     //public void FillSelected ()
