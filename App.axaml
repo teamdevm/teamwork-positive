@@ -1,8 +1,217 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="Documently.App">
-
+             x:Class="Documently.App"
+			 xmlns:local="clr-namespace:Documently">
+	<Application.DataTemplates>
+		<local:ViewLocator/>
+	</Application.DataTemplates>
     <Application.Styles>
-        <FluentTheme Mode="Light"/>
+        <Style Selector="Image.Icon">
+			<Setter Property="Width" Value="20"/>
+			<Setter Property="Height" Value="20"/>
+		</Style>
+		<Style Selector="Button.Fill">
+			<Setter Property="Background" Value="Transparent"/>
+		</Style>
+		<FluentTheme Mode="Light"/>
     </Application.Styles>
+	<Application.Resources>
+		<Bitmap x:Key="Light">
+			<x:Arguments>
+				<x:String>Assets/Sun.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Dark">
+			<x:Arguments>
+				<x:String>Assets/Moon.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Return">
+			<x:Arguments>
+				<x:String>Assets/Home.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="NewFile">
+			<x:Arguments>
+				<x:String>Assets/NewFile.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Trash">
+			<x:Arguments>
+				<x:String>Assets/Trash.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Upload">
+			<x:Arguments>
+				<x:String>Assets/Download1.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Edit">
+			<x:Arguments>
+				<x:String>Assets/Edit3.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Fill">
+			<x:Arguments>
+				<x:String>Assets/Copy.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Setting">
+			<x:Arguments>
+				<x:String>Assets/Setting.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Help">
+			<x:Arguments>
+				<x:String>Assets/Help.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Save">
+			<x:Arguments>
+				<x:String>Assets/Save.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="MinusSquare">
+			<x:Arguments>
+				<x:String>Assets/MinusCircle.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="PlusSquare">
+			<x:Arguments>
+				<x:String>Assets/PlusSquare.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Plus">
+			<x:Arguments>
+				<x:String>Assets/Plus.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Bold">
+			<x:Arguments>
+				<x:String>Assets/Bold.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Italic">
+			<x:Arguments>
+				<x:String>Assets/Italic.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Underline">
+			<x:Arguments>
+				<x:String>Assets/Underline.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="CenterAlign">
+			<x:Arguments>
+				<x:String>Assets/CenterAlign.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Justify">
+			<x:Arguments>
+				<x:String>Assets/Justify.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="LeftAlign">
+			<x:Arguments>
+				<x:String>Assets/LeftAlign.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="RightAlign">
+			<x:Arguments>
+				<x:String>Assets/RightAlign.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Tik">
+			<x:Arguments>
+				<x:String>Assets/Check.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="X">
+			<x:Arguments>
+				<x:String>Assets/X.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Undo">
+			<x:Arguments>
+				<x:String>Assets/Undo.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Redo">
+			<x:Arguments>
+				<x:String>Assets/Redo.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="LeftIndent">
+			<x:Arguments>
+				<x:String>Assets/LeftIndent.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="RightIndent">
+			<x:Arguments>
+				<x:String>Assets/RightIndent.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="LineHeight">
+			<x:Arguments>
+				<x:String>Assets/LineHeight.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Orderlist">
+			<x:Arguments>
+				<x:String>Assets/Orderlist.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Ulitem">
+			<x:Arguments>
+				<x:String>Assets/Ulitem.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="ClearFormat">
+			<x:Arguments>
+				<x:String>Assets/ClearFormat.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="ClearFormat Dark">
+			<x:Arguments>
+				<x:String>Assets/ClearFormat dark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="FormatPainter">
+			<x:Arguments>
+				<x:String>Assets/FormatPainter.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Tag">
+			<x:Arguments>
+				<x:String>Assets/Tag.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="EmptyFile">
+			<x:Arguments>
+				<x:String>Assets/File-Blank.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="AddRow">
+			<x:Arguments>
+				<x:String>Assets/PlusCircle.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="AddDataset">
+			<x:Arguments>
+				<x:String>Assets/NewFolder.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="ArrowLeft">
+			<x:Arguments>
+				<x:String>Assets/ic24-chevron-left.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="ArrowRight">
+			<x:Arguments>
+				<x:String>Assets/ic24-chevron-right.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+
+	</Application.Resources>
 </Application>
+

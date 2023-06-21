@@ -8,6 +8,7 @@ namespace Documently;
 
 public partial class App : Application
 {
+
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -17,10 +18,7 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            desktop.MainWindow = new MainWindow
-            {
-                DataContext = new MainWindowViewModel(),
-            };
+            desktop.MainWindow = new MainWindow(new MainWindowViewModel());
         }
 
         base.OnFrameworkInitializationCompleted();
