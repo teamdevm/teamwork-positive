@@ -1,9 +1,13 @@
 ﻿using ReactiveUI;
 using System.Reactive;
 using System.Reactive.Linq;
+using Avalonia;
+using Avalonia.Styling;
 using Avalonia.Controls;
+using Avalonia.Themes.Fluent;
 using Documently.Models;
 using System.Threading.Tasks;
+
 namespace Documently.ViewModels;
 public class MainWindowViewModel : ViewModelBase
 {
@@ -12,15 +16,17 @@ public class MainWindowViewModel : ViewModelBase
     private string curTitle;
     private string prevTitle;
 
-    //private string mode;
+    public bool mode;
+    //public bool Mode => mode != 0;
     //private string size;
 
-    //public Interaction<FileDialogFilter, string> OpenDialogInteraction { get; }
-    //public Interaction<FileDialogFilter, string> SaveDialogInteraction { get; }
+    public Interaction<FileDialogFilter, string> OpenDialogInteraction { get; }
+    public Interaction<FileDialogFilter, string> SaveDialogInteraction { get; }
     //public Interaction<EditWindowViewModel, Student> EditDialogInteraction { get; }
     public Interaction<MessageBoxViewModel, MessageBoxResult> ConfirmDialogInteraction { get; }
     //public ReactiveCommand<Unit, Unit> ActionFileNew { get; }
-    public ReactiveCommand<Unit, Unit> ActionTemplateOpen { get; }
+    public ReactiveCommand<Unit, Unit> ActionTemplateFill { get; }
+    public ReactiveCommand<Unit, Unit> ActionTemplateUpload { get; }
     //public ReactiveCommand<Unit, Unit> ActionFileSave { get; }
     //public ReactiveCommand<Unit, Unit> ActionFileSaveAs { get; }
     //public ReactiveCommand<Unit, Unit> ActionViewNext { get; }
@@ -46,16 +52,12 @@ public class MainWindowViewModel : ViewModelBase
         get => curTitle;
         set => this.RaiseAndSetIfChanged(ref curTitle, value);
     }
-    //public string Mode
-    //{
-    //    get => mode;
-    //    set => this.RaiseAndSetIfChanged(ref mode, value);
-    //}
-    //public string Size
-    //{
-    //    get => size;
-    //    set => this.RaiseAndSetIfChanged(ref size, value);
-    //}
+    public bool Mode
+    {
+        get => mode;
+        set => this.RaiseAndSetIfChanged(ref mode, value);
+    }
+    
     public string PrevTitle
     {
         get => prevTitle;
@@ -73,17 +75,19 @@ public class MainWindowViewModel : ViewModelBase
         fillWindow = new FillViewModel();
         CurWindow = collectionWindow;
         CurTitle = "Коллекция шаблонов";
-        //Mode = "Light";
+        mode = false;
         //Size = "20";
         //ShowDialog = new Interaction<CollectionViewModel, FillViewModel>();
 
-        //OpenDialogInteraction = new Interaction<FileDialogFilter, string>();
-        //SaveDialogInteraction = new Interaction<FileDialogFilter, string>();
+        OpenDialogInteraction = new Interaction<FileDialogFilter, string>();
+        SaveDialogInteraction = new Interaction<FileDialogFilter, string>();
         //EditDialogInteraction = new Interaction<EditWindowViewModel, Student>();
         ConfirmDialogInteraction = new Interaction<MessageBoxViewModel, MessageBoxResult>();
 
         //ActionFileNew = ReactiveCommand.CreateFromTask(FileNew);
-        ActionTemplateOpen = ReactiveCommand.CreateFromTask(CheckTemplate);
+        ActionTemplateFill = ReactiveCommand.CreateFromTask(CheckTemplate);
+        //ActionTemplateUpload = ReactiveCommand.CreateFromTask(TemplateUpload);
+
         //ActionFileSave = ReactiveCommand.CreateFromTask(FileSave);
         //ActionFileSaveAs = ReactiveCommand.CreateFromTask(FileSaveAs);
         //ActionViewNext = ReactiveCommand.Create(ViewNext);
@@ -94,14 +98,6 @@ public class MainWindowViewModel : ViewModelBase
         //ActionEdit = ReactiveCommand.CreateFromTask(Edit);
         //ActionRemove = ReactiveCommand.Create(Remove);
     }
-    //public void LightMode()
-    //{
-    //    Mode = "Light";
-    //}
-    //public void DarkMode()
-    //{
-    //    Mode = "Dark";
-    //}
     public void SwitchToCollect()
     {
         CurWindow = collectionWindow;
@@ -147,7 +143,35 @@ public class MainWindowViewModel : ViewModelBase
 
     //    return true;
     //}
+    //private async Task TemplateUpload()
+    //{
+    //    /* We accept only XML files */
+    //    FileDialogFilter xmlFilter = new FileDialogFilter()
+    //    {
+    //        Extensions = { "xml" }
+    //    };
 
+    //    /* Show dialog window and retrieve file path */
+    //    string result = await OpenDialogInteraction.Handle(xmlFilter);
+
+    //    /* If no file was selected */
+    //    if (string.IsNullOrEmpty(result)) return;
+
+    //    try
+    //    {
+    //        collectionWindow.db
+    //        Content = StudentList.Deserialize(result);
+    //        Selection = Content.First();
+    //        workingPath = result;
+    //        isSaved = true;
+    //        UpdateAll();
+    //    }
+    //    catch
+    //    {
+    //        MessageBoxViewModel msg = new MessageBoxViewModel("Файл имеет некорректный формат", MessageBoxButtons.Ok);
+    //        MessageBoxResult res = await ConfirmDialogInteraction.Handle(msg);
+    //    }
+    //}
     private async Task CheckTemplate()
     {
         if (collectionWindow.SelectedTemplate is null)
@@ -199,14 +223,30 @@ public class MainWindowViewModel : ViewModelBase
 
     public void SwitchToFill()
     {
-
-
-        CurWindow = new FillViewModel(new Backend(), collectionWindow.SelectedTemplate);
+        CurWindow = new FillViewModel();
         PrevWindow = collectionWindow;
         CurTitle = "Заполнить шаблон";
         PrevTitle = "Коллекция шаблонов";
-
     }
+
+    public void SwitchTheme()
+    {
+        
+        foreach (IStyle s in Application.Current.Styles)
+        {
+            if (s is FluentTheme f)
+            {
+                mode = !mode;
+                if (mode)
+                    f.Mode = FluentThemeMode.Dark;
+                else
+                    f.Mode = FluentThemeMode.Light;
+                //f.Mode = (FluentThemeMode)((int)mode);
+            }
+        }
+    }
+
+    
 
     //private async Task FileNew()
     //{

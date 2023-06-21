@@ -38,22 +38,18 @@
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 				<Button Classes="Fill"
-						ToolTip.Tip="Настройки">
-					<Button.Flyout>
-						<MenuFlyout Placement="BottomEdgeAlignedLeft">
-							<MenuItem Header="Тема">
-								<MenuItem Header="Светлая"/>
-								<MenuItem Header="Темная"/>
-							</MenuItem>
-							<MenuItem Header="Иконки">
-								<MenuItem Header="Маленькие"/>
-								<MenuItem Header="Средние"/>
-								<MenuItem Header="Большие"/>
-							</MenuItem>
-						</MenuFlyout>
-					</Button.Flyout>
-					<Image Source="{DynamicResource Setting}" Classes="Icon"/>
+						ToolTip.Tip="Переключить тему"
+						IsVisible="{Binding !$parent[Window].DataContext.Mode}"
+						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
+					<Image Source="{DynamicResource Light}" Classes="Icon"/>
 				</Button>
+				<Button Classes="Fill"
+						ToolTip.Tip="Переключить тему"
+						IsVisible="{Binding $parent[Window].DataContext.Mode}"
+						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
+					<Image Source="{DynamicResource Dark}" Classes="Icon"/>
+				</Button>
+
 				<Button Classes="Fill" ToolTip.Tip="Помощь">
 					<Image Source="{DynamicResource Help}" Classes="Icon"/>
 				</Button>

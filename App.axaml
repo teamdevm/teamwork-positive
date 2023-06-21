@@ -16,6 +16,16 @@
 		<FluentTheme Mode="Light"/>
     </Application.Styles>
 	<Application.Resources>
+		<Bitmap x:Key="Light">
+			<x:Arguments>
+				<x:String>Assets/Sun.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Dark">
+			<x:Arguments>
+				<x:String>Assets/Moon.png</x:String>
+			</x:Arguments>
+		</Bitmap>
 		<Bitmap x:Key="Return">
 			<x:Arguments>
 				<x:String>Assets/Shape.png</x:String>
@@ -48,12 +58,12 @@
 		</Bitmap>
 		<Bitmap x:Key="Setting">
 			<x:Arguments>
-				<x:String>Assets/Setting3.png</x:String>
+				<x:String>Assets/Setting.png</x:String>
 			</x:Arguments>
 		</Bitmap>
 		<Bitmap x:Key="Help">
 			<x:Arguments>
-				<x:String>Assets/_.png</x:String>
+				<x:String>Assets/Help.png</x:String>
 			</x:Arguments>
 		</Bitmap>
 		<Bitmap x:Key="Save">
@@ -173,7 +183,7 @@
 		</Bitmap>
 		<Bitmap x:Key="Tag">
 			<x:Arguments>
-				<x:String>Assets/ic24-tag.png</x:String>
+				<x:String>Assets/Tag.png</x:String>
 			</x:Arguments>
 		</Bitmap>
 		<Bitmap x:Key="EmptyFile">
