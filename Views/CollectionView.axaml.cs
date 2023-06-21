@@ -1,6 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using System;
+using Documently.ViewModels;
 
 namespace Documently.Views
 {

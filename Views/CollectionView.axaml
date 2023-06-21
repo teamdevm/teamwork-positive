@@ -14,7 +14,7 @@
 					<Image Source="{DynamicResource NewFile}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill"
-						Command="{Binding UploadTemplate}"
+						Command="{Binding $parent[Window].DataContext.UploadTemplate}"
 						ToolTip.Tip="Загрузить шаблон">
 					<Image Source="{DynamicResource Upload}" Classes="Icon"/>
 				</Button>
@@ -38,13 +38,13 @@
 				<Button Classes="Fill"
 						ToolTip.Tip="Переключить тему"
 						Command="{Binding $parent[Window].DataContext.SwitchTheme}"
-						IsVisible="{Binding !$parent[Window].DataContext.Mode}">
+						IsVisible="{Binding $parent[Window].DataContext.Mode}">
 					<Image Source="{DynamicResource Light}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill"
 						ToolTip.Tip="Переключить тему"
 						Command="{Binding $parent[Window].DataContext.SwitchTheme}"
-						IsVisible="{Binding $parent[Window].DataContext.Mode}">
+						IsVisible="{Binding !$parent[Window].DataContext.Mode}">
 					<Image Source="{DynamicResource Dark}" Classes="Icon"/>
 				</Button>
 
@@ -67,13 +67,13 @@
 						</TreeView.ItemTemplate>
 					</TreeView>
 							
-					<Button Classes="Fill" Command="{Binding AddCategory}">
+					<Button Classes="Fill" Command="{Binding $parent[Window].DataContext.AddCategory}">
 						<StackPanel Orientation="Horizontal">
 							<Image Source="{DynamicResource Plus}" Classes="Icon"/>
 							<TextBlock Text="Добавить категорию" VerticalAlignment="Center" Margin="0, 0, 150, 0"/>
 						</StackPanel>
 					</Button>
-						<Button Classes="Fill" Command="{Binding AddSubCategory}">
+						<Button Classes="Fill" Command="{Binding $parent[Window].DataContext.AddSubCategory}">
 							<StackPanel Orientation="Horizontal" >
 								<Image Source="{DynamicResource Plus}" Classes="Icon"/>
 								<TextBlock Text="Добавить подкатегорию" VerticalAlignment="Center" Margin="0, 0, 150, 0"/>
