@@ -135,7 +135,7 @@ class Backend : ITemplateProcessor
     {
         ObservableCollection<Field> table = new ObservableCollection<Field>();
         Document doc = new Document(pathPattern); // проверку бы на открытие дока замутить
-        Field f;
+        TextField f;
 
         foreach (Paragraph p in doc.GetChildNodes(NodeType.Paragraph, true))
         {
@@ -144,7 +144,7 @@ class Backend : ITemplateProcessor
             while (left >= 0 && right >= 0)
             {
                 varStr = pStr.Substring(left, right - left + 1);
-                f = new Field(varStr);
+                f = new TextField(varStr);
                 if (!table.Contains(f))
                     table.Add(f);
                 pStr = pStr.Remove(0, right + 1);

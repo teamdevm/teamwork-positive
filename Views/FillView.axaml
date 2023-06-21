@@ -15,7 +15,7 @@
 					<Image Source="{DynamicResource Return}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill" 
-						Command="{Binding GetTemplate}"
+						Command="{Binding $parent[Window].DataContext.DocSave}"
 						ToolTip.Tip="Сохранить">
 					<Image Source="{DynamicResource Tik}" Classes="Icon"/>
 				</Button>
@@ -67,7 +67,7 @@
 						<DataTemplate>
 							<StackPanel Margin="24, 4">
 								<TextBlock Text="{Binding Name}"/>
-								<TextBox Watermark="Введите текст" Text="{Binding Value}"/>
+								<TextBox Watermark="Введите текст" Text="{Binding Text}"/>
 							</StackPanel>
 						</DataTemplate>
 					</ItemsRepeater.ItemTemplate>
