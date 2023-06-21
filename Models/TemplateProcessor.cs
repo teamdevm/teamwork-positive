@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.IO;
 
 namespace Documently.Models;
 
@@ -14,7 +15,7 @@ public interface ITemplateProcessor
      * path    - путь к папке, куда необходимо записывать готовые документы
      * pattern - шаблон имени результирующего файла
      */
-    public void Setup (string name, string path, string pattern);
+    public void Setup (MemoryStream name, string path, string pattern);
 
     /*
      * Извлечь список полей из шаблона

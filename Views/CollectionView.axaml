@@ -59,7 +59,7 @@
 			<SplitView IsPaneOpen="True" DisplayMode="Inline">
 				<SplitView.Pane>
 					<StackPanel>
-					<TreeView Items="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
+					<TreeView x:Name="tree" Items="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
 						<TreeView.ItemTemplate>
 							<TreeDataTemplate ItemsSource="{Binding Children}">
 								<TextBlock Text="{Binding Name}"/>

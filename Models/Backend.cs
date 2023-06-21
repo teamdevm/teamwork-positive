@@ -11,13 +11,13 @@ namespace Documently.Models;
 
 class Backend : ITemplateProcessor
 {
-    private string pathPattern;
+    private MemoryStream pathPattern;
     private string pathToFolder;
     private string fileName;
 
     public Backend ()
     {
-        pathPattern = string.Empty;
+        pathPattern = null!;
         pathToFolder = string.Empty;
         fileName = string.Empty;
     }
@@ -123,7 +123,7 @@ class Backend : ITemplateProcessor
     //     }
     // }
 
-    public void Setup(string name, string path, string pattern)
+    public void Setup(MemoryStream name, string path, string pattern)
     {
         pathPattern = name;
         pathToFolder = path;
