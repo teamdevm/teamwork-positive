@@ -13,7 +13,9 @@
 						ToolTip.Tip="Создать шаблон">
 					<Image Source="{DynamicResource NewFile}" Classes="Icon"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Загрузить шаблон">
+				<Button Classes="Fill"
+						Command="{Binding $parent[Window].DataContext.UploadTemplate}"
+						ToolTip.Tip="Загрузить шаблон">
 					<Image Source="{DynamicResource Upload}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill" 
@@ -34,22 +36,19 @@
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 				<Button Classes="Fill"
-						ToolTip.Tip="Настройки">
-					<Button.Flyout>
-						<MenuFlyout Placement="BottomEdgeAlignedLeft">
-							<MenuItem Header="Тема">
-								<MenuItem Header="Светлая"/>
-								<MenuItem Header="Темная"/>
-							</MenuItem>
-							<MenuItem Header="Иконки">
-								<MenuItem Header="Маленькие"/>
-								<MenuItem Header="Средние"/>
-								<MenuItem Header="Большие"/>
-							</MenuItem>
-						</MenuFlyout>
-					</Button.Flyout>
-					<Image Source="{DynamicResource Setting}" Classes="Icon"/>
+						ToolTip.Tip="Переключить тему"
+						Command="{Binding $parent[Window].DataContext.SwitchTheme}"
+						IsVisible="{Binding $parent[Window].DataContext.Mode}">
+					<Image Source="{DynamicResource Light}" Classes="Icon"/>
 				</Button>
+				<Button Classes="Fill"
+						ToolTip.Tip="Переключить тему"
+						Command="{Binding $parent[Window].DataContext.SwitchTheme}"
+						IsVisible="{Binding !$parent[Window].DataContext.Mode}">
+					<Image Source="{DynamicResource Dark}" Classes="Icon"/>
+				</Button>
+
+				
 				<Button Classes="Fill"
 						ToolTip.Tip="Помощь">
 					<Image Source="{DynamicResource Help}" Classes="Icon"/>
@@ -60,32 +59,40 @@
 			<SplitView IsPaneOpen="True" DisplayMode="Inline">
 				<SplitView.Pane>
 					<StackPanel>
-					<TreeView Items="{Binding Items}" SelectedItem="{Binding Selected}">
+					<TreeView Items="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
 						<TreeView.ItemTemplate>
-							<TreeDataTemplate ItemsSource="{Binding Subfolders}">
-								<TextBlock Text="{Binding strNodeText}"/>
+							<TreeDataTemplate ItemsSource="{Binding Children}">
+								<TextBlock Text="{Binding Name}"/>
 							</TreeDataTemplate>
 						</TreeView.ItemTemplate>
 					</TreeView>
-				
-					<Button Classes="Fill">
+							
+					<Button Classes="Fill" Command="{Binding $parent[Window].DataContext.AddCategory}">
 						<StackPanel Orientation="Horizontal">
 							<Image Source="{DynamicResource Plus}" Classes="Icon"/>
-							<TextBlock Text="Добавить категорию" VerticalAlignment="Center"/>
+							<TextBlock Text="Добавить категорию" VerticalAlignment="Center" Margin="0, 0, 150, 0"/>
 						</StackPanel>
 					</Button>
+						<Button Classes="Fill" Command="{Binding $parent[Window].DataContext.AddSubCategory}">
+							<StackPanel Orientation="Horizontal" >
+								<Image Source="{DynamicResource Plus}" Classes="Icon"/>
+								<TextBlock Text="Добавить подкатегорию" VerticalAlignment="Center" Margin="0, 0, 150, 0"/>
+							</StackPanel>
+						</Button>
+						
 					</StackPanel>
 				</SplitView.Pane>
 				
-				<ListBox Items="{Binding Nodes}" 
+				<ListBox Items="{Binding Templates}" 
 						 SelectedItem="{Binding SelectedTemplate}" 
 						 DockPanel.Dock="Right">
 					<ListBox.ItemTemplate>
 						<DataTemplate>
-							<TextBlock Text="{Binding}"/>
+							<TextBlock Text="{Binding Name}"/>
 						</DataTemplate>
 					</ListBox.ItemTemplate>
 				</ListBox>
+				
 			</SplitView>
 	</DockPanel>
 </UserControl>

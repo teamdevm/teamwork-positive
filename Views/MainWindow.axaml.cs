@@ -13,13 +13,29 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
     {
         InitializeComponent();
         this.WhenActivated(a => a(((MainWindowViewModel)DataContext).ConfirmDialogInteraction.RegisterHandler(ShowMessage)));
+        this.WhenActivated(a => a(((MainWindowViewModel)DataContext).OpenDialogInteraction.RegisterHandler(ShowOpenFileWindow)));
+        this.WhenActivated(a => a(((MainWindowViewModel)DataContext).GetNameInteraction.RegisterHandler(ShowMessage)));
 
     }
-    private async Task ShowMessage(InteractionContext<MessageBoxViewModel, MessageBoxResult> i)
+    private async Task ShowMessage(InteractionContext<MessageBoxViewModel, string> i)
     {
         MessageBox dialog = new MessageBox();
         dialog.DataContext = i.Input;
-        MessageBoxResult result = await dialog.ShowAsync(this);
+        string result = await dialog.ShowAsync(this);
         i.SetOutput(result);
+    }
+    private async Task ShowOpenFileWindow(InteractionContext<FileDialogFilter, string> i)
+    {
+        OpenFileDialog dialog = new OpenFileDialog();
+        dialog.Filters = new List<FileDialogFilter>() { i.Input };
+        string[]? result = await dialog.ShowAsync(this);
+        if (result is null)
+        {
+            i.SetOutput(string.Empty);
+        }
+        else
+        {
+            i.SetOutput(result[0]);
+        }
     }
 }

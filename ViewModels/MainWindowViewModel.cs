@@ -1,9 +1,12 @@
 ﻿using ReactiveUI;
 using System.Reactive;
 using System.Reactive.Linq;
+using Avalonia;
+using Avalonia.Styling;
 using Avalonia.Controls;
-using Documently.Models;
+using Avalonia.Themes.Fluent;
 using System.Threading.Tasks;
+
 namespace Documently.ViewModels;
 public class MainWindowViewModel : ViewModelBase
 {
@@ -12,15 +15,19 @@ public class MainWindowViewModel : ViewModelBase
     private string curTitle;
     private string prevTitle;
 
-    //private string mode;
-    //private string size;
-
-    //public Interaction<FileDialogFilter, string> OpenDialogInteraction { get; }
-    //public Interaction<FileDialogFilter, string> SaveDialogInteraction { get; }
+    public bool mode;
+    
+    public Interaction<FileDialogFilter, string> OpenDialogInteraction { get; }
+    public Interaction<FileDialogFilter, string> SaveDialogInteraction { get; }
+    public Interaction<MessageBoxViewModel, string> GetNameInteraction { get; }
     //public Interaction<EditWindowViewModel, Student> EditDialogInteraction { get; }
-    public Interaction<MessageBoxViewModel, MessageBoxResult> ConfirmDialogInteraction { get; }
+    public Interaction<MessageBoxViewModel, string> ConfirmDialogInteraction { get; }
     //public ReactiveCommand<Unit, Unit> ActionFileNew { get; }
-    public ReactiveCommand<Unit, Unit> ActionTemplateOpen { get; }
+    public ReactiveCommand<Unit, Unit> ActionTemplateFill { get; }
+    public ReactiveCommand<Unit, Unit> ActionTemplateUpload { get; }
+    public ReactiveCommand<Unit, Unit> ActionNewCategory { get; }
+    public ReactiveCommand<Unit, Unit> ActionNewSubCategory { get; }
+
     //public ReactiveCommand<Unit, Unit> ActionFileSave { get; }
     //public ReactiveCommand<Unit, Unit> ActionFileSaveAs { get; }
     //public ReactiveCommand<Unit, Unit> ActionViewNext { get; }
@@ -46,16 +53,12 @@ public class MainWindowViewModel : ViewModelBase
         get => curTitle;
         set => this.RaiseAndSetIfChanged(ref curTitle, value);
     }
-    //public string Mode
-    //{
-    //    get => mode;
-    //    set => this.RaiseAndSetIfChanged(ref mode, value);
-    //}
-    //public string Size
-    //{
-    //    get => size;
-    //    set => this.RaiseAndSetIfChanged(ref size, value);
-    //}
+    public bool Mode
+    {
+        get => mode;
+        set => this.RaiseAndSetIfChanged(ref mode, value);
+    }
+    
     public string PrevTitle
     {
         get => prevTitle;
@@ -73,17 +76,22 @@ public class MainWindowViewModel : ViewModelBase
         fillWindow = new FillViewModel();
         CurWindow = collectionWindow;
         CurTitle = "Коллекция шаблонов";
-        //Mode = "Light";
+        mode = false;
         //Size = "20";
         //ShowDialog = new Interaction<CollectionViewModel, FillViewModel>();
 
-        //OpenDialogInteraction = new Interaction<FileDialogFilter, string>();
-        //SaveDialogInteraction = new Interaction<FileDialogFilter, string>();
+        OpenDialogInteraction = new Interaction<FileDialogFilter, string>();
+        SaveDialogInteraction = new Interaction<FileDialogFilter, string>();
         //EditDialogInteraction = new Interaction<EditWindowViewModel, Student>();
-        ConfirmDialogInteraction = new Interaction<MessageBoxViewModel, MessageBoxResult>();
+        ConfirmDialogInteraction = new Interaction<MessageBoxViewModel, string>();
+        GetNameInteraction = new Interaction<MessageBoxViewModel, string>();
 
         //ActionFileNew = ReactiveCommand.CreateFromTask(FileNew);
-        ActionTemplateOpen = ReactiveCommand.CreateFromTask(CheckTemplate);
+        ActionTemplateFill = ReactiveCommand.CreateFromTask(CheckTemplate);
+        ActionTemplateUpload = ReactiveCommand.CreateFromTask(UploadTemplate);
+        ActionNewCategory = ReactiveCommand.CreateFromTask(AddCategory);
+        ActionNewSubCategory = ReactiveCommand.CreateFromTask(AddSubCategory);
+
         //ActionFileSave = ReactiveCommand.CreateFromTask(FileSave);
         //ActionFileSaveAs = ReactiveCommand.CreateFromTask(FileSaveAs);
         //ActionViewNext = ReactiveCommand.Create(ViewNext);
@@ -94,14 +102,6 @@ public class MainWindowViewModel : ViewModelBase
         //ActionEdit = ReactiveCommand.CreateFromTask(Edit);
         //ActionRemove = ReactiveCommand.Create(Remove);
     }
-    //public void LightMode()
-    //{
-    //    Mode = "Light";
-    //}
-    //public void DarkMode()
-    //{
-    //    Mode = "Dark";
-    //}
     public void SwitchToCollect()
     {
         CurWindow = collectionWindow;
@@ -147,14 +147,42 @@ public class MainWindowViewModel : ViewModelBase
 
     //    return true;
     //}
+    //private async Task TemplateUpload()
+    //{
+    //    /* We accept only XML files */
+    //    FileDialogFilter xmlFilter = new FileDialogFilter()
+    //    {
+    //        Extensions = { "xml" }
+    //    };
 
+    //    /* Show dialog window and retrieve file path */
+    //    string result = await OpenDialogInteraction.Handle(xmlFilter);
+
+    //    /* If no file was selected */
+    //    if (string.IsNullOrEmpty(result)) return;
+
+    //    try
+    //    {
+    //        collectionWindow.db
+    //        Content = StudentList.Deserialize(result);
+    //        Selection = Content.First();
+    //        workingPath = result;
+    //        isSaved = true;
+    //        UpdateAll();
+    //    }
+    //    catch
+    //    {
+    //        MessageBoxViewModel msg = new MessageBoxViewModel("Файл имеет некорректный формат", MessageBoxButtons.Ok);
+    //        MessageBoxResult res = await ConfirmDialogInteraction.Handle(msg);
+    //    }
+    //}
     private async Task CheckTemplate()
     {
         if (collectionWindow.SelectedTemplate is null)
         {
             MessageBoxViewModel msg = new MessageBoxViewModel(
                 "Выберите шаблон", MessageBoxButtons.Ok);
-            MessageBoxResult res = await ConfirmDialogInteraction.Handle(msg);
+            await ConfirmDialogInteraction.Handle(msg);
         }
         else
             SwitchToFill();
@@ -199,13 +227,100 @@ public class MainWindowViewModel : ViewModelBase
 
     public void SwitchToFill()
     {
-
-
-        CurWindow = new FillViewModel(new Backend(), collectionWindow.SelectedTemplate);
+        CurWindow = new FillViewModel();
         PrevWindow = collectionWindow;
         CurTitle = "Заполнить шаблон";
         PrevTitle = "Коллекция шаблонов";
+    }
 
+    public void SwitchTheme()
+    {
+        foreach (IStyle s in Application.Current.Styles)
+        {
+            if (s is FluentTheme f)
+            {
+                mode = !mode;
+                if (mode)
+                    f.Mode = FluentThemeMode.Dark;
+                else
+                    f.Mode = FluentThemeMode.Light;
+            }
+        }
+    }
+
+    private async Task UploadTemplate()
+    {
+        /* We accept only XML files */
+        FileDialogFilter xmlFilter = new FileDialogFilter()
+        {
+            Extensions = { "*" }
+        };
+
+        /* Show dialog window and retrieve file path */
+        string result = await OpenDialogInteraction.Handle(xmlFilter);
+
+        /* If no file was selected */
+        if (string.IsNullOrEmpty(result)) return;
+
+        try
+        {
+            collectionWindow.UploadTemplate(result);
+            //Content = StudentList.Deserialize(result);
+            //Selection = Content.First();
+            //workingPath = result;
+            //isSaved = true;
+            //UpdateAll();
+
+            ////добавить диалоговое окно
+            //db.AddTemplate("C:\\Users\\User\\Desktop\\работы\\проект\\teamwork-positive\\Documents\\Договорные документы\\Договор аренды квартиры.docx", SelectedCategory);
+            //collectionWindow.Templates = collectionWindow.db.GetTemplates(SelectedCategory);
+        }
+        catch
+        {
+            MessageBoxViewModel msg = new MessageBoxViewModel("Файл имеет некорректный формат", MessageBoxButtons.Ok);
+            await ConfirmDialogInteraction.Handle(msg);
+        }
+    }
+
+    private async Task AddCategory()
+    {
+        MessageBoxViewModel msg = new MessageBoxViewModel(
+                "Введите название категории:", MessageBoxButtons.TextField);
+        string result = await GetNameInteraction.Handle(msg);
+
+        if (string.IsNullOrEmpty(result)) return;
+
+        collectionWindow.AddCategory(result);
+    }
+    private async Task AddSubCategory()
+    {
+        MessageBoxViewModel msg = new MessageBoxViewModel(
+                "Введите название подкатегории:", MessageBoxButtons.TextField);
+
+        /* Show dialog window and retrieve file path */
+        string result = await GetNameInteraction.Handle(msg);
+
+        /* If no file was selected */
+        if (string.IsNullOrEmpty(result)) return;
+
+        collectionWindow.AddSubCategory(result);
+        //try
+        //{
+        //    //Content = StudentList.Deserialize(result);
+        //    //Selection = Content.First();
+        //    //workingPath = result;
+        //    //isSaved = true;
+        //    //UpdateAll();
+
+        //    ////добавить диалоговое окно
+        //    //db.AddTemplate("C:\\Users\\User\\Desktop\\работы\\проект\\teamwork-positive\\Documents\\Договорные документы\\Договор аренды квартиры.docx", SelectedCategory);
+        //    //collectionWindow.Templates = collectionWindow.db.GetTemplates(SelectedCategory);
+        //}
+        //catch
+        //{
+        //    MessageBoxViewModel msg = new MessageBoxViewModel("Файл имеет некорректный формат", MessageBoxButtons.Ok);
+        //    MessageBoxResult res = await ConfirmDialogInteraction.Handle(msg);
+        //}
     }
 
     //private async Task FileNew()

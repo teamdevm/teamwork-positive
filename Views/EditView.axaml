@@ -5,7 +5,6 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Documently.Views.EditView">
 
-
 	<DockPanel>
 		<DockPanel DockPanel.Dock="Top">
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0, 0, 150, 0">
@@ -14,7 +13,7 @@
 						ToolTip.Tip="Вернуться">
 					<Image Source="{DynamicResource Return}" Classes="Icon"/>
 				</Button>
-				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
+				<Rectangle Width="1" Fill="Gray"/>
 				<Button Classes="Fill" ToolTip.Tip="Новый">
 					<Image Source="{DynamicResource EmptyFile}" Classes="Icon"/>
 				</Button>
@@ -24,31 +23,34 @@
 				<Button Classes="Fill" ToolTip.Tip="Категории">
 					<Image Source="{DynamicResource Tag}" Classes="Icon"/>
 				</Button>
+				<Rectangle Width="1" Fill="Gray"/>
 				<Button Classes="Fill" ToolTip.Tip="Назад">
 					<Image Source="{DynamicResource Undo}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill" ToolTip.Tip="Вперед">
 					<Image Source="{DynamicResource Redo}" Classes="Icon"/>
 				</Button>
-				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
+				<Rectangle Width="1" Fill="Gray"/>
 			</StackPanel>
 
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 				<Button Classes="Fill" ToolTip.Tip="Копировать формат">
 					<Image Source="{DynamicResource FormatPainter}" Classes="Icon"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Очистить формат" IsVisible="True">
+				<Button Classes="Fill" ToolTip.Tip="Очистить формат">
 					<Image Source="{DynamicResource ClearFormat}" Classes="Icon"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Полужирный">
-					<Image Source="{DynamicResource Bold}" Classes="Icon"/>
+				<Rectangle Width="1" Fill="Gray"/>
+				<Button Classes="Fill" ToolTip.Tip="Полужирный" Margin="4, 4">
+					<TextBlock Text="B" FontFamily="Consolas" FontWeight="Bold" FontSize="24"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Курсив">
-					<Image Source="{DynamicResource Italic}" Classes="Icon"/>
+				<Button Classes="Fill" ToolTip.Tip="Курсив" Margin="4, 4">
+					<TextBlock Text="I" FontFamily="Consolas" FontStyle="Italic" FontSize="24"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Подчеркнутый">
-					<Image Source="{DynamicResource Underline}" Classes="Icon"/>
+				<Button Classes="Fill" ToolTip.Tip="Подчеркнутый" Margin="4, 4">
+					<TextBlock Text="U" FontFamily="Consolas" TextDecorations="Underline" FontSize="24"/>
 				</Button>
+				<Rectangle Width="1" Fill="Gray"/>
 				<Button Classes="Fill" ToolTip.Tip="Выровнять по левому краю">
 					<Image Source="{DynamicResource LeftAlign}" Classes="Icon"/>
 				</Button>
@@ -61,6 +63,7 @@
 				<Button Classes="Fill" ToolTip.Tip="Выровнять по ширине">
 					<Image Source="{DynamicResource Justify}" Classes="Icon"/>
 				</Button>
+				<Rectangle Width="1" Fill="Gray"/>
 				<Button Classes="Fill" ToolTip.Tip="Маркированный список">
 					<Image Source="{DynamicResource Ulitem}" Classes="Icon"/>
 				</Button>
@@ -80,24 +83,20 @@
 			</StackPanel>
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-				<Rectangle Width="2" Fill="Gray" Margin="4,0"/>
+				<Rectangle Width="1" Fill="Gray"/>
 				<Button Classes="Fill"
-						ToolTip.Tip="Настройки">
-					<Button.Flyout>
-						<MenuFlyout Placement="BottomEdgeAlignedLeft">
-							<MenuItem Header="Тема">
-								<MenuItem Header="Светлая"/>
-								<MenuItem Header="Темная"/>
-							</MenuItem>
-							<MenuItem Header="Иконки">
-								<MenuItem Header="Маленькие"/>
-								<MenuItem Header="Средние"/>
-								<MenuItem Header="Большие"/>
-							</MenuItem>
-						</MenuFlyout>
-					</Button.Flyout>
-					<Image Source="{DynamicResource Setting}" Classes="Icon"/>
+						ToolTip.Tip="Переключить тему"
+						IsVisible="{Binding $parent[Window].DataContext.Mode}"
+						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
+					<Image Source="{DynamicResource Light}" Classes="Icon"/>
 				</Button>
+				<Button Classes="Fill"
+						ToolTip.Tip="Переключить тему"
+						IsVisible="{Binding !$parent[Window].DataContext.Mode}"
+						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
+					<Image Source="{DynamicResource Dark}" Classes="Icon"/>
+				</Button>
+				
 				<Button Classes="Fill" ToolTip.Tip="Помощь">
 					<Image Source="{DynamicResource Help}" Classes="Icon"/>
 				</Button>

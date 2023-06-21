@@ -1,86 +1,79 @@
 ﻿using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using ReactiveUI;
 using System.IO;
 using Documently.Models;
+using System.Reactive;
+using System.Reactive.Linq;
+using Avalonia;
+using Avalonia.Styling;
+using Avalonia.Themes.Fluent;
+using Avalonia.Controls;
+using System.Threading.Tasks;
+using Documently.ViewModels;
+
 namespace Documently.ViewModels;
 
 public class CollectionViewModel : ViewModelBase
 {
-    private ObservableCollection<string> nodes;
-    private Node selected;
-    private string selectedTemplate;
-    public ObservableCollection<Node> Items { get; }
-    public ObservableCollection<Node> SelectedItems { get; }
-    public string strFolder { get; set; }
-    public Node Selected 
-    {
-        get => selected; 
-        set
-        { 
-            selected = value;
-            Nodes = new ObservableCollection<string>(Directory.GetFiles(selected.strFullPath));
+    TemplateDatabase db;
+    Category selectedCategory;
+    List<Template> templates;
+    Template selectedTemplate;
+    //MainWindowViewModel mw;
 
-        } 
+    
+
+    public ObservableCollection<Category> Categories => db.Categories;
+
+    public Category SelectedCategory 
+    { 
+        get => selectedCategory; 
+        set { Templates = db.GetTemplates(value); selectedCategory = value; } 
     }
-    public ObservableCollection<string> Nodes
+    public List<Template> Templates 
     {
-        get => nodes;
-        set => this.RaiseAndSetIfChanged(ref nodes, value);
+        get => templates;
+        set => this.RaiseAndSetIfChanged(ref templates, value);
     }
-    public string SelectedTemplate
+    public Template SelectedTemplate
     {
         get => selectedTemplate;
         set => this.RaiseAndSetIfChanged(ref selectedTemplate, value);
     }
-    public CollectionViewModel()
+    public CollectionViewModel() 
     {
-        strFolder = "Documents"; // EDIT THIS FOR AN EXISTING FOLDER
+        db = new TemplateDatabase("Documents.db");
+        templates = new List<Template>();
+        selectedCategory = null!;
+        selectedTemplate = null!;
+        //ActionUploadTemplate = ReactiveCommand.CreateFromTask(UploadTemplate);
 
-        Items = new ObservableCollection<Node>();
-
-        Node rootNode = new Node(strFolder);
-        rootNode.Subfolders = GetSubfolders(strFolder);
-
-        Items.Add(rootNode);
+        //mw = new MainWindowViewModel();
     }
-
-    public ObservableCollection<Node> GetSubfolders(string strPath)
+    ~CollectionViewModel()
     {
-        ObservableCollection<Node> subfolders = new ObservableCollection<Node>();
-        string[] subdirs = Directory.GetDirectories(strPath, "*", SearchOption.TopDirectoryOnly);
-
-        foreach (string dir in subdirs)
-        {
-            Node thisnode = new Node(dir);
-
-            if (Directory.GetDirectories(dir, "*", SearchOption.TopDirectoryOnly).Length > 0)
-            {
-                thisnode.Subfolders = new ObservableCollection<Node>();
-
-                thisnode.Subfolders = GetSubfolders(dir);
-            }
-
-            subfolders.Add(thisnode);
-        }
-
-        return subfolders;
+        db.Close();
     }
-
-    public class Node
+    public void AddCategory(string name)
     {
-        public ObservableCollection<Node> Subfolders { get; set; }
-
-        public string strNodeText { get; }
-        public string strFullPath { get; }
-
-        public Node(string _strFullPath)
-        {
-            strFullPath = _strFullPath;
-            strNodeText = Path.GetFileName(_strFullPath);
-        }
+        //добавить диалоговое окно
+        
+        db.AddCategory(name);
     }
-    public void FillSelected ()
+    public void AddSubCategory(string name)
     {
-        FillViewModel fillViewModel = new FillViewModel(new Backend(), SelectedTemplate);
+        //добавить диалоговое окно
+        db.AddSubCategory(SelectedCategory, name);
     }
+    public void UploadTemplate(string path)
+    {
+        //добавить диалоговое окно
+        db.AddTemplate(path, SelectedCategory);
+        Templates = db.GetTemplates(SelectedCategory);
+    }
+    //public void FillSelected ()
+    //{
+    //    FillViewModel fillViewModel = new FillViewModel(new Backend(), SelectedTemplate);
+    //}
 }
