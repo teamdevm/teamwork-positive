@@ -221,8 +221,8 @@ public class MainWindowViewModel : ViewModelBase
                     f.Mode = FluentThemeMode.Dark;
                 else
                     f.Mode = FluentThemeMode.Light;
+                break;
             }
-            break;
         }
     }
 
