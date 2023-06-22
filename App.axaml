@@ -73,7 +73,7 @@
 		</Bitmap>
 		<Bitmap x:Key="MinusSquare">
 			<x:Arguments>
-				<x:String>Assets/MinusCircle.png</x:String>
+				<x:String>Assets/MinusSquare.png</x:String>
 			</x:Arguments>
 		</Bitmap>
 		<Bitmap x:Key="PlusSquare">
@@ -169,11 +169,6 @@
 		<Bitmap x:Key="ClearFormat">
 			<x:Arguments>
 				<x:String>Assets/ClearFormat.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="ClearFormat Dark">
-			<x:Arguments>
-				<x:String>Assets/ClearFormat dark.png</x:String>
 			</x:Arguments>
 		</Bitmap>
 		<Bitmap x:Key="FormatPainter">

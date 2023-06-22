@@ -32,6 +32,24 @@
 						ToolTip.Tip="Удалить шаблон">
 					<Image Source="{DynamicResource Trash}" Classes="Icon"/>
 				</Button>
+				<Rectangle Width="1" Fill="Gray"/>
+				<Button Classes="Fill"
+						ToolTip.Tip="Добавить...">
+					<Button.Flyout>
+						<MenuFlyout Placement="BottomEdgeAlignedLeft">
+								<MenuItem Header="Категорию" 
+										  Command="{Binding $parent[Window].DataContext.AddCategory}"/>
+								<MenuItem Header="Подкатегорию" 
+										  Command="{Binding $parent[Window].DataContext.AddSubCategory}"/>
+						</MenuFlyout>
+					</Button.Flyout>
+					<Image Source="{DynamicResource PlusSquare}" Classes="Icon"/>
+				</Button>
+				<Button Classes="Fill"
+						ToolTip.Tip="Удалить категорию"
+						Command="{Binding RemoveCategory}">
+					<Image Source="{DynamicResource MinusSquare}" Classes="Icon"/>
+				</Button>
 			</StackPanel>
 			
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
@@ -55,9 +73,10 @@
 				</Button>
 			</StackPanel>
 		</DockPanel>
-		
+
 			<SplitView IsPaneOpen="True" DisplayMode="Inline">
 				<SplitView.Pane>
+			<ScrollViewer>
 					<StackPanel>
 					<TreeView x:Name="tree" Items="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
 						<TreeView.ItemTemplate>
@@ -66,21 +85,8 @@
 							</TreeDataTemplate>
 						</TreeView.ItemTemplate>
 					</TreeView>
-							
-					<Button Classes="Fill" Command="{Binding $parent[Window].DataContext.AddCategory}">
-						<StackPanel Orientation="Horizontal">
-							<Image Source="{DynamicResource Plus}" Classes="Icon"/>
-							<TextBlock Text="Добавить категорию" VerticalAlignment="Center" Margin="0, 0, 150, 0"/>
-						</StackPanel>
-					</Button>
-						<Button Classes="Fill" Command="{Binding $parent[Window].DataContext.AddSubCategory}">
-							<StackPanel Orientation="Horizontal" >
-								<Image Source="{DynamicResource Plus}" Classes="Icon"/>
-								<TextBlock Text="Добавить подкатегорию" VerticalAlignment="Center" Margin="0, 0, 150, 0"/>
-							</StackPanel>
-						</Button>
-						
 					</StackPanel>
+				</ScrollViewer>
 				</SplitView.Pane>
 				
 				<ListBox Items="{Binding Templates}" 
