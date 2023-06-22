@@ -57,14 +57,15 @@ public class CollectionViewModel : ViewModelBase
     }
     public void AddCategory(string name)
     {
-        //добавить диалоговое окно
-        
         db.AddCategory(name);
     }
     public void AddSubCategory(string name)
     {
-        //добавить диалоговое окно
         db.AddSubCategory(SelectedCategory, name);
+    }
+    public void RemoveCategory(string name)
+    {
+        db.RemoveCategory(SelectedCategory);
     }
     public void UploadTemplate(string path)
     {
