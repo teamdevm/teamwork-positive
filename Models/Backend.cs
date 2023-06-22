@@ -9,13 +9,15 @@ namespace Documently.Models;
 
 class Backend : ITemplateProcessor
 {
-    private string pathPattern;
+    private MemoryStream pathPattern;
+    //private string pathPattern; 
     private string pathToFolder;
     private string fileName;
 
     public Backend()
     {
-        pathPattern = string.Empty;
+        pathPattern = null!;
+        //pathPattern = string.Empty;
         pathToFolder = string.Empty;
         fileName = string.Empty;
     }
@@ -121,7 +123,7 @@ class Backend : ITemplateProcessor
     //     }
     // }
 
-    public void Setup(string name, string path, string pattern)
+    public void Setup(MemoryStream name, string path, string pattern)
     {
         pathPattern = name;
         pathToFolder = path;
@@ -132,7 +134,10 @@ class Backend : ITemplateProcessor
     {
         ObservableCollection<Field> table = new ObservableCollection<Field>();
         Document doc = new Document(pathPattern);
+        //Dictionary<string, List<int>> dicCategory = new Dictionary<string, List<int>>(); 
+        List<string> listCategory = new List<string>();
         Field f;
+        int pos = 0;
         foreach (Paragraph p in doc.GetChildNodes(NodeType.Paragraph, true))
         {
             int left = p.ToString(SaveFormat.Text).IndexOf("<"), right = p.ToString(SaveFormat.Text).IndexOf(">");
@@ -149,13 +154,26 @@ class Backend : ITemplateProcessor
 
                 if (counter < 2)
                 {
+                    pos++;
                     if (placeCategory >= 0)
                     {
                         nameCategory = varStr.Substring(placeCategory + 1, varStr.Length - placeCategory - 1);
+                        if (!listCategory.Contains(nameCategory))
+                            listCategory.Add(nameCategory);
                         varStr = varStr.Remove(placeCategory, varStr.Length - placeCategory);
                     }
                     else
-                        nameCategory = "NoCategory";
+                        nameCategory = "Общие данные";
+                    //if (!dicCategory.ContainsKey(nameCategory))
+                    //    dicCategory.Add(nameCategory, new List<int> { pos });
+                    //else
+                    //{
+                    //    List<int> listPos = new List<int>();
+                    //    listPos = dicCategory[nameCategory];
+                    //    listPos.Add(pos);
+                    //    dicCategory[nameCategory] = listPos;
+                    //}
+
                     f = new TextField(varStr, nameCategory);
                     if (!table.Contains(f))
                         table.Add(f);
@@ -168,6 +186,34 @@ class Backend : ITemplateProcessor
 
             }
         }
+        ObservableCollection<Field> copyTable = new ObservableCollection<Field>();
+        for (int i = 0; i < listCategory.Count; i++)
+            foreach (var x in table)
+            {
+                if (x.Category == listCategory[i])
+                    copyTable.Add(x); 
+            }
+        foreach (var x in table)
+        {
+            if (x.Category == "Общие данные")
+                copyTable.Add(x);
+        }
+        table = copyTable; 
+        //pos = 0;
+        //int num = 0;
+        //foreach (var pair in dicCategory)
+        //{
+        //    foreach (var value in pair.Value)
+        //    {
+        //        if (num == 0)
+        //            table.Move(value - 1, pos);
+        //        else
+        //            table.Move(num, pos);
+        //        pos++;
+        //    }
+        //    num = pair.Value.Count; 
+        //}
+
         return table;
     }
 
@@ -182,7 +228,7 @@ class Backend : ITemplateProcessor
             options.FindWholeWordsOnly = false;
             options.Direction = FindReplaceDirection.Forward;
 
-            if (record[j].Category == "NoCategory")
+            if (record[j].Category == "Общие данные")
                 doc.Range.Replace("<" + record[j].Name + ">", record[j].Value, options);
             else
                 doc.Range.Replace("<" + record[j].Name + ":" + record[j].Category + ">", record[j].Value, options);
