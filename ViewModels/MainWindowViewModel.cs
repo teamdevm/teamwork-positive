@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+using System;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.ComponentModel;
@@ -78,6 +79,7 @@ public class MainWindowViewModel : ViewModelBase
         CurWindow = collectionWindow;
         CurTitle = "Коллекция шаблонов";
         mode = false;
+        Application.Current.Resources["Theme"] = Application.Current.Resources["Dark"];
         
         OpenDialogInteraction = new Interaction<FileDialogFilter, string>();
         SaveDialogInteraction = new Interaction<FileDialogFilter, string>();
@@ -220,12 +222,14 @@ public class MainWindowViewModel : ViewModelBase
                 if (Mode)
                 {
                     f.Mode = FluentThemeMode.Dark;
+                    Application.Current.Resources["Theme"] = Application.Current.Resources["Light"];
                     Application.Current.Resources["TreeBackground"] = Application.Current.Resources["DarkGrayBrush"];
                     //Color = "#171717";
                 }
                 else
                 {
                     f.Mode = FluentThemeMode.Light;
+                    Application.Current.Resources["Theme"] = Application.Current.Resources["Dark"];
                     Application.Current.Resources["TreeBackground"] = Application.Current.Resources["LightGrayBrush"];
                     //Color = "#E8E8E8";
                 }
