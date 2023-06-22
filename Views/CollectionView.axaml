@@ -70,7 +70,7 @@
 			<SplitView IsPaneOpen="True" DisplayMode="Inline">
 				<SplitView.Pane>
 					<ScrollViewer>
-						<StackPanel>
+				<StackPanel Background="{DynamicResource TreeBackground}">
 							<TreeView x:Name="tree" Items="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
 								<TreeView.ItemTemplate>
 									<TreeDataTemplate ItemsSource="{Binding Children}">

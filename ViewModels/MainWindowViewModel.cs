@@ -17,7 +17,7 @@ public class MainWindowViewModel : ViewModelBase
     private string curTitle;
     private string prevTitle;
 
-    public bool mode;
+    private bool mode;
     
     public Interaction<FileDialogFilter, string> OpenDialogInteraction { get; }
     public Interaction<FileDialogFilter, string> SaveDialogInteraction { get; }
@@ -223,11 +223,15 @@ public class MainWindowViewModel : ViewModelBase
                 {
                     f.Mode = FluentThemeMode.Dark;
                     Application.Current.Resources["Theme"] = Application.Current.Resources["Light"];
+                    Application.Current.Resources["TreeBackground"] = Application.Current.Resources["DarkGrayBrush"];
+                    //Color = "#171717";
                 }
                 else
                 {
                     f.Mode = FluentThemeMode.Light;
                     Application.Current.Resources["Theme"] = Application.Current.Resources["Dark"];
+                    Application.Current.Resources["TreeBackground"] = Application.Current.Resources["LightGrayBrush"];
+                    //Color = "#E8E8E8";
                 }
                 break;
             }
