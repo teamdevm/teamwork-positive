@@ -1,9 +1,11 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using Aspose.Words;
 using Aspose.Words.Replacing;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace Documently.Models;
 
@@ -150,7 +152,7 @@ class Backend : ITemplateProcessor
                 int placeCategory = varStr.IndexOf(":");
                 int counter = 0;
                 if (placeCategory >= 0)
-                    counter = varStr.Count(x => (x == ':'));
+                    counter = varStr.Where(c => c == 's').Count();
 
                 if (counter < 2)
                 {
