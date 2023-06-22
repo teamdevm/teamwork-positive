@@ -55,15 +55,8 @@
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 				<Button Classes="Fill"
 						ToolTip.Tip="Переключить тему"
-						Command="{Binding $parent[Window].DataContext.SwitchTheme}"
-						IsVisible="{Binding $parent[Window].DataContext.Mode}">
-					<Image Source="{DynamicResource Light}" Classes="Icon"/>
-				</Button>
-				<Button Classes="Fill"
-						ToolTip.Tip="Переключить тему"
-						Command="{Binding $parent[Window].DataContext.SwitchTheme}"
-						IsVisible="{Binding !$parent[Window].DataContext.Mode}">
-					<Image Source="{DynamicResource Dark}" Classes="Icon"/>
+						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
+					<Image Source="{DynamicResource Theme}" Classes="Icon"/>
 				</Button>
 
 				
@@ -76,17 +69,20 @@
 
 			<SplitView IsPaneOpen="True" DisplayMode="Inline">
 				<SplitView.Pane>
-			<ScrollViewer>
-					<StackPanel>
-					<TreeView x:Name="tree" Items="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
-						<TreeView.ItemTemplate>
-							<TreeDataTemplate ItemsSource="{Binding Children}">
-								<TextBlock Text="{Binding Name}"/>
-							</TreeDataTemplate>
-						</TreeView.ItemTemplate>
-					</TreeView>
-					</StackPanel>
-				</ScrollViewer>
+					<ScrollViewer>
+						<StackPanel>
+							<TreeView x:Name="tree" Items="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
+								<TreeView.ItemTemplate>
+									<TreeDataTemplate ItemsSource="{Binding Children}">
+										<Grid ColumnDefinitions="*,Auto">
+											<TextBlock Grid.Column="0" Margin="8,0" Text="{Binding Name}"/>
+											<TextBlock Grid.Column="1" Margin="8,0" Foreground="Gray" Text="{Binding Count, StringFormat={}{0}}"/>
+										</Grid>
+									</TreeDataTemplate>
+								</TreeView.ItemTemplate>
+							</TreeView>
+						</StackPanel>
+					</ScrollViewer>
 				</SplitView.Pane>
 				
 				<ListBox Items="{Binding Templates}" 

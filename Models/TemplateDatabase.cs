@@ -88,6 +88,7 @@ public class TemplateDatabase
 
         Template t = new Template(name, "", tag);
         templates.Insert(t);
+        tag.Count += 1;
 
         storage.Upload(t.Id, path);
     }
@@ -100,6 +101,9 @@ public class TemplateDatabase
 
     public void RemoveTemplate (Template t)
     {
+        Category c = FindCategoryById(root, t.Category);
+        c.Count -= 1;
+
         templates.Delete(t.Id);
         storage.Delete(t.Id);
     }
@@ -135,6 +139,7 @@ public class TemplateDatabase
     private void DeserializeCategoryTree (Category c)
     {
         var a = categories.Find(x => x.Parent == c.Id);
+        c.Count = templates.Query().Where(x => x.Category == c.Id).Count();
 
         foreach (Category d in a)
         {
@@ -150,6 +155,20 @@ public class TemplateDatabase
             t.Category = root.Id;
             templates.Update(t);
         }
+    }
+
+    private Category FindCategoryById (Category c, ObjectId id)
+    {
+        if (c.Id == id) return c;
+        Category e;
+
+        foreach (Category d in c.Children)
+        {
+            e = FindCategoryById(d, id);
+            if (e is not null) return e;
+        }
+
+        return null!;
     }
 
     private bool DFSRemoveCategory (Category cursor, Category target)
