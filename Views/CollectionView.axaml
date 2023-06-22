@@ -11,28 +11,28 @@
 				<Button Classes="Fill" 
 						Command="{Binding $parent[Window].DataContext.SwitchToCreate}"
 						ToolTip.Tip="Создать шаблон">
-					<Image Source="{DynamicResource NewFile}" Classes="Icon"/>
-				</Button>
-				<Button Classes="Fill"
-						Command="{Binding $parent[Window].DataContext.UploadTemplate}"
-						ToolTip.Tip="Загрузить шаблон">
-					<Image Source="{DynamicResource Upload}" Classes="Icon"/>
+					<Image Source="{DynamicResource CreateMode}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill" 
 						Command="{Binding $parent[Window].DataContext.SwitchToEdit}"
 						ToolTip.Tip="Изменить шаблон">
-					<Image Source="{DynamicResource Edit}" Classes="Icon"/>
+					<Image Source="{DynamicResource EditMode}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill" 
 						Command="{Binding $parent[Window].DataContext.CheckTemplate}"
 						ToolTip.Tip="Заполнить шаблон">
-					<Image Source="{DynamicResource Fill}" Classes="Icon"/>
+					<Image Source="{DynamicResource FillMode}" Classes="Icon"/>
+				</Button>
+				<Button Classes="Fill"
+						Command="{Binding $parent[Window].DataContext.UploadTemplate}"
+						ToolTip.Tip="Загрузить шаблон">
+					<Image Source="{DynamicResource UploadMode}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill"
 						ToolTip.Tip="Удалить шаблон">
-					<Image Source="{DynamicResource Trash}" Classes="Icon"/>
+					<Image Source="{DynamicResource TrashMode}" Classes="Icon"/>
 				</Button>
-				<Rectangle Width="1" Fill="Gray"/>
+				<Rectangle Width="1" Height="20" Fill="Gray"/>
 				<Button Classes="Fill"
 						ToolTip.Tip="Добавить...">
 					<Button.Flyout>
@@ -43,12 +43,17 @@
 										  Command="{Binding $parent[Window].DataContext.AddSubCategory}"/>
 						</MenuFlyout>
 					</Button.Flyout>
-					<Image Source="{DynamicResource PlusSquare}" Classes="Icon"/>
+					<Image Source="{DynamicResource PlusSquareMode}" Classes="Icon"/>
+				</Button>
+				<Button Classes="Fill"
+						ToolTip.Tip="Переименовать категорию"
+						>
+					<Image Source="{DynamicResource RenameMode}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill"
 						ToolTip.Tip="Удалить категорию"
 						Command="{Binding RemoveCategory}">
-					<Image Source="{DynamicResource MinusSquare}" Classes="Icon"/>
+					<Image Source="{DynamicResource MinusSquareMode}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
 			
@@ -62,7 +67,7 @@
 				
 				<Button Classes="Fill"
 						ToolTip.Tip="Помощь">
-					<Image Source="{DynamicResource Help}" Classes="Icon"/>
+					<Image Source="{DynamicResource HelpMode}" Classes="Icon"/>
 				</Button>
 			</StackPanel>
 		</DockPanel>
@@ -70,13 +75,13 @@
 			<SplitView IsPaneOpen="True" DisplayMode="Inline">
 				<SplitView.Pane>
 					<ScrollViewer>
-				<StackPanel Background="{DynamicResource TreeBackground}">
+				<StackPanel Background="{DynamicResource TreeViewBackground}">
 							<TreeView x:Name="tree" Items="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
 								<TreeView.ItemTemplate>
 									<TreeDataTemplate ItemsSource="{Binding Children}">
 										<Grid ColumnDefinitions="*,Auto">
-											<TextBlock Grid.Column="0" Margin="8,0" Text="{Binding Name}"/>
-											<TextBlock Grid.Column="1" Margin="8,0" Foreground="Gray" Text="{Binding Count, StringFormat={}{0}}"/>
+											<TextBlock Grid.Column="0" Text="{Binding Name}"/>
+											<TextBlock Grid.Column="1" Margin="20,0" Foreground="Gray" Text="{Binding Count, StringFormat={}{0}}"/>
 										</Grid>
 									</TreeDataTemplate>
 								</TreeView.ItemTemplate>

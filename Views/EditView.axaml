@@ -41,7 +41,7 @@
 					<Image Source="{DynamicResource ClearFormat}" Classes="Icon"/>
 				</Button>
 				<Rectangle Width="1" Fill="Gray"/>
-				<Button Classes="Fill" ToolTip.Tip="Полужирный" Margin="4, 4">
+				<!--<Button Classes="Fill" ToolTip.Tip="Полужирный" Margin="4, 4">
 					<TextBlock Text="B" FontFamily="Consolas" FontWeight="Bold" FontSize="24"/>
 				</Button>
 				<Button Classes="Fill" ToolTip.Tip="Курсив" Margin="4, 4">
@@ -49,26 +49,35 @@
 				</Button>
 				<Button Classes="Fill" ToolTip.Tip="Подчеркнутый" Margin="4, 4">
 					<TextBlock Text="U" FontFamily="Consolas" TextDecorations="Underline" FontSize="24"/>
+				</Button>-->
+				<Button Classes="Fill" ToolTip.Tip="Полужирный">
+					<Image Source="{DynamicResource BoldMode}" Classes="Icon"/>
+				</Button>
+				<Button Classes="Fill" ToolTip.Tip="Курсив">
+					<Image Source="{DynamicResource ItalicMode}" Classes="Icon"/>
+				</Button>
+				<Button Classes="Fill" ToolTip.Tip="Подчеркнутый">
+					<Image Source="{DynamicResource UnderlineMode}" Classes="Icon"/>
 				</Button>
 				<Rectangle Width="1" Fill="Gray"/>
 				<Button Classes="Fill" ToolTip.Tip="Выровнять по левому краю">
-					<Image Source="{DynamicResource LeftAlign}" Classes="Icon"/>
+					<Image Source="{DynamicResource LeftAlignMode}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill" ToolTip.Tip="Выровнять по центру">
-					<Image Source="{DynamicResource CenterAlign}" Classes="Icon"/>
+					<Image Source="{DynamicResource CenterAlignMode}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill" ToolTip.Tip="Выровнять по правому краю">
-					<Image Source="{DynamicResource RightAlign}" Classes="Icon"/>
+					<Image Source="{DynamicResource RightAlignMode}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill" ToolTip.Tip="Выровнять по ширине">
-					<Image Source="{DynamicResource Justify}" Classes="Icon"/>
+					<Image Source="{DynamicResource JustifyMode}" Classes="Icon"/>
 				</Button>
 				<Rectangle Width="1" Fill="Gray"/>
 				<Button Classes="Fill" ToolTip.Tip="Маркированный список">
-					<Image Source="{DynamicResource Ulitem}" Classes="Icon"/>
+					<Image Source="{DynamicResource UlitemMode}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill" ToolTip.Tip="Нумерованный список">
-					<Image Source="{DynamicResource Orderlist}" Classes="Icon"/>
+					<Image Source="{DynamicResource OrderlistMode}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill" ToolTip.Tip="Уменьшить отступ">
 					<Image Source="{DynamicResource LeftIndent}" Classes="Icon"/>

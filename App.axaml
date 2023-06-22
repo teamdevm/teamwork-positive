@@ -33,14 +33,34 @@
 				<x:String>Assets/Home.png</x:String>
 			</x:Arguments>
 		</Bitmap>
-		<Bitmap x:Key="NewFile">
+		<Bitmap x:Key="Create">
 			<x:Arguments>
 				<x:String>Assets/NewFile.png</x:String>
 			</x:Arguments>
 		</Bitmap>
-		<Bitmap x:Key="Trash">
+		<Bitmap x:Key="CreateDark">
 			<x:Arguments>
-				<x:String>Assets/Trash.png</x:String>
+				<x:String>Assets/NewFileDark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Edit">
+			<x:Arguments>
+				<x:String>Assets/File.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="EditDark">
+			<x:Arguments>
+				<x:String>Assets/FileDark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Fill">
+			<x:Arguments>
+				<x:String>Assets/Templates.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="FillDark">
+			<x:Arguments>
+				<x:String>Assets/TemplatesDark.png</x:String>
 			</x:Arguments>
 		</Bitmap>
 		<Bitmap x:Key="Upload">
@@ -48,21 +68,27 @@
 				<x:String>Assets/Upload.png</x:String>
 			</x:Arguments>
 		</Bitmap>
+		<Bitmap x:Key="UploadDark">
+			<x:Arguments>
+				<x:String>Assets/UploadDark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Trash">
+			<x:Arguments>
+				<x:String>Assets/Trash.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="TrashDark">
+			<x:Arguments>
+				<x:String>Assets/TrashDark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
 		<Bitmap x:Key="Download">
 			<x:Arguments>
 				<x:String>Assets/Download.png</x:String>
 			</x:Arguments>
 		</Bitmap>
-		<Bitmap x:Key="Edit">
-			<x:Arguments>
-				<x:String>Assets/Edit3.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Fill">
-			<x:Arguments>
-				<x:String>Assets/Copy.png</x:String>
-			</x:Arguments>
-		</Bitmap>
+		
 		<Bitmap x:Key="Setting">
 			<x:Arguments>
 				<x:String>Assets/Setting.png</x:String>
@@ -73,6 +99,12 @@
 				<x:String>Assets/Help.png</x:String>
 			</x:Arguments>
 		</Bitmap>
+		<Bitmap x:Key="HelpDark">
+			<x:Arguments>
+				<x:String>Assets/HelpDark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+
 		<Bitmap x:Key="Save">
 			<x:Arguments>
 				<x:String>Assets/Save.png</x:String>
@@ -83,19 +115,48 @@
 				<x:String>Assets/MinusSquare.png</x:String>
 			</x:Arguments>
 		</Bitmap>
+		<Bitmap x:Key="MinusSquareDark">
+			<x:Arguments>
+				<x:String>Assets/MinusSquareDark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+
 		<Bitmap x:Key="PlusSquare">
 			<x:Arguments>
 				<x:String>Assets/PlusSquare.png</x:String>
 			</x:Arguments>
 		</Bitmap>
+		<Bitmap x:Key="PlusSquareDark">
+			<x:Arguments>
+				<x:String>Assets/PlusSquareDark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+
+		<Bitmap x:Key="Rename">
+			<x:Arguments>
+				<x:String>Assets/Rename.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="RenameDark">
+			<x:Arguments>
+				<x:String>Assets/RenameDark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+
 		<Bitmap x:Key="Plus">
 			<x:Arguments>
 				<x:String>Assets/Plus.png</x:String>
 			</x:Arguments>
 		</Bitmap>
+		
 		<Bitmap x:Key="Bold">
 			<x:Arguments>
 				<x:String>Assets/Bold.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="BoldDark">
+			<x:Arguments>
+				<x:String>Assets/BoldDark.png</x:String>
 			</x:Arguments>
 		</Bitmap>
 		<Bitmap x:Key="Italic">
@@ -103,9 +164,30 @@
 				<x:String>Assets/Italic.png</x:String>
 			</x:Arguments>
 		</Bitmap>
+		<Bitmap x:Key="ItalicDark">
+			<x:Arguments>
+				<x:String>Assets/ItalicDark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
 		<Bitmap x:Key="Underline">
 			<x:Arguments>
 				<x:String>Assets/Underline.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="UnderlineDark">
+			<x:Arguments>
+				<x:String>Assets/UnderlineDark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		
+		<Bitmap x:Key="LeftAlign">
+			<x:Arguments>
+				<x:String>Assets/LeftAlign.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="LeftAlignDark">
+			<x:Arguments>
+				<x:String>Assets/LeftAlignDark.png</x:String>
 			</x:Arguments>
 		</Bitmap>
 		<Bitmap x:Key="CenterAlign">
@@ -113,14 +195,9 @@
 				<x:String>Assets/CenterAlign.png</x:String>
 			</x:Arguments>
 		</Bitmap>
-		<Bitmap x:Key="Justify">
+		<Bitmap x:Key="CenterAlignDark">
 			<x:Arguments>
-				<x:String>Assets/Justify.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="LeftAlign">
-			<x:Arguments>
-				<x:String>Assets/LeftAlign.png</x:String>
+				<x:String>Assets/CenterAlignDark.png</x:String>
 			</x:Arguments>
 		</Bitmap>
 		<Bitmap x:Key="RightAlign">
@@ -128,6 +205,43 @@
 				<x:String>Assets/RightAlign.png</x:String>
 			</x:Arguments>
 		</Bitmap>
+		<Bitmap x:Key="RightAlignDark">
+			<x:Arguments>
+				<x:String>Assets/RightAlignDark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Justify">
+			<x:Arguments>
+				<x:String>Assets/Justify.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="JustifyDark">
+			<x:Arguments>
+				<x:String>Assets/JustifyDark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+
+		<Bitmap x:Key="Orderlist">
+			<x:Arguments>
+				<x:String>Assets/Orderlist.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="OrderlistDark">
+			<x:Arguments>
+				<x:String>Assets/OrderlistDark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Ulitem">
+			<x:Arguments>
+				<x:String>Assets/Ulitem.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="UlitemDark">
+			<x:Arguments>
+				<x:String>Assets/UlitemDark.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		
 		<Bitmap x:Key="Tik">
 			<x:Arguments>
 				<x:String>Assets/Check.png</x:String>
@@ -163,16 +277,8 @@
 				<x:String>Assets/LineHeight.png</x:String>
 			</x:Arguments>
 		</Bitmap>
-		<Bitmap x:Key="Orderlist">
-			<x:Arguments>
-				<x:String>Assets/Orderlist.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Ulitem">
-			<x:Arguments>
-				<x:String>Assets/Ulitem.png</x:String>
-			</x:Arguments>
-		</Bitmap>
+		
+		
 		<Bitmap x:Key="ClearFormat">
 			<x:Arguments>
 				<x:String>Assets/ClearFormat.png</x:String>
