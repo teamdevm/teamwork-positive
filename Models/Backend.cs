@@ -1,23 +1,21 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
 using Aspose.Words;
-using Aspose.Words.MailMerging;
 using Aspose.Words.Replacing;
-using System.Dynamic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Documently.Models;
 
 class Backend : ITemplateProcessor
 {
-    private MemoryStream pathPattern;
+    private string pathPattern;
     private string pathToFolder;
     private string fileName;
 
-    public Backend ()
+    public Backend()
     {
-        pathPattern = null!;
+        pathPattern = string.Empty;
         pathToFolder = string.Empty;
         fileName = string.Empty;
     }
@@ -55,7 +53,7 @@ class Backend : ITemplateProcessor
     //     return table;
     // }
 
-    public bool CheckFileName (ObservableCollection<Field> table)
+    public bool CheckFileName(ObservableCollection<Field> table)
     {
         string copyName = fileName;
 
@@ -123,36 +121,53 @@ class Backend : ITemplateProcessor
     //     }
     // }
 
-    public void Setup(MemoryStream name, string path, string pattern)
+    public void Setup(string name, string path, string pattern)
     {
         pathPattern = name;
         pathToFolder = path;
         fileName = pattern;
-        CheckFileName(GetFields());
     }
 
     public ObservableCollection<Field> GetFields()
     {
         ObservableCollection<Field> table = new ObservableCollection<Field>();
-        Document doc = new Document(pathPattern); // проверку бы на открытие дока замутить
-        TextField f;
-
+        Document doc = new Document(pathPattern);
+        Field f;
         foreach (Paragraph p in doc.GetChildNodes(NodeType.Paragraph, true))
         {
             int left = p.ToString(SaveFormat.Text).IndexOf("<"), right = p.ToString(SaveFormat.Text).IndexOf(">");
-            string varStr, pStr = p.ToString(SaveFormat.Text);
+            string varStr, nameCategory, pStr = p.ToString(SaveFormat.Text);
+
             while (left >= 0 && right >= 0)
             {
-                varStr = pStr.Substring(left, right - left + 1);
-                f = new TextField(varStr);
-                if (!table.Contains(f))
-                    table.Add(f);
+                varStr = pStr.Substring(left + 1, right - left - 1);
+
+                int placeCategory = varStr.IndexOf(":");
+                int counter = 0;
+                if (placeCategory >= 0)
+                    counter = varStr.Count(x => (x == ':'));
+
+                if (counter < 2)
+                {
+                    if (placeCategory >= 0)
+                    {
+                        nameCategory = varStr.Substring(placeCategory + 1, varStr.Length - placeCategory - 1);
+                        varStr = varStr.Remove(placeCategory, varStr.Length - placeCategory);
+                    }
+                    else
+                        nameCategory = "NoCategory";
+                    f = new TextField(varStr, nameCategory);
+                    if (!table.Contains(f))
+                        table.Add(f);
+                }
+                else Console.WriteLine("У переменной может быть только одна категория!");
+
                 pStr = pStr.Remove(0, right + 1);
                 left = pStr.IndexOf("<");
                 right = pStr.IndexOf(">");
+
             }
         }
-
         return table;
     }
 
@@ -167,7 +182,10 @@ class Backend : ITemplateProcessor
             options.FindWholeWordsOnly = false;
             options.Direction = FindReplaceDirection.Forward;
 
-            doc.Range.Replace(record[j].Name, record[j].Value, options);
+            if (record[j].Category == "NoCategory")
+                doc.Range.Replace("<" + record[j].Name + ">", record[j].Value, options);
+            else
+                doc.Range.Replace("<" + record[j].Name + ":" + record[j].Category + ">", record[j].Value, options);
         }
 
         string name = fileName;
@@ -185,7 +203,7 @@ class Backend : ITemplateProcessor
         }
 
         doc.Save(Path.Join(pathToFolder, name + counterStr + ".docx"));
-        Console.WriteLine($"Документ {pathToFolder}\\{name} {counterStr}.docx создан");
+        Console.WriteLine($"Документ {pathToFolder}\\{name}{counterStr}.docx создан");
     }
 
     public void Dispose()
