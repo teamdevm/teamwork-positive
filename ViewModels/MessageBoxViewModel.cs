@@ -37,7 +37,7 @@ public class MessageBoxViewModel : ReactiveObject
         else
             is_visible = false;
         buttons = btn;
-        result = string.Empty;
+        result = "Cancel";
     }
     public string Message
     {

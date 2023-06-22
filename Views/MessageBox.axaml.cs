@@ -41,7 +41,10 @@ public partial class MessageBox : ReactiveWindow<MessageBoxViewModel>
 
         Closed += (send, args) => {
             if (ViewModel!.Buttons == MessageBoxButtons.TextField)
-                tcs.TrySetResult(ViewModel!.Field);
+                if (ViewModel!.Result == "Cancel")
+                    tcs.TrySetResult(string.Empty);
+                else
+                    tcs.TrySetResult(ViewModel!.Field);
             else
                 tcs.TrySetResult(ViewModel!.Result);
         };
