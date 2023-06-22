@@ -75,10 +75,12 @@
 		</DockPanel>
 
 			<SplitView IsPaneOpen="True" DisplayMode="Inline">
-				<SplitView.Pane>
+				<SplitView.Pane >
 			<ScrollViewer>
-					<StackPanel>
-					<TreeView x:Name="tree" Items="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
+				<StackPanel Background="{DynamicResource TreeBackground}">
+					<TreeView x:Name="tree" 
+							  Items="{Binding Categories}" 
+						SelectedItem="{Binding SelectedCategory}" >
 						<TreeView.ItemTemplate>
 							<TreeDataTemplate ItemsSource="{Binding Children}">
 								<TextBlock Text="{Binding Name}"/>
