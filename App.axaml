@@ -16,6 +16,8 @@
 		<FluentTheme Mode="Light"/>
     </Application.Styles>
 	<Application.Resources>
+		<SolidColorBrush x:Key="DarkGrayBrush" Color="#171717"/>
+		<SolidColorBrush x:Key="LightGrayBrush" Color="#E8E8E8"/>
 		<Bitmap x:Key="Light">
 			<x:Arguments>
 				<x:String>Assets/Sun.png</x:String>
@@ -43,7 +45,12 @@
 		</Bitmap>
 		<Bitmap x:Key="Upload">
 			<x:Arguments>
-				<x:String>Assets/Download1.png</x:String>
+				<x:String>Assets/Upload.png</x:String>
+			</x:Arguments>
+		</Bitmap>
+		<Bitmap x:Key="Download">
+			<x:Arguments>
+				<x:String>Assets/Download.png</x:String>
 			</x:Arguments>
 		</Bitmap>
 		<Bitmap x:Key="Edit">

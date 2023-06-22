@@ -17,7 +17,7 @@
 				<Button Classes="Fill" 
 						Command="{Binding $parent[Window].DataContext.DocSave}"
 						ToolTip.Tip="Сохранить">
-					<Image Source="{DynamicResource Tik}" Classes="Icon"/>
+					<Image Source="{DynamicResource Download}" Classes="Icon"/>
 				</Button>
 				<Button Classes="Fill" ToolTip.Tip="Добавить экземпляр">
 					<Image Source="{DynamicResource AddRow}" Classes="Icon"/>
