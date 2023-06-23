@@ -17,7 +17,7 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
         this.WhenActivated(a => a(m.OpenDialogInteraction.RegisterHandler(ShowOpenFileWindow)));
         this.WhenActivated(a => a(m.SaveDialogInteraction.RegisterHandler(ShowSaveFileWindow)));
 
-        this.WhenActivated(a => a(m.GetNameInteraction.RegisterHandler(ShowMessage)));
+        this.WhenActivated(a => a(m.NameCategoryInteraction.RegisterHandler(ShowMessage)));
 
         this.WhenActivated(a => a(m.ConfirmDialogInteraction.RegisterHandler(ShowMessage)));
         this.Closing += m.OnWindowClose;

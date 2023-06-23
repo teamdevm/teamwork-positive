@@ -21,7 +21,7 @@ public class MainWindowViewModel : ViewModelBase
     
     public Interaction<FileDialogFilter, string> OpenDialogInteraction { get; }
     public Interaction<FileDialogFilter, string> SaveDialogInteraction { get; }
-    public Interaction<MessageBoxViewModel, string> GetNameInteraction { get; }
+    public Interaction<MessageBoxViewModel, string> NameCategoryInteraction { get; }
     //public Interaction<EditWindowViewModel, Student> EditDialogInteraction { get; }
     public Interaction<MessageBoxViewModel, string> ConfirmDialogInteraction { get; }
     //public ReactiveCommand<Unit, Unit> ActionFileNew { get; }
@@ -29,6 +29,7 @@ public class MainWindowViewModel : ViewModelBase
     public ReactiveCommand<Unit, Unit> ActionTemplateUpload { get; }
     public ReactiveCommand<Unit, Unit> ActionNewCategory { get; }
     public ReactiveCommand<Unit, Unit> ActionNewSubCategory { get; }
+    public ReactiveCommand<Unit, Unit> ActionRenameCategory { get; }
 
     public ReactiveCommand<Unit, Unit> ActionDocSave { get; }
     //public ReactiveCommand<Unit, Unit> ActionFileSaveAs { get; }
@@ -92,13 +93,15 @@ public class MainWindowViewModel : ViewModelBase
         SaveDialogInteraction = new Interaction<FileDialogFilter, string>();
         //EditDialogInteraction = new Interaction<EditWindowViewModel, Student>();
         ConfirmDialogInteraction = new Interaction<MessageBoxViewModel, string>();
-        GetNameInteraction = new Interaction<MessageBoxViewModel, string>();
+        NameCategoryInteraction = new Interaction<MessageBoxViewModel, string>();
 
         //ActionFileNew = ReactiveCommand.CreateFromTask(FileNew);
         ActionTemplateFill = ReactiveCommand.CreateFromTask(CheckTemplate);
         ActionTemplateUpload = ReactiveCommand.CreateFromTask(UploadTemplate);
         ActionNewCategory = ReactiveCommand.CreateFromTask(AddCategory);
         ActionNewSubCategory = ReactiveCommand.CreateFromTask(AddSubCategory);
+        ActionRenameCategory = ReactiveCommand.CreateFromTask(RenameCategory);
+
         ActionDocSave = ReactiveCommand.CreateFromTask(DocSave);
 
         //ActionFileSaveAs = ReactiveCommand.CreateFromTask(FileSaveAs);
@@ -257,16 +260,12 @@ public class MainWindowViewModel : ViewModelBase
 
     private async Task UploadTemplate()
     {
-        /* We accept only XML files */
-        FileDialogFilter xmlFilter = new FileDialogFilter()
+        FileDialogFilter Filter = new FileDialogFilter()
         {
-            Extensions = { "*" }
+            Name = "Текстовые файлы",
+            Extensions = { "doc", "docx", "dot", "dotx", "odt", "ott", "rtf", "txt" }
         };
-
-        /* Show dialog window and retrieve file path */
-        string result = await OpenDialogInteraction.Handle(xmlFilter);
-
-        /* If no file was selected */
+        string result = await OpenDialogInteraction.Handle(Filter);
         if (string.IsNullOrEmpty(result)) return;
 
         try
@@ -324,18 +323,13 @@ public class MainWindowViewModel : ViewModelBase
     //}
     public async Task DocSave()
     {
-        /* We accept only XML files */
-        FileDialogFilter xmlFilter = new FileDialogFilter()
+        FileDialogFilter Filter = new FileDialogFilter()
         {
-            Extensions = { "*" }
+            Name = "Текстовые файлы",
+            Extensions = { "docx" }
         };
-
-        /* Show dialog window and retrieve file path */
-        string result = await SaveDialogInteraction.Handle(xmlFilter);
-
-        /* If no file was selected */
+        string result = await SaveDialogInteraction.Handle(Filter);
         if (string.IsNullOrEmpty(result)) return;
-
         fillWindow.result = result;
         fillWindow.GetTemplate();
     }
@@ -344,7 +338,7 @@ public class MainWindowViewModel : ViewModelBase
     {
         MessageBoxViewModel msg = new MessageBoxViewModel(
                 "Введите название категории:", MessageBoxButtons.TextField);
-        string result = await GetNameInteraction.Handle(msg);
+        string result = await NameCategoryInteraction.Handle(msg);
 
         if (string.IsNullOrEmpty(result)) return;
 
@@ -356,7 +350,7 @@ public class MainWindowViewModel : ViewModelBase
                 "Введите название подкатегории:", MessageBoxButtons.TextField);
 
         /* Show dialog window and retrieve file path */
-        string result = await GetNameInteraction.Handle(msg);
+        string result = await NameCategoryInteraction.Handle(msg);
 
         /* If no file was selected */
         if (string.IsNullOrEmpty(result)) return;
@@ -379,6 +373,16 @@ public class MainWindowViewModel : ViewModelBase
         //    MessageBoxViewModel msg = new MessageBoxViewModel("Файл имеет некорректный формат", MessageBoxButtons.Ok);
         //    MessageBoxResult res = await ConfirmDialogInteraction.Handle(msg);
         //}
+    }
+    private async Task RenameCategory()
+    {
+        MessageBoxViewModel msg = new MessageBoxViewModel(
+                "Введите название категории:", MessageBoxButtons.TextField);
+        string result = await NameCategoryInteraction.Handle(msg);
+
+        if (string.IsNullOrEmpty(result)) return;
+
+        collectionWindow.RenameCategory(result);
     }
 
     //private async Task FileNew()
@@ -474,64 +478,6 @@ public class MainWindowViewModel : ViewModelBase
     //    Content.Serialize(result);
     //    workingPath = result;
     //    isSaved = true;
-    //    UpdateAll();
-    //}
-
-    //private void ViewNext()
-    //{
-    //    Selection = Content.Next();
-    //    UpdateAll();
-    //}
-
-    //private void ViewPrev()
-    //{
-    //    Selection = Content.Prev();
-    //    UpdateAll();
-    //}
-
-    //private void ViewFirst()
-    //{
-    //    Selection = Content.First();
-    //    UpdateAll();
-    //}
-
-    //private void ViewLast()
-    //{
-    //    Selection = Content.Last();
-    //    UpdateAll();
-    //}
-
-    //private async Task New()
-    //{
-    //    EditWindowViewModel model = new EditWindowViewModel();
-    //    Student result = await EditDialogInteraction.Handle(model);
-    //    if (result is not null)
-    //    {
-    //        Content.Add(result);
-    //        Selection = Content.This;
-    //        isSaved = false;
-    //        UpdateAll();
-    //    }
-    //}
-
-    //private async Task Edit()
-    //{
-    //    EditWindowViewModel model = new EditWindowViewModel(content.This!);
-    //    Student result = await EditDialogInteraction.Handle(model);
-    //    if (result is not null)
-    //    {
-    //        Content.This = result;
-    //        Selection = result;
-    //        isSaved = false;
-    //        UpdateAll();
-    //    }
-    //}
-
-    //private void Remove()
-    //{
-    //    Content.Remove();
-    //    Selection = Content.This;
-    //    isSaved = false;
     //    UpdateAll();
     //}
 

@@ -65,6 +65,10 @@ public class CollectionViewModel : ViewModelBase
     {
         db.AddSubCategory(SelectedCategory, name);
     }
+    public void RenameCategory(string name)
+    {
+        db.RenameCategory(SelectedCategory, name);
+    }
     public void RemoveCategory(string name)
     {
         db.RemoveCategory(SelectedCategory);
