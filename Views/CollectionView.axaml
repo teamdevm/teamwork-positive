@@ -6,34 +6,45 @@
              x:Class="Documently.Views.CollectionView">
 
 	<DockPanel>
-		<DockPanel DockPanel.Dock="Top">
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-				<Button Classes="Fill" 
+		<DockPanel DockPanel.Dock="Top" 
+				   Background="{DynamicResource PanelBackground}">
+			<DockPanel HorizontalAlignment="Left">
+				<Button Classes="Back"
 						Command="{Binding $parent[Window].DataContext.SwitchToCreate}"
 						ToolTip.Tip="Создать шаблон">
-					<Image Source="{DynamicResource CreateMode}" Classes="Icon"/>
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Create}"/>
 				</Button>
-				<Button Classes="Fill" 
+				<Button Classes="Back"
 						Command="{Binding $parent[Window].DataContext.SwitchToEdit}"
 						ToolTip.Tip="Изменить шаблон">
-					<Image Source="{DynamicResource EditMode}" Classes="Icon"/>
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Edit}"/>
 				</Button>
-				<Button Classes="Fill" 
+				<Button Classes="Back"
 						Command="{Binding $parent[Window].DataContext.CheckTemplate}"
 						ToolTip.Tip="Заполнить шаблон">
-					<Image Source="{DynamicResource FillMode}" Classes="Icon"/>
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Fill}"/>
 				</Button>
-				<Button Classes="Fill"
+				<Button Classes="Back"
 						Command="{Binding $parent[Window].DataContext.UploadTemplate}"
 						ToolTip.Tip="Загрузить шаблон">
-					<Image Source="{DynamicResource UploadMode}" Classes="Icon"/>
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Upload}"/>
 				</Button>
-				<Button Classes="Fill"
+				<Button Classes="Back"
 						ToolTip.Tip="Удалить шаблон">
-					<Image Source="{DynamicResource TrashMode}" Classes="Icon"/>
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Trash}"/>
 				</Button>
-				<Rectangle Width="1" Height="20" Fill="Gray"/>
-				<Button Classes="Fill"
+				<Rectangle Classes="Sep"/>
+				<Button Classes="Back"
 						ToolTip.Tip="Добавить...">
 					<Button.Flyout>
 						<MenuFlyout Placement="BottomEdgeAlignedLeft">
@@ -43,45 +54,56 @@
 										  Command="{Binding $parent[Window].DataContext.AddSubCategory}"/>
 						</MenuFlyout>
 					</Button.Flyout>
-					<Image Source="{DynamicResource PlusSquareMode}" Classes="Icon"/>
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource PlusSquare}"/>
 				</Button>
-				<Button Classes="Fill"
-						ToolTip.Tip="Переименовать категорию"
-						>
-					<Image Source="{DynamicResource RenameMode}" Classes="Icon"/>
+				<Button Classes="Back"
+						ToolTip.Tip="Переименовать категорию">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource EditSquare}"/>
 				</Button>
-				<Button Classes="Fill"
+				<Button Classes="Back"
 						ToolTip.Tip="Удалить категорию"
 						Command="{Binding RemoveCategory}">
-					<Image Source="{DynamicResource MinusSquareMode}" Classes="Icon"/>
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource MinusSquare}"/>
 				</Button>
-			</StackPanel>
+			</DockPanel>
 			
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-				<Button Classes="Fill"
+			<DockPanel HorizontalAlignment="Right">
+				<Button Classes="Back"
 						ToolTip.Tip="Переключить тему"
 						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
 					<Image Source="{DynamicResource Theme}" Classes="Icon"/>
 				</Button>
-
-				
-				<Button Classes="Fill"
+				<Button Classes="Back"
 						ToolTip.Tip="Помощь">
-					<Image Source="{DynamicResource HelpMode}" Classes="Icon"/>
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Help}"/>
 				</Button>
-			</StackPanel>
+			</DockPanel>
 		</DockPanel>
 
 			<SplitView IsPaneOpen="True" DisplayMode="Inline">
 				<SplitView.Pane>
 					<ScrollViewer>
-				<StackPanel Background="{DynamicResource TreeViewBackground}">
-							<TreeView x:Name="tree" Items="{Binding Categories}" SelectedItem="{Binding SelectedCategory}">
+						<StackPanel Background="{DynamicResource FirstBlockBackground}">
+							<TreeView x:Name="tree" 
+									  Items="{Binding Categories}" 
+									  SelectedItem="{Binding SelectedCategory}">
 								<TreeView.ItemTemplate>
 									<TreeDataTemplate ItemsSource="{Binding Children}">
 										<Grid ColumnDefinitions="*,Auto">
-											<TextBlock Grid.Column="0" Text="{Binding Name}"/>
-											<TextBlock Grid.Column="1" Margin="20,0" Foreground="Gray" Text="{Binding Count, StringFormat={}{0}}"/>
+											<TextBlock Grid.Column="0" 
+													   Text="{Binding Name}"/>
+											<TextBlock Grid.Column="1" 
+													   Margin="20,0" 
+													   Foreground="Gray" 
+													   Text="{Binding Count, StringFormat={}{0}}"/>
 										</Grid>
 									</TreeDataTemplate>
 								</TreeView.ItemTemplate>
@@ -89,17 +111,19 @@
 						</StackPanel>
 					</ScrollViewer>
 				</SplitView.Pane>
-				
-				<ListBox Items="{Binding Templates}" 
-						 SelectedItem="{Binding SelectedTemplate}" 
-						 DockPanel.Dock="Right">
-					<ListBox.ItemTemplate>
-						<DataTemplate>
-							<TextBlock Text="{Binding Name}"/>
-						</DataTemplate>
-					</ListBox.ItemTemplate>
-				</ListBox>
-				
+
+				<ScrollViewer>
+					<ListBox Items="{Binding Templates}" 
+							 SelectedItem="{Binding SelectedTemplate}" 
+							 DockPanel.Dock="Right"
+							 Background="{DynamicResource SecondBlockBackground}">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<TextBlock Text="{Binding Name}"/>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+				</ScrollViewer>
 			</SplitView>
 	</DockPanel>
 </UserControl>

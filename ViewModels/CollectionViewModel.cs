@@ -48,19 +48,7 @@ public class CollectionViewModel : ViewModelBase
         selectedCategory = null!;
         selectedTemplate = null!;
 
-        Application.Current.Resources["CreateMode"] = Application.Current.Resources["Create"];
-        Application.Current.Resources["EditMode"] = Application.Current.Resources["Edit"];
-        Application.Current.Resources["FillMode"] = Application.Current.Resources["Fill"];
-        Application.Current.Resources["UploadMode"] = Application.Current.Resources["Upload"];
-
-        Application.Current.Resources["TrashMode"] = Application.Current.Resources["Trash"];
-        Application.Current.Resources["HelpMode"] = Application.Current.Resources["Help"];
-        Application.Current.Resources["PlusSquareMode"] = Application.Current.Resources["PlusSquare"];
-        Application.Current.Resources["MinusSquareMode"] = Application.Current.Resources["MinusSquare"];
-        Application.Current.Resources["RenameMode"] = Application.Current.Resources["Rename"];
-
-
-
+        
         //ActionUploadTemplate = ReactiveCommand.CreateFromTask(UploadTemplate);
 
         //mw = new MainWindowViewModel();

@@ -79,8 +79,14 @@ public class MainWindowViewModel : ViewModelBase
         CurWindow = collectionWindow;
         CurTitle = "Коллекция шаблонов";
         mode = false;
+
+        
         Application.Current.Resources["Theme"] = Application.Current.Resources["Dark"];
-        Application.Current.Resources["TreeViewBackground"] = Application.Current.Resources["LightGrayBrush"];
+        Application.Current.Resources["PanelBackground"] = Application.Current.Resources["LightBrush"];
+        Application.Current.Resources["FirstBlockBackground"] = Application.Current.Resources["AlmostWhiteBrush"];
+        Application.Current.Resources["SecondBlockBackground"] = Application.Current.Resources["LightBlueBrush"];
+        Application.Current.Resources["ButtonColor"] = Application.Current.Resources["DarkBlueBrush"];
+
 
         OpenDialogInteraction = new Interaction<FileDialogFilter, string>();
         SaveDialogInteraction = new Interaction<FileDialogFilter, string>();
@@ -223,63 +229,24 @@ public class MainWindowViewModel : ViewModelBase
                 if (Mode)
                 {
                     f.Mode = FluentThemeMode.Dark;
-                    Application.Current.Resources["Theme"] = Application.Current.Resources["Light"];
-                    Application.Current.Resources["TreeViewBackground"] = Application.Current.Resources["DarkGrayBrush"];
-                    
-                    Application.Current.Resources["CreateMode"] = Application.Current.Resources["CreateDark"];
-                    Application.Current.Resources["EditMode"] = Application.Current.Resources["EditDark"];
-                    Application.Current.Resources["FillMode"] = Application.Current.Resources["FillDark"];
-                    Application.Current.Resources["UploadMode"] = Application.Current.Resources["UploadDark"];
-                    
-                    Application.Current.Resources["TrashMode"] = Application.Current.Resources["TrashDark"];
-                    Application.Current.Resources["HelpMode"] = Application.Current.Resources["HelpDark"];
-                    Application.Current.Resources["PlusSquareMode"] = Application.Current.Resources["PlusSquareDark"];
-                    Application.Current.Resources["MinusSquareMode"] = Application.Current.Resources["MinusSquareDark"];
-                    Application.Current.Resources["RenameMode"] = Application.Current.Resources["RenameDark"];
-
-
-                    Application.Current.Resources["LeftAlignMode"] = Application.Current.Resources["LeftAlignDark"];
-                    Application.Current.Resources["CenterAlignMode"] = Application.Current.Resources["CenterAlignDark"];
-                    Application.Current.Resources["RightAlignMode"] = Application.Current.Resources["RightAlignDark"];
-                    Application.Current.Resources["JustifyMode"] = Application.Current.Resources["JustifyDark"];
-                    
-                    Application.Current.Resources["BoldMode"] = Application.Current.Resources["BoldDark"];
-                    Application.Current.Resources["ItalicMode"] = Application.Current.Resources["ItalicDark"];
-                    Application.Current.Resources["UnderlineMode"] = Application.Current.Resources["UnderlineDark"];
-
-                    Application.Current.Resources["OrderlistMode"] = Application.Current.Resources["OrderlistDark"];
-                    Application.Current.Resources["UlitemMode"] = Application.Current.Resources["UlitemDark"];
+                    var res = Application.Current.Resources;
+                    res["Theme"] = res["Light"];
+                    res["PanelBackground"] = res["DarkBrush"];
+                    res["FirstBlockBackground"] = res["DarkGrayBrush"];
+                    res["SecondBlockBackground"] = res["DarkPurpleBrush"];
+                    res["ButtonColor"] = res["LightPurpleBrush"];
 
                     //Mode = "#171717";
                 }
                 else
                 {
                     f.Mode = FluentThemeMode.Light;
-                    Application.Current.Resources["Theme"] = Application.Current.Resources["Dark"];
-                    Application.Current.Resources["TreeViewBackground"] = Application.Current.Resources["LightGrayBrush"];
-                    Application.Current.Resources["CreateMode"] = Application.Current.Resources["Create"];
-                    Application.Current.Resources["EditMode"] = Application.Current.Resources["Edit"];
-                    Application.Current.Resources["FillMode"] = Application.Current.Resources["Fill"];
-                    Application.Current.Resources["UploadMode"] = Application.Current.Resources["Upload"];
-
-                    Application.Current.Resources["TrashMode"] = Application.Current.Resources["Trash"];
-                    Application.Current.Resources["HelpMode"] = Application.Current.Resources["Help"];
-                    Application.Current.Resources["PlusSquareMode"] = Application.Current.Resources["PlusSquare"];
-                    Application.Current.Resources["MinusSquareMode"] = Application.Current.Resources["MinusSquare"];
-                    Application.Current.Resources["RenameMode"] = Application.Current.Resources["Rename"];
-
-
-                    Application.Current.Resources["LeftAlignMode"] = Application.Current.Resources["LeftAlign"];
-                    Application.Current.Resources["CenterAlignMode"] = Application.Current.Resources["CenterAlign"];
-                    Application.Current.Resources["RightAlignMode"] = Application.Current.Resources["RightAlign"];
-                    Application.Current.Resources["JustifyMode"] = Application.Current.Resources["Justify"];
-
-                    Application.Current.Resources["BoldMode"] = Application.Current.Resources["Bold"];
-                    Application.Current.Resources["ItalicMode"] = Application.Current.Resources["Italic"];
-                    Application.Current.Resources["UnderlineMode"] = Application.Current.Resources["Underline"];
-
-                    Application.Current.Resources["OrderlistMode"] = Application.Current.Resources["Orderlist"];
-                    Application.Current.Resources["UlitemMode"] = Application.Current.Resources["Ulitem"];
+                    var res = Application.Current.Resources;
+                    res["Theme"] = res["Dark"];
+                    res["PanelBackground"] = res["LightBrush"];
+                    res["FirstBlockBackground"] = res["AlmostWhiteBrush"];
+                    res["SecondBlockBackground"] = res["LightBlueBrush"];
+                    res["ButtonColor"] = res["DarkBlueBrush"];
 
                     //Mode = "#E8E8E8";
                 }
