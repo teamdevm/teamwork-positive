@@ -59,7 +59,8 @@
 							   OpacityMask="{DynamicResource PlusSquare}"/>
 				</Button>
 				<Button Classes="Back"
-						ToolTip.Tip="Переименовать категорию">
+						ToolTip.Tip="Переименовать категорию"
+						Command="{Binding $parent[Window].DataContext.RenameCategory}">
 					<Rectangle Classes="Mask" 
 							   Fill="{DynamicResource ButtonColor}" 
 							   OpacityMask="{DynamicResource EditSquare}"/>
