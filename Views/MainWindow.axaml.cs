@@ -16,12 +16,8 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
         this.WhenActivated(a => a(m.ConfirmDialogInteraction.RegisterHandler(ShowMessage)));
         this.WhenActivated(a => a(m.OpenDialogInteraction.RegisterHandler(ShowOpenFileWindow)));
         this.WhenActivated(a => a(m.SaveDialogInteraction.RegisterHandler(ShowSaveFileWindow)));
-
         this.WhenActivated(a => a(m.NameCategoryInteraction.RegisterHandler(ShowMessage)));
-
-        this.WhenActivated(a => a(m.ConfirmDialogInteraction.RegisterHandler(ShowMessage)));
         this.Closing += m.OnWindowClose;
-
         DataContext = m;
     }
     private async Task ShowMessage(InteractionContext<MessageBoxViewModel, string> i)
@@ -37,13 +33,9 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
         dialog.Filters = new List<FileDialogFilter>() { i.Input };
         string[]? result = await dialog.ShowAsync(this);
         if (result is null)
-        {
             i.SetOutput(string.Empty);
-        }
         else
-        {
             i.SetOutput(result[0]);
-        }
     }
     private async Task ShowSaveFileWindow(InteractionContext<FileDialogFilter, string> i)
     {
@@ -51,12 +43,8 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
         dialog.Filters = new List<FileDialogFilter>() { i.Input };
         string? result = await dialog.ShowAsync(this);
         if (result is null)
-        {
             i.SetOutput(string.Empty);
-        }
         else
-        {
             i.SetOutput(result);
-        }
     }
 }
