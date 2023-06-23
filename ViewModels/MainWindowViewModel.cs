@@ -79,8 +79,15 @@ public class MainWindowViewModel : ViewModelBase
         CurWindow = collectionWindow;
         CurTitle = "Коллекция шаблонов";
         mode = false;
-        Application.Current.Resources["Theme"] = Application.Current.Resources["Dark"];
+
         
+        Application.Current.Resources["Theme"] = Application.Current.Resources["Dark"];
+        Application.Current.Resources["PanelBackground"] = Application.Current.Resources["LightBrush"];
+        Application.Current.Resources["FirstBlockBackground"] = Application.Current.Resources["AlmostWhiteBrush"];
+        Application.Current.Resources["SecondBlockBackground"] = Application.Current.Resources["LightBlueBrush"];
+        Application.Current.Resources["ButtonColor"] = Application.Current.Resources["DarkBlueBrush"];
+
+
         OpenDialogInteraction = new Interaction<FileDialogFilter, string>();
         SaveDialogInteraction = new Interaction<FileDialogFilter, string>();
         //EditDialogInteraction = new Interaction<EditWindowViewModel, Student>();
@@ -222,16 +229,26 @@ public class MainWindowViewModel : ViewModelBase
                 if (Mode)
                 {
                     f.Mode = FluentThemeMode.Dark;
-                    Application.Current.Resources["Theme"] = Application.Current.Resources["Light"];
-                    Application.Current.Resources["TreeBackground"] = Application.Current.Resources["DarkGrayBrush"];
-                    //Color = "#171717";
+                    var res = Application.Current.Resources;
+                    res["Theme"] = res["Light"];
+                    res["PanelBackground"] = res["DarkBrush"];
+                    res["FirstBlockBackground"] = res["DarkGrayBrush"];
+                    res["SecondBlockBackground"] = res["DarkPurpleBrush"];
+                    res["ButtonColor"] = res["LightPurpleBrush"];
+
+                    //Mode = "#171717";
                 }
                 else
                 {
                     f.Mode = FluentThemeMode.Light;
-                    Application.Current.Resources["Theme"] = Application.Current.Resources["Dark"];
-                    Application.Current.Resources["TreeBackground"] = Application.Current.Resources["LightGrayBrush"];
-                    //Color = "#E8E8E8";
+                    var res = Application.Current.Resources;
+                    res["Theme"] = res["Dark"];
+                    res["PanelBackground"] = res["LightBrush"];
+                    res["FirstBlockBackground"] = res["AlmostWhiteBrush"];
+                    res["SecondBlockBackground"] = res["LightBlueBrush"];
+                    res["ButtonColor"] = res["DarkBlueBrush"];
+
+                    //Mode = "#E8E8E8";
                 }
                 break;
             }

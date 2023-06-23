@@ -47,6 +47,8 @@ public class CollectionViewModel : ViewModelBase
         templates = new List<Template>();
         selectedCategory = null!;
         selectedTemplate = null!;
+
+        
         //ActionUploadTemplate = ReactiveCommand.CreateFromTask(UploadTemplate);
 
         //mw = new MainWindowViewModel();

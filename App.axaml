@@ -10,14 +10,32 @@
 			<Setter Property="Width" Value="20"/>
 			<Setter Property="Height" Value="20"/>
 		</Style>
-		<Style Selector="Button.Fill">
+		<Style Selector="Button.Back">
 			<Setter Property="Background" Value="Transparent"/>
+		</Style>
+		<Style Selector="Rectangle.Mask">
+			<Setter Property="Width" Value="20"/>
+			<Setter Property="Height" Value="20"/>
+		</Style>
+		<Style Selector="Rectangle.Sep">
+			<Setter Property="Width" Value="1"/>
+			<Setter Property="Height" Value="20"/>
+			<Setter Property="Fill" Value="Gray"/>
+			<Setter Property="Margin" Value="5, 0"/>
 		</Style>
 		<FluentTheme Mode="Light"/>
     </Application.Styles>
 	<Application.Resources>
-		<SolidColorBrush x:Key="DarkGrayBrush" Color="#171717"/>
-		<SolidColorBrush x:Key="LightGrayBrush" Color="#E8E8E8"/>
+		
+		<SolidColorBrush x:Key="DarkBrush" Color="#232428"/>
+		<SolidColorBrush x:Key="LightBrush" Color="#ffffff"/>
+		<SolidColorBrush x:Key="DarkGrayBrush" Color="#2b2d31"/>
+		<SolidColorBrush x:Key="DarkPurpleBrush" Color="#422c59"/>
+		<SolidColorBrush x:Key="AlmostWhiteBrush" Color="#f8f8ff"/>
+		<SolidColorBrush x:Key="LightBlueBrush" Color="#ddeeff"/>
+		<SolidColorBrush x:Key="DarkBlueBrush" Color="#002699"/>
+		<SolidColorBrush x:Key="LightPurpleBrush" Color="#bf7fff"/>
+
 		<Bitmap x:Key="Light">
 			<x:Arguments>
 				<x:String>Assets/Sun.png</x:String>
@@ -28,192 +46,323 @@
 				<x:String>Assets/Moon.png</x:String>
 			</x:Arguments>
 		</Bitmap>
-		<Bitmap x:Key="Return">
+		<ImageBrush x:Key="Help" BitmapInterpolationMode="HighQuality">
 			<x:Arguments>
-				<x:String>Assets/Home.png</x:String>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Help.png</x:String>
+					</x:Arguments>
+				</Bitmap>
 			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="NewFile">
-			<x:Arguments>
-				<x:String>Assets/NewFile.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Trash">
-			<x:Arguments>
-				<x:String>Assets/Trash.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Upload">
-			<x:Arguments>
-				<x:String>Assets/Upload.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Download">
-			<x:Arguments>
-				<x:String>Assets/Download.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Edit">
-			<x:Arguments>
-				<x:String>Assets/Edit3.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Fill">
-			<x:Arguments>
-				<x:String>Assets/Copy.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Setting">
-			<x:Arguments>
-				<x:String>Assets/Setting.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Help">
-			<x:Arguments>
-				<x:String>Assets/Help.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Save">
-			<x:Arguments>
-				<x:String>Assets/Save.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="MinusSquare">
-			<x:Arguments>
-				<x:String>Assets/MinusSquare.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="PlusSquare">
-			<x:Arguments>
-				<x:String>Assets/PlusSquare.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Plus">
-			<x:Arguments>
-				<x:String>Assets/Plus.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Bold">
-			<x:Arguments>
-				<x:String>Assets/Bold.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Italic">
-			<x:Arguments>
-				<x:String>Assets/Italic.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Underline">
-			<x:Arguments>
-				<x:String>Assets/Underline.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="CenterAlign">
-			<x:Arguments>
-				<x:String>Assets/CenterAlign.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Justify">
-			<x:Arguments>
-				<x:String>Assets/Justify.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="LeftAlign">
-			<x:Arguments>
-				<x:String>Assets/LeftAlign.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="RightAlign">
-			<x:Arguments>
-				<x:String>Assets/RightAlign.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Tik">
-			<x:Arguments>
-				<x:String>Assets/Check.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="X">
-			<x:Arguments>
-				<x:String>Assets/X.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Undo">
-			<x:Arguments>
-				<x:String>Assets/Undo.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Redo">
-			<x:Arguments>
-				<x:String>Assets/Redo.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="LeftIndent">
-			<x:Arguments>
-				<x:String>Assets/LeftIndent.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="RightIndent">
-			<x:Arguments>
-				<x:String>Assets/RightIndent.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="LineHeight">
-			<x:Arguments>
-				<x:String>Assets/LineHeight.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Orderlist">
-			<x:Arguments>
-				<x:String>Assets/Orderlist.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Ulitem">
-			<x:Arguments>
-				<x:String>Assets/Ulitem.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="ClearFormat">
-			<x:Arguments>
-				<x:String>Assets/ClearFormat.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="FormatPainter">
-			<x:Arguments>
-				<x:String>Assets/FormatPainter.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="Tag">
-			<x:Arguments>
-				<x:String>Assets/Tag.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="EmptyFile">
-			<x:Arguments>
-				<x:String>Assets/File-Blank.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="AddRow">
-			<x:Arguments>
-				<x:String>Assets/PlusCircle.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="AddDataset">
-			<x:Arguments>
-				<x:String>Assets/NewFolder.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="ArrowLeft">
-			<x:Arguments>
-				<x:String>Assets/ic24-chevron-left.png</x:String>
-			</x:Arguments>
-		</Bitmap>
-		<Bitmap x:Key="ArrowRight">
-			<x:Arguments>
-				<x:String>Assets/ic24-chevron-right.png</x:String>
-			</x:Arguments>
-		</Bitmap>
+		</ImageBrush>
 
+		<ImageBrush x:Key="Return" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Home.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="Create" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/NewFile.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="Edit" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/File.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="Fill" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Templates.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="Upload" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Upload.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="Download" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Download.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="Trash" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Trash.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		
+		<ImageBrush x:Key="PlusSquare" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/PlusSquare.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="EditSquare" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/EditSquare.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="MinusSquare" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/MinusSquare.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		
+		<ImageBrush x:Key="EmptyFile" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/EmptyFile.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="Save" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Save.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="Tag" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Tag.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+
+		<ImageBrush x:Key="Undo" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Undo.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="Redo" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Redo.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+
+		<ImageBrush x:Key="ClearFormat" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/ClearFormat.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="FormatPainter" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/FormatPainter.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+
+		<ImageBrush x:Key="Bold" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Bold.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="Italic" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Italic.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="Underline" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Underline.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+
+		<ImageBrush x:Key="LeftAlign" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/LeftAlign.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="CenterAlign" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/CenterAlign.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="RightAlign" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/RightAlign.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="Justify" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Justify.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+
+		<ImageBrush x:Key="Orderlist" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Orderlist.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="Ulitem" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Ulitem.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+
+		<ImageBrush x:Key="LeftIndent" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/LeftIndent.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="RightIndent" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/RightIndent.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="LineHeight" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/Lineheight.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+
+		<ImageBrush x:Key="AddRow" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/PlusCircle.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="AddDataset" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/NewFolder.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+
+		<ImageBrush x:Key="ArrowLeft" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/ArrowLeft.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
+		<ImageBrush x:Key="ArrowRight" BitmapInterpolationMode="HighQuality">
+			<x:Arguments>
+				<Bitmap>
+					<x:Arguments>
+						<x:String>Assets/ArrowRight.png</x:String>
+					</x:Arguments>
+				</Bitmap>
+			</x:Arguments>
+		</ImageBrush>
 	</Application.Resources>
 </Application>
 
