@@ -24,7 +24,7 @@
 							   OpacityMask="{DynamicResource Edit}"/>
 				</Button>
 				<Button Classes="Back"
-						Command="{Binding $parent[Window].DataContext.CheckTemplate}"
+						Command="{Binding $parent[Window].DataContext.FillTemplate}"
 						ToolTip.Tip="Заполнить шаблон">
 					<Rectangle Classes="Mask" 
 							   Fill="{DynamicResource ButtonColor}" 
@@ -38,6 +38,7 @@
 							   OpacityMask="{DynamicResource Upload}"/>
 				</Button>
 				<Button Classes="Back"
+						Command="{Binding $parent[Window].DataContext.RemoveTemplate}"
 						ToolTip.Tip="Удалить шаблон">
 					<Rectangle Classes="Mask" 
 							   Fill="{DynamicResource ButtonColor}" 
@@ -67,7 +68,7 @@
 				</Button>
 				<Button Classes="Back"
 						ToolTip.Tip="Удалить категорию"
-						Command="{Binding RemoveCategory}">
+						Command="{Binding $parent[Window].DataContext.RemoveCategory}">
 					<Rectangle Classes="Mask" 
 							   Fill="{DynamicResource ButtonColor}" 
 							   OpacityMask="{DynamicResource MinusSquare}"/>

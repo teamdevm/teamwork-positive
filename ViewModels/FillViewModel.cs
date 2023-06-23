@@ -23,7 +23,6 @@ public class FillViewModel : ViewModelBase
         templateProcessor.Setup(name, "C:/Users/User/Desktop//Interface", "Test");
         fields = templateProcessor.GetFields();
     }
-
     public ObservableCollection<Field> Fields
     {
         get => fields;

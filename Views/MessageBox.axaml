@@ -6,8 +6,16 @@
         Title="Сообщение"
         SizeToContent="WidthAndHeight" CanResize="False">
     <StackPanel HorizontalAlignment="Center">
-        <TextBlock HorizontalAlignment="Center" Margin="32,16,32,8" Text="{Binding Message}"/>
-		<TextBox HorizontalAlignment="Center" Margin="32,8" Width="300" Text="{Binding Field}" IsVisible="{Binding IsVisible}"/>
+        <TextBlock HorizontalAlignment="Center" 
+				   Margin="32,16,32,8" 
+				   MaxWidth="300"
+				   Text="{Binding Message}"
+				   TextWrapping="WrapWithOverflow"/>
+		<TextBox HorizontalAlignment="Center" 
+				 Margin="32,8" 
+				 Width="300" 
+				 Text="{Binding Field}" 
+				 IsVisible="{Binding IsVisible}"/>
 		<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Name="Buttons">
             <StackPanel.Styles>
                 <Style Selector="Button">
