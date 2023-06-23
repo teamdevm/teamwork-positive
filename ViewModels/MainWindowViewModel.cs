@@ -31,6 +31,7 @@ public class MainWindowViewModel : ViewModelBase
     public ReactiveCommand<Unit, Unit> ActionNewCategory { get; }
     public ReactiveCommand<Unit, Unit> ActionNewSubCategory { get; }
     public ReactiveCommand<Unit, Unit> ActionRenameCategory { get; }
+    public ReactiveCommand<Unit, Unit> ActionRemoveCategory { get; }
 
     public ReactiveCommand<Unit, Unit> ActionDocSave { get; }
     public ReactiveCommand<Unit, Unit> ActionDocSaveAs { get; }
@@ -106,6 +107,7 @@ public class MainWindowViewModel : ViewModelBase
         ActionNewCategory = ReactiveCommand.CreateFromTask(AddCategory);
         ActionNewSubCategory = ReactiveCommand.CreateFromTask(AddSubCategory);
         ActionRenameCategory = ReactiveCommand.CreateFromTask(RenameCategory);
+        ActionRemoveCategory = ReactiveCommand.CreateFromTask(RemoveCategory);
 
         ActionDocSave = ReactiveCommand.CreateFromTask(DocSave);
         ActionDocSaveAs = ReactiveCommand.CreateFromTask(DocSaveAs);
