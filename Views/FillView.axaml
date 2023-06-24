@@ -6,84 +6,90 @@
              x:Class="Documently.Views.FillView">
 	
 	<DockPanel>
-		<DockPanel DockPanel.Dock="Top">
-			
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-				<Button Classes="Fill" 
+		<Grid DockPanel.Dock="Top"
+			  Background="{DynamicResource PanelBackground}"
+			  ColumnDefinitions="*,*,*">
+			<StackPanel Orientation="Horizontal" 
+						HorizontalAlignment="Left"
+						Grid.Column="0">
+				<Button Classes="Back" 
 						Command="{Binding $parent[Window].DataContext.SwitchToPrevious}"
 						ToolTip.Tip="Вернуться">
-					<Image Source="{DynamicResource Return}" Classes="Icon"/>
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Return}"/>
 				</Button>
-				<Button Classes="Fill" 
+				<Rectangle Classes="Sep"/>
+				<Button Classes="Back" ToolTip.Tip="Добавить экземпляр">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource AddRow}"/>
+				</Button>
+				<Button Classes="Back" ToolTip.Tip="Загрузить таблицу">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource AddDataset}"/>
+				</Button>
+				<Button Classes="Back" 
 						Command="{Binding $parent[Window].DataContext.DocSave}"
 						ToolTip.Tip="Сохранить">
-					<Image Source="{DynamicResource Tik}" Classes="Icon"/>
-				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Добавить экземпляр">
-					<Image Source="{DynamicResource AddRow}" Classes="Icon"/>
-				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Загрузить таблицу">
-					<Image Source="{DynamicResource AddDataset}" Classes="Icon"/>
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Download}"/>
 				</Button>
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Classes="Fill" ToolTip.Tip="Предыдущий">
-					<Image Source="{DynamicResource ArrowLeft}" Classes="Icon"/>
+			<StackPanel Orientation="Horizontal" 
+						HorizontalAlignment="Center"
+						Grid.Column="1">
+				<Button Classes="Back" ToolTip.Tip="Предыдущий">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource ArrowLeft}"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Следующий">
-					<Image Source="{DynamicResource ArrowRight}" Classes="Icon"/>
-				</Button>
-			</StackPanel>
-			
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-				<Button Classes="Fill"
-						ToolTip.Tip="Переключить тему"
-						IsVisible="{Binding $parent[Window].DataContext.Mode}"
-						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
-					<Image Source="{DynamicResource Light}" Classes="Icon"/>
-				</Button>
-				<Button Classes="Fill"
-						ToolTip.Tip="Переключить тему"
-						IsVisible="{Binding !$parent[Window].DataContext.Mode}"
-						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
-					<Image Source="{DynamicResource Dark}" Classes="Icon"/>
-				</Button>
-
-				<Button Classes="Fill" ToolTip.Tip="Помощь">
-					<Image Source="{DynamicResource Help}" Classes="Icon"/>
+				<Button Classes="Back" ToolTip.Tip="Следующий">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource ArrowRight}"/>
 				</Button>
 			</StackPanel>
 			
-		</DockPanel>
+			<StackPanel Orientation="Horizontal" 
+						HorizontalAlignment="Right"
+						Grid.Column="2">
+				<Button Classes="Back"
+						ToolTip.Tip="Переключить тему"
+						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
+					<Image Source="{DynamicResource Theme}" Classes="Icon"/>
+				</Button>
+				<Button Classes="Back" ToolTip.Tip="Помощь">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Help}"/>
+				</Button>
+			</StackPanel>
+		</Grid>
 
-		<SplitView IsPaneOpen="True"
-           DisplayMode="Inline"
-           OpenPaneLength="600">
-			<SplitView.Pane>
-				<ScrollViewer>
+		<Grid Background="{DynamicResource SecondBlockBackground}"
+			  ColumnDefinitions="*,*">
+			<ScrollViewer Grid.Column="0">
 				<ItemsRepeater Items="{Binding Fields}">
 					<ItemsRepeater.ItemTemplate>
 						<DataTemplate>
-							<StackPanel Margin="24, 4">
+							<StackPanel Margin="10,5,20,5" >
 								<TextBlock Text="{Binding Name}"/>
 								<TextBox Watermark="Введите текст" Text="{Binding Text}"/>
 							</StackPanel>
 						</DataTemplate>
 					</ItemsRepeater.ItemTemplate>
 				</ItemsRepeater>
-				</ScrollViewer>
-			</SplitView.Pane>
-
-			<Grid>
-				<TextBlock Text="Предварительный просмотр"
-						   FontSize="24"
-						   FontFamily="Times New Roman"
-						   VerticalAlignment="Center"
-						   HorizontalAlignment="Center"/>
-			</Grid>
-		</SplitView>
-		
+			</ScrollViewer>
+			<TextBlock Text="Предварительный просмотр"
+					   FontSize="24"
+					   FontFamily="Times New Roman"
+					   VerticalAlignment="Center"
+					   HorizontalAlignment="Center"
+					   Grid.Column="1"/>
+		</Grid>
 	</DockPanel>
-	
 </UserControl>

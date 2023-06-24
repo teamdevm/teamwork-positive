@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+using System;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.ComponentModel;
@@ -15,21 +16,25 @@ public class MainWindowViewModel : ViewModelBase
     private ViewModelBase prevWindow;
     private string curTitle;
     private string prevTitle;
-
-    public bool mode;
+    private bool mode;
+    private string workingPath;
     
     public Interaction<FileDialogFilter, string> OpenDialogInteraction { get; }
     public Interaction<FileDialogFilter, string> SaveDialogInteraction { get; }
-    public Interaction<MessageBoxViewModel, string> GetNameInteraction { get; }
+    public Interaction<MessageBoxViewModel, string> NameCategoryInteraction { get; }
     //public Interaction<EditWindowViewModel, Student> EditDialogInteraction { get; }
     public Interaction<MessageBoxViewModel, string> ConfirmDialogInteraction { get; }
     //public ReactiveCommand<Unit, Unit> ActionFileNew { get; }
-    public ReactiveCommand<Unit, Unit> ActionTemplateFill { get; }
-    public ReactiveCommand<Unit, Unit> ActionTemplateUpload { get; }
+    public ReactiveCommand<Unit, Unit> ActionFillTemplate { get; }
+    public ReactiveCommand<Unit, Unit> ActionUploadTemplate { get; }
+    public ReactiveCommand<Unit, Unit> ActionRemoveTemplate { get; }
     public ReactiveCommand<Unit, Unit> ActionNewCategory { get; }
     public ReactiveCommand<Unit, Unit> ActionNewSubCategory { get; }
+    public ReactiveCommand<Unit, Unit> ActionRenameCategory { get; }
+    public ReactiveCommand<Unit, Unit> ActionRemoveCategory { get; }
 
     public ReactiveCommand<Unit, Unit> ActionDocSave { get; }
+    public ReactiveCommand<Unit, Unit> ActionDocSaveAs { get; }
     //public ReactiveCommand<Unit, Unit> ActionFileSaveAs { get; }
     //public ReactiveCommand<Unit, Unit> ActionViewNext { get; }
     //public ReactiveCommand<Unit, Unit> ActionViewPrev { get; }
@@ -65,6 +70,7 @@ public class MainWindowViewModel : ViewModelBase
         get => prevTitle;
         set => this.RaiseAndSetIfChanged(ref prevTitle, value);
     }
+    
 
     private CollectionViewModel collectionWindow;
     private EditViewModel editWindow;
@@ -78,19 +84,34 @@ public class MainWindowViewModel : ViewModelBase
         CurWindow = collectionWindow;
         CurTitle = "Коллекция шаблонов";
         mode = false;
+        workingPath = String.Empty;
         
+        Application.Current.Resources["Theme"] = Application.Current.Resources["Dark"];
+        Application.Current.Resources["PanelBackground"] = Application.Current.Resources["LightBrush"];
+        Application.Current.Resources["FirstBlockBackground"] = Application.Current.Resources["AlmostWhiteBrush"];
+        Application.Current.Resources["SecondBlockBackground"] = Application.Current.Resources["LightBlueBrush"];
+        Application.Current.Resources["ButtonColor"] = Application.Current.Resources["DarkBlueBrush"];
+
+
         OpenDialogInteraction = new Interaction<FileDialogFilter, string>();
         SaveDialogInteraction = new Interaction<FileDialogFilter, string>();
         //EditDialogInteraction = new Interaction<EditWindowViewModel, Student>();
         ConfirmDialogInteraction = new Interaction<MessageBoxViewModel, string>();
-        GetNameInteraction = new Interaction<MessageBoxViewModel, string>();
+        NameCategoryInteraction = new Interaction<MessageBoxViewModel, string>();
 
         //ActionFileNew = ReactiveCommand.CreateFromTask(FileNew);
-        ActionTemplateFill = ReactiveCommand.CreateFromTask(CheckTemplate);
-        ActionTemplateUpload = ReactiveCommand.CreateFromTask(UploadTemplate);
+        ActionFillTemplate = ReactiveCommand.CreateFromTask(FillTemplate);
+        ActionUploadTemplate = ReactiveCommand.CreateFromTask(UploadTemplate);
+        ActionRemoveTemplate = ReactiveCommand.CreateFromTask(RemoveTemplate);
+
         ActionNewCategory = ReactiveCommand.CreateFromTask(AddCategory);
         ActionNewSubCategory = ReactiveCommand.CreateFromTask(AddSubCategory);
+        ActionRenameCategory = ReactiveCommand.CreateFromTask(RenameCategory);
+        ActionRemoveCategory = ReactiveCommand.CreateFromTask(RemoveCategory);
+
         ActionDocSave = ReactiveCommand.CreateFromTask(DocSave);
+        ActionDocSaveAs = ReactiveCommand.CreateFromTask(DocSaveAs);
+        //ActionTemplateRemove = ReactiveCommand.CreateFromTask(RemoveTemplate);
 
         //ActionFileSaveAs = ReactiveCommand.CreateFromTask(FileSaveAs);
         //ActionViewNext = ReactiveCommand.Create(ViewNext);
@@ -152,55 +173,6 @@ public class MainWindowViewModel : ViewModelBase
     //    return true;
     //}
     
-    private async Task CheckTemplate()
-    {
-        if (collectionWindow.SelectedTemplate is null)
-        {
-            MessageBoxViewModel msg = new MessageBoxViewModel(
-                "Выберите шаблон", MessageBoxButtons.Ok);
-            await ConfirmDialogInteraction.Handle(msg);
-        }
-        else
-            SwitchToFill();
-        //if (!isSaved)
-        //{
-        //    MessageBoxViewModel msg = new MessageBoxViewModel("Сохранить изменения?", MessageBoxButtons.YesNoCancel);
-        //    MessageBoxResult res = await ConfirmDialogInteraction.Handle(msg);
-        //    switch (res)
-        //    {
-        //        case MessageBoxResult.Yes: await FileSave(); break;
-        //        case MessageBoxResult.Cancel: return;
-        //    }
-        //}
-
-        /* We accept only XML files */
-        //FileDialogFilter xmlFilter = new FileDialogFilter()
-        //{
-        //    Name = "Списки студентов",
-        //    Extensions = { "xml" }
-        //};
-
-        ///* Show dialog window and retrieve file path */
-        //string result = await OpenDialogInteraction.Handle(xmlFilter);
-
-        ///* If no file was selected */
-        //if (string.IsNullOrEmpty(result)) return;
-
-        //try
-        //{
-        //    Content = StudentList.Deserialize(result);
-        //    Selection = Content.First();
-        //    workingPath = result;
-        //    isSaved = true;
-        //    UpdateAll();
-        //}
-        //catch
-        //{
-        //    MessageBoxViewModel msg = new MessageBoxViewModel("Файл имеет некорректный формат", MessageBoxButtons.Ok);
-        //    MessageBoxResult res = await ConfirmDialogInteraction.Handle(msg);
-        //}
-    }
-
     public void SwitchToFill()
     {
         fillWindow = new FillViewModel(new Backend(), collectionWindow.db.FetchTemplate(collectionWindow.SelectedTemplate));
@@ -218,9 +190,25 @@ public class MainWindowViewModel : ViewModelBase
             {
                 Mode = !Mode;
                 if (Mode)
+                {
                     f.Mode = FluentThemeMode.Dark;
+                    var res = Application.Current.Resources;
+                    res["Theme"] = res["Light"];
+                    res["PanelBackground"] = res["DarkBrush"];
+                    res["FirstBlockBackground"] = res["DarkGrayBrush"];
+                    res["SecondBlockBackground"] = res["DarkPurpleBrush"];
+                    res["ButtonColor"] = res["LightPurpleBrush"];
+                }
                 else
+                {
                     f.Mode = FluentThemeMode.Light;
+                    var res = Application.Current.Resources;
+                    res["Theme"] = res["Dark"];
+                    res["PanelBackground"] = res["LightBrush"];
+                    res["FirstBlockBackground"] = res["AlmostWhiteBrush"];
+                    res["SecondBlockBackground"] = res["LightBlueBrush"];
+                    res["ButtonColor"] = res["DarkBlueBrush"];
+                }
                 break;
             }
         }
@@ -228,128 +216,131 @@ public class MainWindowViewModel : ViewModelBase
 
     private async Task UploadTemplate()
     {
-        /* We accept only XML files */
-        FileDialogFilter xmlFilter = new FileDialogFilter()
+        MessageBoxViewModel msg;
+        if (collectionWindow.SelectedCategory is null)
         {
-            Extensions = { "*" }
+            msg = new MessageBoxViewModel("Категория не выбрана.", MessageBoxButtons.Ok);
+            await ConfirmDialogInteraction.Handle(msg);
+            return;
+        }
+        FileDialogFilter Filter = new FileDialogFilter()
+        {
+            Name = "Текстовые файлы",
+            Extensions = { "doc", "docx", "dot", "dotx", "odt", "ott", "rtf", "txt" }
         };
-
-        /* Show dialog window and retrieve file path */
-        string result = await OpenDialogInteraction.Handle(xmlFilter);
-
-        /* If no file was selected */
+        string result = await OpenDialogInteraction.Handle(Filter);
         if (string.IsNullOrEmpty(result)) return;
-
         try
         {
             collectionWindow.UploadTemplate(result);
-            //Content = StudentList.Deserialize(result);
-            //Selection = Content.First();
-            //workingPath = result;
-            //isSaved = true;
-            //UpdateAll();
-
-            ////добавить диалоговое окно
-            //db.AddTemplate("C:\\Users\\User\\Desktop\\работы\\проект\\teamwork-positive\\Documents\\Договорные документы\\Договор аренды квартиры.docx", SelectedCategory);
-            //collectionWindow.Templates = collectionWindow.db.GetTemplates(SelectedCategory);
         }
-        catch
+        catch (Exception ex)
         {
-            MessageBoxViewModel msg = new MessageBoxViewModel("Файл имеет некорректный формат", MessageBoxButtons.Ok);
+            msg = new MessageBoxViewModel(ex.Message, MessageBoxButtons.Ok);
             await ConfirmDialogInteraction.Handle(msg);
         }
     }
-
-    //private async Task FileSave()
-    //{
-    //    if (string.IsNullOrEmpty(workingPath))
-    //    {
-    //        await FileSaveAs();
-    //    }
-    //    else
-    //    {
-    //        Content.Serialize(workingPath);
-    //        isSaved = true;
-    //        UpdateAll();
-    //    }
-    //}
-
-    //private async Task FileSaveAs()
-    //{
-    //    /* We accept only XML files */
-    //    FileDialogFilter xmlFilter = new FileDialogFilter()
-    //    {
-    //        Extensions = { "*" }
-    //    };
-
-    //    /* Show dialog window and retrieve file path */
-    //    string result = await SaveDialogInteraction.Handle(xmlFilter);
-
-    //    /* If no file was selected */
-    //    if (string.IsNullOrEmpty(result)) return;
-
-    //    Content.Serialize(result);
-    //    workingPath = result;
-    //    isSaved = true;
-    //    UpdateAll();
-    //}
-    public async Task DocSave()
+    private async Task FillTemplate()
     {
-        /* We accept only XML files */
-        FileDialogFilter xmlFilter = new FileDialogFilter()
+        MessageBoxViewModel msg;
+        if (collectionWindow.SelectedTemplate is null)
         {
-            Extensions = { "*" }
-        };
-
-        /* Show dialog window and retrieve file path */
-        string result = await SaveDialogInteraction.Handle(xmlFilter);
-
-        /* If no file was selected */
+            msg = new MessageBoxViewModel(
+                "Шаблон не выбран.", MessageBoxButtons.Ok);
+            await ConfirmDialogInteraction.Handle(msg);
+            return;
+        }
+        else
+            SwitchToFill();
+    }
+    private async Task RemoveTemplate()
+    {
+        MessageBoxViewModel msg;
+        if (collectionWindow.SelectedTemplate is null)
+        {
+            msg = new MessageBoxViewModel("Шаблон не выбран.", MessageBoxButtons.Ok);
+            await ConfirmDialogInteraction.Handle(msg);
+            return;
+        }
+        msg = new MessageBoxViewModel("Удалить шаблон?", MessageBoxButtons.YesNo);
+        string result = await ConfirmDialogInteraction.Handle(msg);
         if (string.IsNullOrEmpty(result)) return;
-
+        if (result == "Yes")
+            collectionWindow.RemoveTemplate();
+    }
+    private async Task DocSave()
+    {
+        if (string.IsNullOrEmpty(workingPath))
+            await DocSaveAs();
+    }
+    private async Task DocSaveAs()
+    {
+        FileDialogFilter Filter = new FileDialogFilter()
+        {
+            Name = "Текстовые файлы",
+            Extensions = { "docx" }
+        };
+        string result = await SaveDialogInteraction.Handle(Filter);
+        if (string.IsNullOrEmpty(result)) return;
+        workingPath = result;
         fillWindow.result = result;
         fillWindow.GetTemplate();
     }
-
     private async Task AddCategory()
     {
         MessageBoxViewModel msg = new MessageBoxViewModel(
                 "Введите название категории:", MessageBoxButtons.TextField);
-        string result = await GetNameInteraction.Handle(msg);
-
+        string result = await NameCategoryInteraction.Handle(msg);
         if (string.IsNullOrEmpty(result)) return;
-
+        //проверка существования категории
         collectionWindow.AddCategory(result);
     }
     private async Task AddSubCategory()
     {
-        MessageBoxViewModel msg = new MessageBoxViewModel(
+        MessageBoxViewModel msg;
+        if (collectionWindow.SelectedCategory is null)
+        {
+            msg = new MessageBoxViewModel("Категория не выбрана.", MessageBoxButtons.Ok);
+            await ConfirmDialogInteraction.Handle(msg);
+            return;
+        }
+        msg = new MessageBoxViewModel(
                 "Введите название подкатегории:", MessageBoxButtons.TextField);
-
-        /* Show dialog window and retrieve file path */
-        string result = await GetNameInteraction.Handle(msg);
-
-        /* If no file was selected */
+        string result = await NameCategoryInteraction.Handle(msg);
         if (string.IsNullOrEmpty(result)) return;
-
+        //проверка существования категории
         collectionWindow.AddSubCategory(result);
-        //try
-        //{
-        //    //Content = StudentList.Deserialize(result);
-        //    //Selection = Content.First();
-        //    //workingPath = result;
-        //    //isSaved = true;
-        //    //UpdateAll();
-
-        //    ////добавить диалоговое окно
-        //    //db.AddTemplate("C:\\Users\\User\\Desktop\\работы\\проект\\teamwork-positive\\Documents\\Договорные документы\\Договор аренды квартиры.docx", SelectedCategory);
-        //    //collectionWindow.Templates = collectionWindow.db.GetTemplates(SelectedCategory);
-        //}
-        //catch
-        //{
-        //    MessageBoxViewModel msg = new MessageBoxViewModel("Файл имеет некорректный формат", MessageBoxButtons.Ok);
-        //    MessageBoxResult res = await ConfirmDialogInteraction.Handle(msg);
-        //}
+    }
+    private async Task RenameCategory()
+    {
+        MessageBoxViewModel msg;
+        if (collectionWindow.SelectedCategory is null)
+        {
+            msg = new MessageBoxViewModel("Категория не выбрана.", MessageBoxButtons.Ok);
+            await ConfirmDialogInteraction.Handle(msg);
+            return;
+        }
+        msg = new MessageBoxViewModel(
+                "Введите название категории:", MessageBoxButtons.TextField);
+        string result = await NameCategoryInteraction.Handle(msg);
+        if (string.IsNullOrEmpty(result)) return;
+        //проверка существования категории
+        collectionWindow.RenameCategory(result);
+    }
+    private async Task RemoveCategory()
+    {
+        MessageBoxViewModel msg;
+        if (collectionWindow.SelectedCategory is null)
+        {
+            msg = new MessageBoxViewModel("Категория не выбрана.", MessageBoxButtons.Ok);
+            await ConfirmDialogInteraction.Handle(msg);
+            return;
+        }
+        msg = new MessageBoxViewModel("Удалить категорию?", MessageBoxButtons.YesNo);
+        string result = await ConfirmDialogInteraction.Handle(msg);
+        if (string.IsNullOrEmpty(result)) return;
+        if (result == "Yes")
+            collectionWindow.RemoveCategory();
     }
 
     //private async Task FileNew()
@@ -413,98 +404,7 @@ public class MainWindowViewModel : ViewModelBase
     //    }
     //}
 
-    //private async Task FileSave()
-    //{
-    //    if (string.IsNullOrEmpty(workingPath))
-    //    {
-    //        await FileSaveAs();
-    //    }
-    //    else
-    //    {
-    //        Content.Serialize(workingPath);
-    //        isSaved = true;
-    //        UpdateAll();
-    //    }
-    //}
 
-    //private async Task FileSaveAs()
-    //{
-    //    /* We accept only XML files */
-    //    FileDialogFilter xmlFilter = new FileDialogFilter()
-    //    {
-    //        Name = "Списки студентов",
-    //        Extensions = { "xml" }
-    //    };
-
-    //    /* Show dialog window and retrieve file path */
-    //    string result = await SaveDialogInteraction.Handle(xmlFilter);
-
-    //    /* If no file was selected */
-    //    if (string.IsNullOrEmpty(result)) return;
-
-    //    Content.Serialize(result);
-    //    workingPath = result;
-    //    isSaved = true;
-    //    UpdateAll();
-    //}
-
-    //private void ViewNext()
-    //{
-    //    Selection = Content.Next();
-    //    UpdateAll();
-    //}
-
-    //private void ViewPrev()
-    //{
-    //    Selection = Content.Prev();
-    //    UpdateAll();
-    //}
-
-    //private void ViewFirst()
-    //{
-    //    Selection = Content.First();
-    //    UpdateAll();
-    //}
-
-    //private void ViewLast()
-    //{
-    //    Selection = Content.Last();
-    //    UpdateAll();
-    //}
-
-    //private async Task New()
-    //{
-    //    EditWindowViewModel model = new EditWindowViewModel();
-    //    Student result = await EditDialogInteraction.Handle(model);
-    //    if (result is not null)
-    //    {
-    //        Content.Add(result);
-    //        Selection = Content.This;
-    //        isSaved = false;
-    //        UpdateAll();
-    //    }
-    //}
-
-    //private async Task Edit()
-    //{
-    //    EditWindowViewModel model = new EditWindowViewModel(content.This!);
-    //    Student result = await EditDialogInteraction.Handle(model);
-    //    if (result is not null)
-    //    {
-    //        Content.This = result;
-    //        Selection = result;
-    //        isSaved = false;
-    //        UpdateAll();
-    //    }
-    //}
-
-    //private void Remove()
-    //{
-    //    Content.Remove();
-    //    Selection = Content.This;
-    //    isSaved = false;
-    //    UpdateAll();
-    //}
 
     //public async void ConfirmOnClose(object? sender, CancelEventArgs args)
     //{

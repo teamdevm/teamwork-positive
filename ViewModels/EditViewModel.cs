@@ -1,10 +1,14 @@
 ﻿using System.Collections.ObjectModel;
 using ReactiveUI;
 using System.IO;
+using Avalonia;
 namespace Documently.ViewModels;
 
 public class EditViewModel : ViewModelBase
 {
-    public string Greeting => "Welcome to Avalonia!";
-    
+    public EditViewModel()
+    {
+        
+    }
+
 }
