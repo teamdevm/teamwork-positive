@@ -5,14 +5,13 @@ using Aspose.Words;
 using Aspose.Words.Replacing;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 
 namespace Documently.Models;
 
 class Backend : ITemplateProcessor
 {
     private MemoryStream pathPattern;
-    //private string pathPattern; 
+    //private string pathPattern;
     private string pathToFolder;
     private string fileName;
 
@@ -57,12 +56,13 @@ class Backend : ITemplateProcessor
     //     return table;
     // }
 
-    public bool CheckFileName(ObservableCollection<Field> table)
+    public bool CheckFileName(Dictionary<string, ObservableCollection<Field>> table)
     {
         string copyName = fileName;
 
-        for (int i = 0; i < table.Count; i++)
-            copyName = copyName.Replace(table[i].Name, "Переменная");
+        foreach (var value in table)
+            for (int i = 0; i < value.Value.Count; i++)
+                copyName = copyName.Replace(value.Value[i].Name, "Переменная");
 
         // Path.GetInvalidFileNameChars();
 
@@ -132,12 +132,11 @@ class Backend : ITemplateProcessor
         fileName = pattern;
     }
 
-    public ObservableCollection<Field> GetFields()
+    public Dictionary<string, ObservableCollection<Field>> GetFields()
     {
-        ObservableCollection<Field> table = new ObservableCollection<Field>();
+        ObservableCollection<Field> table;
         Document doc = new Document(pathPattern);
-        //Dictionary<string, List<int>> dicCategory = new Dictionary<string, List<int>>(); 
-        List<string> listCategory = new List<string>();
+        Dictionary<string, ObservableCollection<Field>> dicCategory = new Dictionary<string, ObservableCollection<Field>>();
         Field f;
         int pos = 0;
         foreach (Paragraph p in doc.GetChildNodes(NodeType.Paragraph, true))
@@ -152,7 +151,7 @@ class Backend : ITemplateProcessor
                 int placeCategory = varStr.IndexOf(":");
                 int counter = 0;
                 if (placeCategory >= 0)
-                    counter = varStr.Where(c => c == 's').Count();
+                    counter = varStr.Where(c => c == ':').Count();
 
                 if (counter < 2)
                 {
@@ -160,27 +159,29 @@ class Backend : ITemplateProcessor
                     if (placeCategory >= 0)
                     {
                         nameCategory = varStr.Substring(placeCategory + 1, varStr.Length - placeCategory - 1);
-                        if (!listCategory.Contains(nameCategory))
-                            listCategory.Add(nameCategory);
                         varStr = varStr.Remove(placeCategory, varStr.Length - placeCategory);
                     }
                     else
                         nameCategory = "Общие данные";
-                    //if (!dicCategory.ContainsKey(nameCategory))
-                    //    dicCategory.Add(nameCategory, new List<int> { pos });
-                    //else
-                    //{
-                    //    List<int> listPos = new List<int>();
-                    //    listPos = dicCategory[nameCategory];
-                    //    listPos.Add(pos);
-                    //    dicCategory[nameCategory] = listPos;
-                    //}
 
                     f = new TextField(varStr, nameCategory);
-                    if (!table.Contains(f))
-                        table.Add(f);
+                    if (!dicCategory.ContainsKey(nameCategory))
+                    {
+                        table = new ObservableCollection<Field>{ f };
+                        dicCategory.Add(nameCategory, table);
+                    }
+                    else
+                    {
+                        table = new ObservableCollection<Field>();
+                        table = dicCategory[nameCategory];
+                        if (!table.Contains(f))
+                        {
+                            table.Add(f);
+                            dicCategory[nameCategory] = table;
+                        }
+                    }
                 }
-                else Console.WriteLine("У переменной может быть только одна категория!");
+                else throw new ArgumentException("У переменной может быть только одна категория!");
 
                 pStr = pStr.Remove(0, right + 1);
                 left = pStr.IndexOf("<");
@@ -188,58 +189,40 @@ class Backend : ITemplateProcessor
 
             }
         }
-        ObservableCollection<Field> copyTable = new ObservableCollection<Field>();
-        for (int i = 0; i < listCategory.Count; i++)
-            foreach (var x in table)
-            {
-                if (x.Category == listCategory[i])
-                    copyTable.Add(x); 
-            }
-        foreach (var x in table)
-        {
-            if (x.Category == "Общие данные")
-                copyTable.Add(x);
-        }
-        table = copyTable; 
-        //pos = 0;
-        //int num = 0;
-        //foreach (var pair in dicCategory)
+
+        //table = new ObservableCollection<Field>();
+        //if (dicCategory.ContainsKey("Общие данные"))
         //{
-        //    foreach (var value in pair.Value)
-        //    {
-        //        if (num == 0)
-        //            table.Move(value - 1, pos);
-        //        else
-        //            table.Move(num, pos);
-        //        pos++;
-        //    }
-        //    num = pair.Value.Count; 
+        //    table = dicCategory["Общие данные"];
+        //    dicCategory.Remove("Общие данные");
+        //    dicCategory.Add("Общие данные", table);
         //}
 
-        return table;
+            return dicCategory;
     }
 
-    public void Fill(ObservableCollection<Field> record)
+    public void Fill(Dictionary<string, ObservableCollection<Field>> record)
     {
         Document doc = new Document(pathPattern);
 
-        for (int j = 0; j < record.Count; j++)
-        {
-            FindReplaceOptions options = new FindReplaceOptions();
-            options.MatchCase = false;
-            options.FindWholeWordsOnly = false;
-            options.Direction = FindReplaceDirection.Forward;
-
-            if (record[j].Category == "Общие данные")
-                doc.Range.Replace("<" + record[j].Name + ">", record[j].Value, options);
-            else
-                doc.Range.Replace("<" + record[j].Name + ":" + record[j].Category + ">", record[j].Value, options);
-        }
+        foreach (var value in record)
+            for (int j = 0; j < value.Value.Count; j++)
+            {
+                FindReplaceOptions options = new FindReplaceOptions();
+                options.MatchCase = false;
+                options.FindWholeWordsOnly = false;
+                options.Direction = FindReplaceDirection.Forward;
+                if (value.Value[j].Category == "Общие данные")
+                    doc.Range.Replace("<" + value.Value[j].Name + ">", value.Value[j].Value, options);
+                else
+                    doc.Range.Replace("<" + value.Value[j].Name + ":" + value.Value[j].Category + ">", value.Value[j].Value, options);
+            }
 
         string name = fileName;
 
-        for (int j = 0; j < record.Count; j++)
-            name = name.Replace(record[j].Name, record[j].Value);
+        foreach (var value in record)
+            for (int i = 0; i < value.Value.Count; i++)
+                name = name.Replace(value.Value[i].Name, value.Value[i].Value);
 
         int counter = 0;
         string counterStr = "";
