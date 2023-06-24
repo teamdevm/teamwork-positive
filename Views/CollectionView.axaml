@@ -94,6 +94,7 @@
 				<SplitView.Pane>
 					<ScrollViewer>
 						<StackPanel Background="{DynamicResource FirstBlockBackground}">
+							<TextBlock Text="Категории" Margin="16,12" FontWeight="Bold"/>
 							<TreeView x:Name="tree" 
 									  Items="{Binding Categories}" 
 									  SelectedItem="{Binding SelectedCategory}">
@@ -110,21 +111,37 @@
 									</TreeDataTemplate>
 								</TreeView.ItemTemplate>
 							</TreeView>
+							<TextBlock
+								Margin="32"
+								LineHeight="24"
+								Text="Здесь появятся ваши категории документов. Добавьте одну прямо сейчас, нажав на кнопку 'Добавить'"
+								TextWrapping="Wrap"
+								IsVisible="{Binding !!!Categories.Count}"
+							/>
 						</StackPanel>
 					</ScrollViewer>
 				</SplitView.Pane>
 
 				<ScrollViewer>
-					<ListBox Items="{Binding Templates}" 
-							 SelectedItem="{Binding SelectedTemplate}" 
-							 DockPanel.Dock="Right"
-							 Background="{DynamicResource SecondBlockBackground}">
-						<ListBox.ItemTemplate>
-							<DataTemplate>
-								<TextBlock Text="{Binding Name}"/>
-							</DataTemplate>
-						</ListBox.ItemTemplate>
-					</ListBox>
+					<StackPanel Background="{DynamicResource SecondBlockBackground}">
+						<TextBlock Text="Шаблоны" Margin="16,12" FontWeight="Bold"/>
+						<TextBlock
+							Margin="32"
+							LineHeight="24"
+							Text="Здесь появятся ваши шаблоны документов. Чтобы добавить новый, выберите категорию и нажмите кнопку 'Загрузить'"
+							TextWrapping="Wrap"
+							IsVisible="{Binding !!!Templates.Count}"
+						/>
+						<ListBox Items="{Binding Templates}" 
+								SelectedItem="{Binding SelectedTemplate}" 
+								DockPanel.Dock="Right">
+							<ListBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Name}"/>
+								</DataTemplate>
+							</ListBox.ItemTemplate>
+						</ListBox>
+					</StackPanel>
 				</ScrollViewer>
 			</SplitView>
 	</DockPanel>
