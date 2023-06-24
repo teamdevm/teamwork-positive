@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.IO;
+using System;
 using LiteDB;
 
 namespace Documently.Models;
@@ -31,6 +32,7 @@ public class TemplateDatabase
             root = new Category("root");
 
             categories.EnsureIndex(x => x.Parent);
+            categories.EnsureIndex(x => x.Name);
             categories.Insert(root);
         }
         else
@@ -48,16 +50,21 @@ public class TemplateDatabase
         db.Dispose();
     }
 
-    public void AddCategory (string name)
-    {
-        Category c = new Category(name, root);
-        categories.Insert(c);
-    }
+    public void AddCategory (string name) => AddSubCategory(root, name);
 
     public void AddSubCategory (Category target, string name)
     {
-        Category c = new Category(name, target);
-        categories.Insert(c);
+        Category a = categories.FindOne(x => x.Name == name);
+
+        if (a is null)
+        {
+            Category c = new Category(name, target);
+            categories.Insert(c);
+        }
+        else
+        {
+            throw new ArgumentException($"Категория с именем '{name}' уже существует");
+        }
     }
 
     public void RenameCategory (Category target, string newname)
@@ -72,25 +79,17 @@ public class TemplateDatabase
         categories.Delete(target.Id);
     }
 
-    public void AddTemplate (string path)
-    {
-        string name = Path.GetFileName(path);
-
-        Template t = new Template(name, "", root);
-        templates.Insert(t);
-
-        storage.Upload(t.Id, path);
-    }
+    public void AddTemplate (string path) => AddTemplate(path, root);
 
     public void AddTemplate (string path, Category tag)
     {
         string name = Path.GetFileName(path);
-
         Template t = new Template(name, "", tag);
-        templates.Insert(t);
-        tag.Count += 1;
-
+        
         storage.Upload(t.Id, path);
+        templates.Insert(t);
+
+        tag.Count += 1;
     }
 
     public void RenameTemplate (Template t, string newname)
@@ -101,20 +100,14 @@ public class TemplateDatabase
 
     public void RemoveTemplate (Template t)
     {
-        Category c = FindCategoryById(root, t.Category);
-        c.Count -= 1;
-
         templates.Delete(t.Id);
         storage.Delete(t.Id);
+
+        Category c = FindCategoryById(root, t.Category);
+        c.Count -= 1;
     }
 
-    public List<Template> GetTemplates ()
-    {
-        return templates.Query()
-            .Where(x => x.Category == root.Id)
-            .OrderBy(x => x.Name)
-            .ToList();
-    }
+    public List<Template> GetTemplates () => GetTemplates(root);
 
     public List<Template> GetTemplates (Category c)
     {
@@ -138,7 +131,7 @@ public class TemplateDatabase
 
     private void DeserializeCategoryTree (Category c)
     {
-        var a = categories.Find(x => x.Parent == c.Id);
+        var a = categories.Query().Where(x => x.Parent == c.Id).OrderBy(x => x.Name).ToEnumerable();
         c.Count = templates.Query().Where(x => x.Category == c.Id).Count();
 
         foreach (Category d in a)

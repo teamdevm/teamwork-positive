@@ -320,7 +320,7 @@
 			<x:Arguments>
 				<Bitmap>
 					<x:Arguments>
-						<x:String>Assets/Lineheight.png</x:String>
+						<x:String>Assets/LineHeight.png</x:String>
 					</x:Arguments>
 				</Bitmap>
 			</x:Arguments>
