@@ -65,6 +65,16 @@ public partial class MessageBox : ReactiveWindow<MessageBoxViewModel>
             this.Close();
         };
 
+        if (caption == "Ok" || caption == "Yes")
+        {
+            btn.IsDefault = true;
+        }
+        else
+        if (caption == "Cancel" || caption == "No")
+        {
+            btn.IsCancel = true;
+        }
+
         buttonPanel.Children.Add(btn);
     }
 }
