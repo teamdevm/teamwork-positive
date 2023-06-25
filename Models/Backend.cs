@@ -148,45 +148,43 @@ class Backend : ITemplateProcessor
             {
                 varStr = pStr.Substring(left + 1, right - left - 1);
 
-                int placeCategory = varStr.IndexOf(":");
+                int placeCategory = varStr.IndexOf(':');
                 int counter = 0;
                 if (placeCategory >= 0)
-                    counter = varStr.Where(c => c == ':').Count();
+                    counter = varStr.IndexOf(':', placeCategory + 1);
 
-                if (counter < 2)
+                if (counter > 0)
+                    throw new ArgumentException("У переменной может быть только одна категория!");
+
+                pos++;
+                if (placeCategory >= 0)
                 {
-                    pos++;
-                    if (placeCategory >= 0)
-                    {
-                        nameCategory = varStr.Substring(placeCategory + 1, varStr.Length - placeCategory - 1);
-                        varStr = varStr.Remove(placeCategory, varStr.Length - placeCategory);
-                    }
-                    else
-                        nameCategory = "Общие данные";
+                    nameCategory = varStr.Substring(placeCategory + 1, varStr.Length - placeCategory - 1);
+                    varStr = varStr.Remove(placeCategory, varStr.Length - placeCategory);
+                }
+                else
+                    nameCategory = "Общие данные";
 
-                    f = new TextField(varStr, nameCategory);
-                    if (!dicCategory.ContainsKey(nameCategory))
+                f = new TextField(varStr, nameCategory);
+                if (!dicCategory.ContainsKey(nameCategory))
+                {
+                    table = new ObservableCollection<Field>{ f };
+                    dicCategory.Add(nameCategory, table);
+                }
+                else
+                {
+                    table = new ObservableCollection<Field>();
+                    table = dicCategory[nameCategory];
+                    if (!table.Contains(f))
                     {
-                        table = new ObservableCollection<Field>{ f };
-                        dicCategory.Add(nameCategory, table);
-                    }
-                    else
-                    {
-                        table = new ObservableCollection<Field>();
-                        table = dicCategory[nameCategory];
-                        if (!table.Contains(f))
-                        {
-                            table.Add(f);
-                            dicCategory[nameCategory] = table;
-                        }
+                        table.Add(f);
+                        dicCategory[nameCategory] = table;
                     }
                 }
-                else throw new ArgumentException("У переменной может быть только одна категория!");
 
                 pStr = pStr.Remove(0, right + 1);
                 left = pStr.IndexOf("<");
                 right = pStr.IndexOf(">");
-
             }
         }
 

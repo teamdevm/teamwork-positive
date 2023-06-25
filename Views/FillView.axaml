@@ -2,9 +2,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:md="clr-namespace:Documently.Models"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Documently.Views.FillView">
-	
+	<UserControl.DataTemplates>
+		<DataTemplate DataType="{x:Type md:TextField}">
+			<StackPanel Margin="0,4">
+				<TextBlock Text="{Binding DisplayName}"/>
+				<TextBox Margin="0,4" Watermark="Введите текст" Text="{Binding Text}"/>
+			</StackPanel>
+		</DataTemplate>
+	</UserControl.DataTemplates>
 	<DockPanel>
 		<Grid DockPanel.Dock="Top"
 			  Background="{DynamicResource PanelBackground}"
@@ -76,10 +84,24 @@
 				<ItemsRepeater Items="{Binding Fields}">
 					<ItemsRepeater.ItemTemplate>
 						<DataTemplate>
-							<StackPanel Margin="10,5,20,5" >
-								<TextBlock Text="{Binding Name}"/>
-								<TextBox Watermark="Введите текст" Text="{Binding Text}"/>
-							</StackPanel>
+							<Border BorderBrush="Gray"
+									BorderThickness="1"
+									CornerRadius="4"
+									Padding="12,4"
+									Margin="12">
+								<StackPanel>
+									<TextBlock Text="{Binding Key}"
+											TextAlignment="Center"
+											FontWeight="Bold"/>
+									<ItemsRepeater Items="{Binding Value}">
+										<ItemsRepeater.ItemTemplate>
+											<DataTemplate>
+												<ContentControl Content="{Binding}"/>
+											</DataTemplate>
+										</ItemsRepeater.ItemTemplate>
+									</ItemsRepeater>
+								</StackPanel>
+							</Border>
 						</DataTemplate>
 					</ItemsRepeater.ItemTemplate>
 				</ItemsRepeater>
