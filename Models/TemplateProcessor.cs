@@ -27,7 +27,7 @@ public interface ITemplateProcessor
      * Заполнить шаблон
      * record - набор значений для одного экземпляра
      */
-    public void Fill(Dictionary<string, ObservableCollection<Field>> record);
+    public void Fill(Dictionary<string, ObservableCollection<Field>> record, string extension);
 
     /*
      * Освободить ресурсы, занятые процессором
