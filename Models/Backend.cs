@@ -5,6 +5,7 @@ using Aspose.Words;
 using Aspose.Words.Replacing;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
 
 namespace Documently.Models;
 
@@ -201,7 +202,7 @@ class Backend : ITemplateProcessor
             return dicCategory;
     }
 
-    public void Fill(Dictionary<string, ObservableCollection<Field>> record)
+    public void Fill(Dictionary<string, ObservableCollection<Field>> record, string extension)
     {
         Document doc = new Document(pathPattern);
 
@@ -233,8 +234,38 @@ class Backend : ITemplateProcessor
             counterStr = " (" + counter + ")";
         }
 
-        doc.Save(Path.Join(pathToFolder, name + counterStr + ".docx"));
-        Console.WriteLine($"Документ {pathToFolder}\\{name}{counterStr}.docx создан");
+        switch (extension)
+        {
+            case "docx":
+                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.Docx);
+                break;
+            case "doc":
+                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.Doc);
+                break;
+            case "rtf":
+                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.Rtf);
+                break;
+            case "html":
+                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.Html);
+                break;
+            case "txt":
+                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.Text);
+                break;
+            case "odt":
+                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.Odt);
+                break;
+            case "pdf":
+                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.Pdf);
+                break;
+            case "md":
+                doc.Save(Path.Join(pathToFolder, name + counterStr));
+                break;
+            case "xml":
+                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.FlatOpc);
+                break;
+            default:
+                throw new ArgumentException($"Не знаю, что такое .{extension}");
+        }
     }
 
     public void Dispose()
