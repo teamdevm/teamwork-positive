@@ -138,6 +138,7 @@ class Backend : ITemplateProcessor
         Document doc = new Document(pathPattern);
         Dictionary<string, ObservableCollection<Field>> dicCategory = new Dictionary<string, ObservableCollection<Field>>();
         Field f;
+        CurrentDateField curDate;
         int pos = 0;
         foreach (Paragraph p in doc.GetChildNodes(NodeType.Paragraph, true))
         {
@@ -160,25 +161,71 @@ class Backend : ITemplateProcessor
                 if (placeCategory >= 0)
                 {
                     nameCategory = varStr.Substring(placeCategory + 1, varStr.Length - placeCategory - 1);
-                    varStr = varStr.Remove(placeCategory, varStr.Length - placeCategory);
+                    varStr = varStr.Remove(placeCategory, varStr.Length - placeCategory); 
                 }
-                else
+                else    
                     nameCategory = "Общие данные";
 
-                f = new TextField(varStr, nameCategory);
+                // Display name
+                string displayName = "";
+                char prevChar = char.MinValue; 
+                int index = 0;
+                foreach (char c in varStr)
+                {
+                    index++;
+                    if (displayName == "")
+                        displayName += c;
+                    else if (char.IsUpper(c) && char.IsLower(prevChar))
+                    {
+                        displayName += " " + char.ToLower(c);
+                    }
+                    else
+                        displayName += c;
+                    prevChar = c;
+                }
+                curDate = new CurrentDateField(varStr, displayName, nameCategory);
+                f = new TextField(varStr, displayName, nameCategory);
+
                 if (!dicCategory.ContainsKey(nameCategory))
                 {
-                    table = new ObservableCollection<Field>{ f };
-                    dicCategory.Add(nameCategory, table);
+                    if (nameCategory == "Дата")
+                    {
+                        if (varStr == "ДатаПодписанияДоговора")
+                        {
+                            table = new ObservableCollection<Field> { curDate };
+                            dicCategory.Add(nameCategory, table);
+                        }
+                    }
+                    else
+                    {
+                        table = new ObservableCollection<Field> { f };
+                        dicCategory.Add(nameCategory, table);
+                    }
                 }
                 else
                 {
-                    table = new ObservableCollection<Field>();
-                    table = dicCategory[nameCategory];
-                    if (!table.Contains(f))
+                    if (nameCategory == "Дата")
                     {
-                        table.Add(f);
-                        dicCategory[nameCategory] = table;
+                        if (varStr == "ДатаПодписанияДоговора")
+                        {
+                            table = new ObservableCollection<Field> { curDate };
+                            dicCategory.Add(nameCategory, table);
+                            if (!table.Contains(curDate))
+                            {
+                                table.Add(curDate);
+                                dicCategory[nameCategory] = table;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        table = new ObservableCollection<Field>();
+                        table = dicCategory[nameCategory];
+                        if (!table.Contains(f))
+                        {
+                            table.Add(f);
+                            dicCategory[nameCategory] = table;
+                        }
                     }
                 }
 
