@@ -49,8 +49,8 @@ public class NumericField : Field
 
 public class CurrentDateField : Field
 {
-    public DateTime Date { get; set; }
-    public override string Value => Date.ToLongDateString();
+    public DateTimeOffset Date { get; set; }
+    public override string Value => Date.ToString("D");
 
     public CurrentDateField(string name, string displayName, string categoryName) : base(name,displayName,categoryName )
     {
