@@ -16,10 +16,10 @@ public class Field
     public virtual string Value { get; }
     public string Category { get; set; }
 
-    public Field(string name, string categoryName)
+    public Field(string name,string displayName, string categoryName)
     {
         Name = name;
-        DisplayName = name;
+        DisplayName = displayName;
         Value = string.Empty;
         Category = categoryName;
     }
@@ -30,7 +30,7 @@ public class TextField : Field
     public string Text { get; set; }
     public override string Value => Text;
 
-    public TextField(string name, string categoryName) : base(name, categoryName)
+    public TextField(string name, string displayName, string categoryName) : base(name, displayName, categoryName)
     {
         Text = string.Empty;
     }
@@ -41,22 +41,33 @@ public class NumericField : Field
     public long Number { get; set; }
     public override string Value => Number.ToString();
 
-    public NumericField(string name) : base(name, "NoCategory")
+    public NumericField(string name,string displayName) : base(name, displayName, "NoCategory")
     {
         Number = 0L;
     }
 }
 
-public class DateField : Field
+public class CurrentDateField : Field
 {
     public DateTime Date { get; set; }
-    public override string Value => Date.ToString();
+    public override string Value => Date.ToLongDateString();
 
-    public DateField(string name) : base(name, "NoCategory")
+    public CurrentDateField(string name, string displayName, string categoryName) : base(name,displayName,categoryName )
     {
         Date = DateTime.Today;
     }
 }
+//public class DateField : Field
+//{
+//    public DateTime Date { get; set; }
+//    public override string Value => Date.ToString();
+
+//    public DateField(string name, string displayName, string categoryName) : base(name, displayName, categoryName)
+//    {
+//        Date = DateTime.Today;
+//    }
+
+//}
 
 public class PersonNameField : Field
 {
@@ -67,7 +78,7 @@ public class PersonNameField : Field
     public string MiddleName { get; set; }
     public override string Value => string.Join(' ', FirstName, MiddleName, LastName);
 
-    public PersonNameField(string name) : base(name, "NoCategory")
+    public PersonNameField(string name, string displayName) : base(name, displayName, "NoCategory")
     {
         FirstName = string.Empty;
         LastName = string.Empty;

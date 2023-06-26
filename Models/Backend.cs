@@ -5,7 +5,7 @@ using Aspose.Words;
 using Aspose.Words.Replacing;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
-using System.Security.Cryptography;
+using System.Linq;
 
 namespace Documently.Models;
 
@@ -139,6 +139,8 @@ class Backend : ITemplateProcessor
         Document doc = new Document(pathPattern);
         Dictionary<string, ObservableCollection<Field>> dicCategory = new Dictionary<string, ObservableCollection<Field>>();
         Field f;
+        //DateField date;
+        CurrentDateField curDate;
         int pos = 0;
         foreach (Paragraph p in doc.GetChildNodes(NodeType.Paragraph, true))
         {
@@ -149,45 +151,108 @@ class Backend : ITemplateProcessor
             {
                 varStr = pStr.Substring(left + 1, right - left - 1);
 
-                int placeCategory = varStr.IndexOf(":");
+                int placeCategory = varStr.IndexOf(':');
                 int counter = 0;
                 if (placeCategory >= 0)
-                    counter = varStr.Where(c => c == ':').Count();
+                    counter = varStr.IndexOf(':', placeCategory + 1);
 
-                if (counter < 2)
+                if (counter > 0)
+                    throw new ArgumentException("У переменной может быть только одна категория!");
+
+                pos++;
+                if (placeCategory >= 0)
                 {
-                    pos++;
-                    if (placeCategory >= 0)
+                    nameCategory = varStr.Substring(placeCategory + 1, varStr.Length - placeCategory - 1);
+                    varStr = varStr.Remove(placeCategory, varStr.Length - placeCategory); 
+                }
+                else    
+                    nameCategory = "Общие данные";
+
+                // Display name
+                string displayName = "";
+                char prevChar = char.MinValue; 
+                int index = 0;
+                foreach (char c in varStr)
+                {
+                    index++;
+                    if (displayName == "")
+                        displayName += c;
+                    else if (char.IsUpper(c) && char.IsLower(prevChar))
                     {
-                        nameCategory = varStr.Substring(placeCategory + 1, varStr.Length - placeCategory - 1);
-                        varStr = varStr.Remove(placeCategory, varStr.Length - placeCategory);
+                        displayName += " " + char.ToLower(c);
                     }
                     else
-                        nameCategory = "Общие данные";
+                        displayName += c;
+                    prevChar = c;
+                }
 
-                    f = new TextField(varStr, nameCategory);
-                    if (!dicCategory.ContainsKey(nameCategory))
+                curDate = new CurrentDateField(varStr, displayName, nameCategory);
+                //date = new DateField(varStr, displayName, nameCategory);
+                f = new TextField(varStr, displayName, nameCategory);
+
+                if (!dicCategory.ContainsKey(nameCategory))
+                {
+                    if (nameCategory == "Дата")
                     {
-                        table = new ObservableCollection<Field>{ f };
+                        if (varStr == "ДатаПодписанияДоговора")
+                        {
+                            table = new ObservableCollection<Field> { curDate };
+                            dicCategory.Add(nameCategory, table);
+                        }
+                        //else
+                        //{
+                        //    table = new ObservableCollection<Field> { date };
+                        //    dicCategory.Add(nameCategory, table);
+                        //}
+                    }
+                    else
+                    {
+                        table = new ObservableCollection<Field> { f };
                         dicCategory.Add(nameCategory, table);
+                    }
+                }
+                else
+                {
+                    if (nameCategory == "Дата")
+                    {
+                        if (varStr == "ДатаПодписанияДоговора")
+                        {
+                            table = new ObservableCollection<Field> { curDate };
+                            dicCategory.Add(nameCategory, table);
+                            int check = dicCategory[nameCategory].Where(x => x.Name == varStr).Count();
+                            if (check == 0)
+                            {
+                                table.Add(curDate);
+                                dicCategory[nameCategory] = table;
+                            }
+                        }
+                        //else
+                        //{
+                        //    table = new ObservableCollection<Field> { date };
+                        //    dicCategory.Add(nameCategory, table);
+                        //    if (!table.Contains(date))
+                        //    {
+                        //        table.Add(date);
+                        //        dicCategory[nameCategory] = table;
+                        //    }
+                        //}
                     }
                     else
                     {
                         table = new ObservableCollection<Field>();
                         table = dicCategory[nameCategory];
-                        if (!table.Contains(f))
+                        int check = dicCategory[nameCategory].Where(x=>x.Name== varStr).Count();
+                        if(check==0)
                         {
                             table.Add(f);
                             dicCategory[nameCategory] = table;
                         }
                     }
                 }
-                else throw new ArgumentException("У переменной может быть только одна категория!");
 
                 pStr = pStr.Remove(0, right + 1);
                 left = pStr.IndexOf("<");
                 right = pStr.IndexOf(">");
-
             }
         }
 
@@ -202,7 +267,7 @@ class Backend : ITemplateProcessor
             return dicCategory;
     }
 
-    public void Fill(Dictionary<string, ObservableCollection<Field>> record, string extension)
+    public void Fill(Dictionary<string, ObservableCollection<Field>> record)
     {
         Document doc = new Document(pathPattern);
 
@@ -234,38 +299,8 @@ class Backend : ITemplateProcessor
             counterStr = " (" + counter + ")";
         }
 
-        switch (extension)
-        {
-            case "docx":
-                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.Docx);
-                break;
-            case "doc":
-                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.Doc);
-                break;
-            case "rtf":
-                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.Rtf);
-                break;
-            case "html":
-                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.Html);
-                break;
-            case "txt":
-                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.Text);
-                break;
-            case "odt":
-                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.Odt);
-                break;
-            case "pdf":
-                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.Pdf);
-                break;
-            case "md":
-                doc.Save(Path.Join(pathToFolder, name + counterStr));
-                break;
-            case "xml":
-                doc.Save(Path.Join(pathToFolder, name + counterStr), SaveFormat.FlatOpc);
-                break;
-            default:
-                throw new ArgumentException($"Не знаю, что такое .{extension}");
-        }
+        doc.Save(Path.Join(pathToFolder, name + counterStr + ".docx"));
+        Console.WriteLine($"Документ {pathToFolder}\\{name}{counterStr}.docx создан");
     }
 
     public void Dispose()
