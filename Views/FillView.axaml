@@ -12,6 +12,12 @@
 				<TextBox Margin="0,4" Watermark="Введите текст" Text="{Binding Text}"/>
 			</StackPanel>
 		</DataTemplate>
+		<DataTemplate DataType="{x:Type md:CurrentDateField}">
+			<StackPanel Margin="0,4">
+				<TextBlock Text="{Binding DisplayName}"/>
+				<DatePicker Margin="0,4" SelectedDate="{Binding Date}"/>
+			</StackPanel>
+		</DataTemplate>
 	</UserControl.DataTemplates>
 	<DockPanel>
 		<Grid DockPanel.Dock="Top"

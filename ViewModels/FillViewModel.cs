@@ -32,6 +32,8 @@ public class FillViewModel : ViewModelBase
     public void GetTemplate()
     {
         templateProcessor.Setup(mem, Path.GetDirectoryName(result), Path.GetFileName(result));
-        templateProcessor.Fill(fields);
+        string[] ext1 = result.Split('.');
+        string ext2 = ext1[ext1.Length - 1];
+        templateProcessor.Fill(fields, ext2);
     }
 }
