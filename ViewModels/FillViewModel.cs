@@ -4,6 +4,7 @@ using System.Reactive.Linq;
 using Avalonia.Controls;
 using System.Threading.Tasks;
 using System.IO;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Documently.Models;
 
@@ -12,7 +13,7 @@ namespace Documently.ViewModels;
 public class FillViewModel : ViewModelBase
 {
     private ITemplateProcessor templateProcessor;
-    private ObservableCollection<Field> fields;
+    private Dictionary<string, ObservableCollection<Field>> fields;
     public string result;
     MemoryStream mem;
     public FillViewModel () { }
@@ -23,7 +24,7 @@ public class FillViewModel : ViewModelBase
         templateProcessor.Setup(name, "C:/Users/User/Desktop//Interface", "Test");
         fields = templateProcessor.GetFields();
     }
-    public ObservableCollection<Field> Fields
+    public Dictionary<string, ObservableCollection<Field>> Fields
     {
         get => fields;
         set => this.RaiseAndSetIfChanged(ref fields, value);
