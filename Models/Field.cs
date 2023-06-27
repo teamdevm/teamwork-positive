@@ -57,7 +57,6 @@ public class CurrentDateField : Field
         Date = DateTime.Today;
     }
 }
-//public class DateField : CurrentDateField
 
 public class PersonNameField : Field
 {
