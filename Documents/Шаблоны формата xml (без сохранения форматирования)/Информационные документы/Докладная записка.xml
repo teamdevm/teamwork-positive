@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<article lang="">
+  <informaltable frame="all">
+    <tgroup cols="2"><tbody><row><entry><para/></entry><entry><para>&lt;Должность:Кому&gt;</para></entry></row><row><entry><para/></entry><entry><para>&lt;НаименованииОрганизации:Кому&gt;</para></entry></row><row><entry><para/></entry><entry><para>&lt;Фамилия:Кому&gt; &lt;Имя:Кому&gt;</para></entry></row><row><entry><para/></entry><entry><para>&lt;Отчество:Кому&gt;</para></entry></row><row><entry><para/></entry><entry><para>от &lt;Должность:От кого&gt;</para></entry></row><row><entry><para/></entry><entry><para>&lt;Фамилия:От кого&gt; &lt;Имя:От кого&gt;</para></entry></row><row><entry><para/></entry><entry><para>&lt;Отчество:От кого&gt;</para></entry></row></tbody></tgroup>
+  </informaltable>
+  <para/>
+  <para/>
+  <para>ДОКЛАДНАЯ ЗАПИСКА №&lt;НомерДокладной&gt;</para>
+  <para>&lt;ТемаДокладнойЗаписки&gt;</para>
+  <para/>
+  <para>&lt;ТекстДокладнойЗаписки&gt;</para>
+  <para/>
+  <informaltable frame="all">
+    <tgroup cols="3"><tbody><row><entry><para>&lt;ТекущаяДата:Дата&gt;</para></entry><entry><para><anchor id="_GoBack"/></para></entry><entry><para/></entry></row><row><entry><para>(дата)</para></entry><entry><para/></entry><entry><para>(подпись)</para></entry></row></tbody></tgroup>
+  </informaltable>
+  <para/>
+  <para/>
+  <para/>
+  <para/>
+  <para/>
+  <para/>
+</article>

@@ -6,6 +6,7 @@ using Aspose.Words.Replacing;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
+using System.Linq;
 
 namespace Documently.Models;
 
@@ -175,7 +176,11 @@ class Backend : ITemplateProcessor
                 {
                     index++;
                     if (displayName == "")
-                        displayName += c;
+                        displayName += c;  
+                    else if (char.IsUpper(prevChar) && char.IsUpper(c))
+                    {
+                        displayName = displayName.Substring(0, displayName.Count() - 1) + prevChar + c;
+                    }
                     else if (char.IsUpper(c) && char.IsLower(prevChar))
                     {
                         displayName += " " + char.ToLower(c);
@@ -184,6 +189,7 @@ class Backend : ITemplateProcessor
                         displayName += c;
                     prevChar = c;
                 }
+
                 curDate = new CurrentDateField(varStr, displayName, nameCategory);
                 f = new TextField(varStr, displayName, nameCategory);
 
@@ -191,11 +197,8 @@ class Backend : ITemplateProcessor
                 {
                     if (nameCategory == "Дата")
                     {
-                        if (varStr == "ДатаПодписанияДоговора")
-                        {
-                            table = new ObservableCollection<Field> { curDate };
-                            dicCategory.Add(nameCategory, table);
-                        }
+                        table = new ObservableCollection<Field> { curDate };
+                        dicCategory.Add(nameCategory, table);
                     }
                     else
                     {
@@ -205,27 +208,18 @@ class Backend : ITemplateProcessor
                 }
                 else
                 {
-                    if (nameCategory == "Дата")
+                    table = new ObservableCollection<Field> { };
+                    table = dicCategory[nameCategory];
+                    int check = dicCategory[nameCategory].Where(x => x.Name == varStr).Count();
+                    if (check == 0)
                     {
-                        if (varStr == "ДатаПодписанияДоговора")
+                        if (nameCategory == "Дата")
                         {
-                            table = new ObservableCollection<Field> { curDate };
-                            dicCategory.Add(nameCategory, table);
-                            if (!table.Contains(curDate))
-                            {
-                                table.Add(curDate);
-                                dicCategory[nameCategory] = table;
-                            }
+                            dicCategory[nameCategory].Add(curDate);
                         }
-                    }
-                    else
-                    {
-                        table = new ObservableCollection<Field>();
-                        table = dicCategory[nameCategory];
-                        if (!table.Contains(f))
+                        else
                         {
-                            table.Add(f);
-                            dicCategory[nameCategory] = table;
+                            dicCategory[nameCategory].Add(f);
                         }
                     }
                 }
@@ -235,15 +229,6 @@ class Backend : ITemplateProcessor
                 right = pStr.IndexOf(">");
             }
         }
-
-        //table = new ObservableCollection<Field>();
-        //if (dicCategory.ContainsKey("Общие данные"))
-        //{
-        //    table = dicCategory["Общие данные"];
-        //    dicCategory.Remove("Общие данные");
-        //    dicCategory.Add("Общие данные", table);
-        //}
-
             return dicCategory;
     }
 
