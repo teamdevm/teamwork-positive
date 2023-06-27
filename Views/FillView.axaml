@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:md="clr-namespace:Documently.Models"
+			 xmlns:views="clr-namespace:Documently.Views"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Documently.Views.FillView">
 	<UserControl.DataTemplates>
@@ -87,12 +88,11 @@
 				</Button>
 			</StackPanel>
 		</Grid>
-
 		<Grid Background="{DynamicResource SecondBlockBackground}"
-			  ColumnDefinitions="*,*">
+				ColumnDefinitions="*,*">
 			<ScrollViewer Grid.Column="0">
-				<ItemsRepeater Items="{Binding CurFields}">
-					<ItemsRepeater.ItemTemplate>
+				<ItemsControl Items="{Binding CurFields}">
+					<ItemsControl.ItemTemplate>
 						<DataTemplate>
 							<Border BorderBrush="Gray"
 									BorderThickness="1"
@@ -103,25 +103,24 @@
 									<TextBlock Text="{Binding Key}"
 											TextAlignment="Center"
 											FontWeight="Bold"/>
-									<ItemsRepeater Items="{Binding Value}">
-										<ItemsRepeater.ItemTemplate>
+									<ItemsControl Items="{Binding Value}">
+										<ItemsControl.ItemTemplate>
 											<DataTemplate>
 												<ContentControl Content="{Binding}"/>
 											</DataTemplate>
-										</ItemsRepeater.ItemTemplate>
-									</ItemsRepeater>
+										</ItemsControl.ItemTemplate>
+									</ItemsControl>
 								</StackPanel>
 							</Border>
 						</DataTemplate>
-					</ItemsRepeater.ItemTemplate>
-				</ItemsRepeater>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
 			</ScrollViewer>
-			<TextBlock Text="Предварительный просмотр"
-					   FontSize="24"
-					   FontFamily="Times New Roman"
-					   VerticalAlignment="Center"
-					   HorizontalAlignment="Center"
-					   Grid.Column="1"/>
+			<ScrollViewer Grid.Column="1">
+				<Border Background="White" BorderBrush="Gray" BorderThickness="1" Margin="12">
+					<views:DocumentPreview DataContext="{Binding Doc}"/>
+				</Border>
+			</ScrollViewer>
 		</Grid>
 	</DockPanel>
 </UserControl>
