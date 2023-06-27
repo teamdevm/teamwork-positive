@@ -18,13 +18,14 @@ public class MainWindowViewModel : ViewModelBase
     private string prevTitle;
     private bool mode;
     private string workingPath;
-    
+    private CollectionViewModel collectionWindow;
+    private EditViewModel editWindow;
+    private FillViewModel fillWindow;
+
     public Interaction<FileDialogFilter, string> OpenDialogInteraction { get; }
     public Interaction<FileDialogFilter, string> SaveDialogInteraction { get; }
-    public Interaction<MessageBoxViewModel, string> NameCategoryInteraction { get; }
-    //public Interaction<EditWindowViewModel, Student> EditDialogInteraction { get; }
     public Interaction<MessageBoxViewModel, string> ConfirmDialogInteraction { get; }
-    //public ReactiveCommand<Unit, Unit> ActionFileNew { get; }
+    public Interaction<MessageBoxViewModel, string> GetAnswerInteraction { get; }
     public ReactiveCommand<Unit, Unit> ActionFillTemplate { get; }
     public ReactiveCommand<Unit, Unit> ActionUploadTemplate { get; }
     public ReactiveCommand<Unit, Unit> ActionRemoveTemplate { get; }
@@ -35,15 +36,7 @@ public class MainWindowViewModel : ViewModelBase
 
     public ReactiveCommand<Unit, Unit> ActionDocSave { get; }
     public ReactiveCommand<Unit, Unit> ActionDocSaveAs { get; }
-    //public ReactiveCommand<Unit, Unit> ActionFileSaveAs { get; }
-    //public ReactiveCommand<Unit, Unit> ActionViewNext { get; }
-    //public ReactiveCommand<Unit, Unit> ActionViewPrev { get; }
-    //public ReactiveCommand<Unit, Unit> ActionViewFirst { get; }
-    //public ReactiveCommand<Unit, Unit> ActionViewLast { get; }
-    //public ReactiveCommand<Unit, Unit> ActionNew { get; }
-    //public ReactiveCommand<Unit, Unit> ActionEdit { get; }
-    //public ReactiveCommand<Unit, Unit> ActionRemove { get; }
-
+    //public ReactiveCommand<Unit, Unit> ActionGetCount { get; }
     public ViewModelBase CurWindow 
     { 
         get => curWindow; 
@@ -71,11 +64,6 @@ public class MainWindowViewModel : ViewModelBase
         set => this.RaiseAndSetIfChanged(ref prevTitle, value);
     }
     
-
-    private CollectionViewModel collectionWindow;
-    private EditViewModel editWindow;
-    private FillViewModel fillWindow;
-
     public MainWindowViewModel() 
     { 
         collectionWindow = new CollectionViewModel();
@@ -92,26 +80,24 @@ public class MainWindowViewModel : ViewModelBase
         Application.Current.Resources["SecondBlockBackground"] = Application.Current.Resources["LightBlueBrush"];
         Application.Current.Resources["ButtonColor"] = Application.Current.Resources["DarkBlueBrush"];
 
-
         OpenDialogInteraction = new Interaction<FileDialogFilter, string>();
         SaveDialogInteraction = new Interaction<FileDialogFilter, string>();
         //EditDialogInteraction = new Interaction<EditWindowViewModel, Student>();
         ConfirmDialogInteraction = new Interaction<MessageBoxViewModel, string>();
-        NameCategoryInteraction = new Interaction<MessageBoxViewModel, string>();
+        GetAnswerInteraction = new Interaction<MessageBoxViewModel, string>();
+        //CountTemplatesInteraction = new Interaction<MessageBoxViewModel, int>();
 
         //ActionFileNew = ReactiveCommand.CreateFromTask(FileNew);
         ActionFillTemplate = ReactiveCommand.CreateFromTask(FillTemplate);
         ActionUploadTemplate = ReactiveCommand.CreateFromTask(UploadTemplate);
         ActionRemoveTemplate = ReactiveCommand.CreateFromTask(RemoveTemplate);
-
         ActionNewCategory = ReactiveCommand.CreateFromTask(AddCategory);
         ActionNewSubCategory = ReactiveCommand.CreateFromTask(AddSubCategory);
         ActionRenameCategory = ReactiveCommand.CreateFromTask(RenameCategory);
         ActionRemoveCategory = ReactiveCommand.CreateFromTask(RemoveCategory);
-
         ActionDocSave = ReactiveCommand.CreateFromTask(DocSave);
         ActionDocSaveAs = ReactiveCommand.CreateFromTask(DocSaveAs);
-        //ActionTemplateRemove = ReactiveCommand.CreateFromTask(RemoveTemplate);
+        //ActionGetCount = ReactiveCommand.CreateFromTask(GetCount);
 
         //ActionFileSaveAs = ReactiveCommand.CreateFromTask(FileSaveAs);
         //ActionViewNext = ReactiveCommand.Create(ViewNext);
@@ -152,30 +138,47 @@ public class MainWindowViewModel : ViewModelBase
         PrevTitle = "Коллекция шаблонов";
     }
 
-    //public bool CheckFileName(ObservableCollection<Field> table)
+    //public async Task GetCount()
     //{
-    //    string copyName = fileName;
-
-    //    for (int i = 0; i < table.Count; i++)
-    //        copyName = copyName.Replace(table[i].Name, "Переменная");
-
-    //    // Path.GetInvalidFileNameChars();
-
-    //    if (copyName.IndexOf("\\") >= 0 || copyName.IndexOf("/") >= 0 || copyName.IndexOf(":") >= 0 ||
-    //        copyName.IndexOf("*") >= 0 || copyName.IndexOf("?") >= 0 || copyName.IndexOf("|") >= 0 ||
-    //        copyName.IndexOf("<") >= 0 || copyName.IndexOf(">") >= 0 || copyName == "")
+    //    MessageBoxViewModel msg;
+    //    if (collectionWindow.SelectedTemplate is null)
     //    {
-    //        throw new ArgumentException("Недопустимый символ в имени файла или пустой ввод.Запрещено использовать такие символы, как \\, /, :, *, ?, |, <, > \n" +
-    //            "(Знаки <> можно использовать в том случае, если они используются для определения переменной в названии файла)\n" +
-    //            "Попробуйте ввести имя еще раз");
+    //        msg = new MessageBoxViewModel("Шаблон не выбран.", MessageBoxButtons.Ok);
+    //        await ConfirmDialogInteraction.Handle(msg);
+    //        return;
     //    }
-
-    //    return true;
+    //    msg = new MessageBoxViewModel("Введите количество экземпляров:", MessageBoxButtons.TextField);
+    //    string result = await GetAnswerInteraction.Handle(msg);
+    //    if (string.IsNullOrEmpty(result)) return;
+    //    if (!int.TryParse(result, out fillWindow.count))
+    //    {
+    //        msg = new MessageBoxViewModel("Введите число.", MessageBoxButtons.Ok);
+    //        await ConfirmDialogInteraction.Handle(msg);
+    //    }
     //}
     
-    public void SwitchToFill()
+    public async Task SwitchToFill()
     {
-        fillWindow = new FillViewModel(new Backend(), collectionWindow.db.FetchTemplate(collectionWindow.SelectedTemplate));
+        MessageBoxViewModel msg;
+        if (collectionWindow.SelectedTemplate is null)
+        {
+            msg = new MessageBoxViewModel("Шаблон не выбран.", MessageBoxButtons.Ok);
+            await ConfirmDialogInteraction.Handle(msg);
+            return;
+        }
+        msg = new MessageBoxViewModel("Введите количество экземпляров:", MessageBoxButtons.TextField);
+        string result = await GetAnswerInteraction.Handle(msg);
+        if (string.IsNullOrEmpty(result)) return;
+
+        if (!int.TryParse(result, out fillWindow.count))
+        {
+            msg = new MessageBoxViewModel("Введите число.", MessageBoxButtons.Ok);
+            await ConfirmDialogInteraction.Handle(msg);
+        }
+        fillWindow = new FillViewModel(new Backend(), 
+            collectionWindow.db.FetchTemplate(collectionWindow.SelectedTemplate),
+            fillWindow.count);
+
         CurWindow = fillWindow;
         PrevWindow = collectionWindow;
         CurTitle = "Заполнить шаблон";
@@ -251,7 +254,7 @@ public class MainWindowViewModel : ViewModelBase
             return;
         }
         else
-            SwitchToFill();
+            await SwitchToFill();
     }
     private async Task RemoveTemplate()
     {
@@ -290,7 +293,7 @@ public class MainWindowViewModel : ViewModelBase
     {
         MessageBoxViewModel msg = new MessageBoxViewModel(
                 "Введите название категории:", MessageBoxButtons.TextField);
-        string result = await NameCategoryInteraction.Handle(msg);
+        string result = await GetAnswerInteraction.Handle(msg);
         if (string.IsNullOrEmpty(result)) return;
         //проверка существования категории
         collectionWindow.AddCategory(result);
@@ -306,7 +309,7 @@ public class MainWindowViewModel : ViewModelBase
         }
         msg = new MessageBoxViewModel(
                 "Введите название подкатегории:", MessageBoxButtons.TextField);
-        string result = await NameCategoryInteraction.Handle(msg);
+        string result = await GetAnswerInteraction.Handle(msg);
         if (string.IsNullOrEmpty(result)) return;
         //проверка существования категории
         collectionWindow.AddSubCategory(result);
@@ -322,7 +325,7 @@ public class MainWindowViewModel : ViewModelBase
         }
         msg = new MessageBoxViewModel(
                 "Введите название категории:", MessageBoxButtons.TextField);
-        string result = await NameCategoryInteraction.Handle(msg);
+        string result = await GetAnswerInteraction.Handle(msg);
         if (string.IsNullOrEmpty(result)) return;
         //проверка существования категории
         collectionWindow.RenameCategory(result);
@@ -343,25 +346,7 @@ public class MainWindowViewModel : ViewModelBase
             collectionWindow.RemoveCategory();
     }
 
-    //private async Task FileNew()
-    //{
-    //    if (!isSaved)
-    //    {
-    //        MessageBoxViewModel msg = new MessageBoxViewModel("Сохранить изменения?", MessageBoxButtons.YesNoCancel);
-    //        MessageBoxResult res = await ConfirmDialogInteraction.Handle(msg);
-    //        switch (res)
-    //        {
-    //            case MessageBoxResult.Yes: await FileSave(); break;
-    //            case MessageBoxResult.Cancel: return;
-    //        }
-    //    }
-
-    //    Content = new StudentList();
-    //    Selection = Content.First();
-    //    workingPath = string.Empty;
-    //    isSaved = true;
-    //    UpdateAll();
-    //}
+    
 
     //private async Task FileOpen()
     //{

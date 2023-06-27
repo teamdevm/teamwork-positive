@@ -12,28 +12,70 @@ namespace Documently.ViewModels;
 
 public class FillViewModel : ViewModelBase
 {
-    private ITemplateProcessor templateProcessor;
-    private Dictionary<string, ObservableCollection<Field>> fields;
+    private ITemplateProcessor curTemplate;
+    private Dictionary<string, ObservableCollection<Field>> curFields;
+
+    private ITemplateProcessor[] templateProcessor;
+    private Dictionary<string, ObservableCollection<Field>>[] fields;
     public string result;
+    public int count;
+    public int index;
     MemoryStream mem;
     public FillViewModel () { }
-    public FillViewModel (ITemplateProcessor tp, MemoryStream name)
+    public FillViewModel (ITemplateProcessor tp, MemoryStream name, int count)
     {
-        templateProcessor = tp;
         mem = name;
-        templateProcessor.Setup(name, "C:/Users/User/Desktop//Interface", "Test");
-        fields = templateProcessor.GetFields();
+        this.count = count;
+        index = 0;
+        templateProcessor = new ITemplateProcessor[count];
+        fields = new Dictionary<string, ObservableCollection<Field>>[count];
+        for (int i = 0; i < count; i++)
+        {
+            templateProcessor[i] = tp;
+            templateProcessor[i].Setup(name, "", "");
+            fields[i] = templateProcessor[i].GetFields();
+        }
+        curTemplate = templateProcessor[index];
+        curFields = fields[index];
     }
-    public Dictionary<string, ObservableCollection<Field>> Fields
+    public ITemplateProcessor CurTemplate
     {
-        get => fields;
-        set => this.RaiseAndSetIfChanged(ref fields, value);
+        get => curTemplate;
+        set => this.RaiseAndSetIfChanged(ref curTemplate, value);
+    }
+    public Dictionary<string, ObservableCollection<Field>> CurFields
+    {
+        get => curFields;
+        set => this.RaiseAndSetIfChanged(ref curFields, value);
     }
     public void GetTemplate()
     {
-        templateProcessor.Setup(mem, Path.GetDirectoryName(result), Path.GetFileName(result));
-        string[] ext1 = result.Split('.');
-        string ext2 = ext1[ext1.Length - 1];
-        templateProcessor.Fill(fields, ext2);
+        for (int i = 0; i < count; i++)
+        {
+            templateProcessor[i].Setup(mem, 
+                Path.GetDirectoryName(result), 
+                Path.GetFileNameWithoutExtension(result) + $" ({i+1})" + Path.GetExtension(result));
+            string[] ext1 = result.Split('.');
+            string ext2 = ext1[ext1.Length - 1];
+            templateProcessor[i].Fill(fields[i], ext2);
+        }
+    }
+    public void Next()
+    {
+        if (index != count - 1)
+        {
+            index++; 
+            CurFields = fields[index];
+            CurTemplate = templateProcessor[index];
+        }
+    }
+    public void Previous()
+    {
+        if (index != 0)
+        {
+            index--;
+            CurFields = fields[index];
+            CurTemplate = templateProcessor[index];
+        }
     }
 }
