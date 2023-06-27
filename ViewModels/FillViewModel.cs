@@ -13,27 +13,56 @@ namespace Documently.ViewModels;
 public class FillViewModel : ViewModelBase
 {
     private ITemplateProcessor templateProcessor;
-    private Dictionary<string, ObservableCollection<Field>> fields;
+    private Dictionary<string, ObservableCollection<Field>> curFields;
+    private Dictionary<string, ObservableCollection<Field>>[] fields;
     public string result;
+    public int count;
+    public int index;
     MemoryStream mem;
     public FillViewModel () { }
-    public FillViewModel (ITemplateProcessor tp, MemoryStream name)
+    public FillViewModel (ITemplateProcessor tp, MemoryStream name, int count)
     {
-        templateProcessor = tp;
         mem = name;
-        templateProcessor.Setup(name, "C:/Users/User/Desktop//Interface", "Test");
-        fields = templateProcessor.GetFields();
+        this.count = count;
+        index = 0;
+        templateProcessor = tp;
+        fields = new Dictionary<string, ObservableCollection<Field>>[count];
+        for (int i = 0; i < count; i++)
+        {
+            templateProcessor.Setup(name, "", "");
+            fields[i] = templateProcessor.GetFields();
+        }
+        curFields = fields[index];
     }
-    public Dictionary<string, ObservableCollection<Field>> Fields
+    public Dictionary<string, ObservableCollection<Field>> CurFields
     {
-        get => fields;
-        set => this.RaiseAndSetIfChanged(ref fields, value);
+        get => curFields;
+        set => this.RaiseAndSetIfChanged(ref curFields, value);
     }
     public void GetTemplate()
     {
-        templateProcessor.Setup(mem, Path.GetDirectoryName(result), Path.GetFileName(result));
-        string[] ext1 = result.Split('.');
-        string ext2 = ext1[ext1.Length - 1];
-        templateProcessor.Fill(fields, ext2);
+        for (int i = 0; i < count; i++)
+        {
+            templateProcessor.Setup(mem, 
+                Path.GetDirectoryName(result), 
+                Path.GetFileNameWithoutExtension(result) + $" ({i+1})" + Path.GetExtension(result));
+            templateProcessor.Fill(fields[i], Path.GetExtension(result));
+        }
+    }
+    public void Next()
+    {
+        if (index != count - 1)
+        {
+            index++; 
+            CurFields = fields[index];
+        }
+    }
+    public void Previous()
+    {
+        if (index != 0)
+        {
+            index--;
+            CurFields = fields[index];
+        }
     }
 }
