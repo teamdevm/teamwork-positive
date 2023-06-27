@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<article lang="">
+  <para>Унифицированная форма № Т-1Утверждена Постановлением Госкомстата Россииот 05.01.2004 № 1</para>
+  <informaltable frame="all">
+    <tgroup cols="3"><tbody><row><entry><para/></entry><entry namest="c2" nameend="c3"><para/></entry><entry><para>Код</para></entry></row><row><entry><para/></entry><entry namest="c2" nameend="c3"><para>Форма по ОКУД</para></entry><entry><para>0301001</para></entry></row><row><entry namest="c1" nameend="c2"><para>&lt;НаименованиеОрганизации&gt;</para></entry><entry><para>по ОКПО</para></entry><entry><para>&lt;НомерОКПО&gt;</para></entry></row></tbody></tgroup>
+  </informaltable>
+  <para>(наименование организации)</para>
+  <informaltable frame="all">
+    <tgroup cols="3"><tbody><row><entry><para/></entry><entry><para>Номер документа</para></entry><entry><para>Дата составления</para></entry></row><row><entry><para/></entry><entry><para>&lt;НомерДокумента&gt;</para></entry><entry><para>&lt;ДатаСоставления:Дата&gt;</para></entry></row></tbody></tgroup>
+  </informaltable>
+  <para>ПРИКАЗ</para>
+  <para>(распоряжение)</para>
+  <para>о приеме работника на работу</para>
+  <informaltable frame="all">
+    <tgroup cols="3"><tbody><row><entry><para/></entry><entry><para/></entry><entry><para>Дата</para></entry></row><row><entry><para>Принять на работу</para></entry><entry><para>с</para></entry><entry><para>&lt;ДатаНачалаРаботы:Дата&gt;</para></entry></row><row><entry><para/></entry><entry><para>по</para></entry><entry><para>-</para></entry></row></tbody></tgroup>
+  </informaltable>
+  <para/>
+  <informaltable frame="all">
+    <tgroup cols="1.666666666666667"><tbody><row><entry><para/></entry><entry><para>Табельный номер</para></entry></row><row><entry><para/></entry><entry><para>&lt;ТабельныйНомер&gt;</para></entry></row><row><entry><para>&lt;Фамилия:Принять на работу&gt; &lt; Имя:Принять на работу&gt; &lt;Отчество:Принять на работу&gt;</para></entry></row></tbody></tgroup>
+  </informaltable>
+  <para>(фамилия, имя, отчество)</para>
+  <informaltable frame="all">
+    <tgroup cols="1.285714285714286"><tbody><row><entry><para>в</para></entry><entry><para>&lt;СтруктурноеПодразделение:Принять на работу&gt;</para></entry></row><row><entry><para/></entry><entry><para>(структурное подразделение)</para></entry></row><row><entry namest="c1" nameend="c2"><para>&lt;Должность:Принять на работу&gt;,&lt;Категория:Принять на работу&gt;</para></entry></row><row><entry namest="c1" nameend="c2"><para>(должность (специальность, профессия), разряд, класс (категория) квалификации)</para></entry></row><row><entry namest="c1" nameend="c2"><para>&lt;УсловиеПриема:Принять на работу&gt;,</para></entry></row><row><entry namest="c1" nameend="c2"><para>&lt;ХарактерРаботы:Принять на работу&gt;</para></entry></row><row><entry namest="c1" nameend="c2"><para>(условия приема на работу, характер работы)</para></entry></row></tbody></tgroup>
+  </informaltable>
+  <para>
+    <anchor id="_GoBack"/>
+  </para>
+  <informaltable frame="all">
+    <tgroup cols="5"><tbody><row><entry><para>с тарифной ставкой (окладом)</para></entry><entry><para>&lt;Рубли:Оклад&gt;</para></entry><entry><para>руб.</para></entry><entry><para>&lt;Копейки:Оклад&gt;</para></entry><entry><para>коп.</para></entry></row><row><entry><para/></entry><entry><para>(цифрами)</para></entry><entry><para/></entry><entry><para/></entry><entry><para/></entry></row></tbody></tgroup>
+  </informaltable>
+  <para/>
+  <informaltable frame="all">
+    <tgroup cols="5"><tbody><row><entry><para>надбавкой</para></entry><entry><para>&lt;Рубли:Надбавка&gt;</para></entry><entry><para>руб.</para></entry><entry namest="c4" nameend="c5"><para>&lt;Копейки:Надбавка&gt;</para></entry><entry><para>коп.</para></entry></row><row><entry><para/></entry><entry><para>(цифрами)</para></entry><entry><para/></entry><entry><para/></entry><entry namest="c5" nameend="c6"><para/></entry></row></tbody></tgroup>
+  </informaltable>
+  <para/>
+  <informaltable frame="all">
+    <tgroup cols="3"><tbody><row><entry><para>с испытанием на срок</para></entry><entry><para>&lt;ИспытательныйСрок (количество месяцев)&gt;</para></entry><entry><para>месяца(ев)</para></entry></row></tbody></tgroup>
+  </informaltable>
+  <para/>
+  <para>Основание:</para>
+  <informaltable frame="all">
+    <tgroup cols="4"><tbody><row><entry><para>Трудовой договор от “</para></entry><entry><para>&lt;ДатаТрудовогоДоговора:Дата&gt;</para></entry><entry><para>  №</para></entry><entry><para>&lt;НомерТрудовогоДогора&gt;</para></entry></row></tbody></tgroup>
+  </informaltable>
+  <para/>
+  <informaltable frame="all">
+    <tgroup cols="6"><tbody><row><entry><para>Руководитель организации</para></entry><entry><para>&lt;ДолжностьРуководителя:Руководитель&gt;</para></entry><entry><para/></entry><entry><para/></entry><entry><para/></entry><entry><para>&lt;РасшифровкаПодписи:Руководитель&gt;</para></entry></row><row><entry><para/></entry><entry><para>(должность)</para></entry><entry><para/></entry><entry><para>(личная подпись)</para></entry><entry><para/></entry><entry><para>(расшифровка подписи)</para></entry></row></tbody></tgroup>
+  </informaltable>
+  <para/>
+  <informaltable frame="all">
+    <tgroup cols="7"><tbody><row><entry><para>С приказом (распоряжением) работник ознакомлен</para></entry><entry><para/></entry><entry><para/></entry><entry namest="c4" nameend="c8"><para>&lt;ДатаОзнакомления:Дата&gt;</para></entry><entry><para/></entry></row><row><entry><para/></entry><entry><para>(личная подпись)</para></entry><entry><para/></entry><entry><para/></entry><entry><para/></entry><entry><para/></entry><entry><para/></entry><entry><para/></entry><entry><para/></entry></row></tbody></tgroup>
+  </informaltable>
+  <para/>
+</article>
