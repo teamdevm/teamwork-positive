@@ -12,10 +12,8 @@ namespace Documently.ViewModels;
 
 public class FillViewModel : ViewModelBase
 {
-    private ITemplateProcessor curTemplate;
+    private ITemplateProcessor templateProcessor;
     private Dictionary<string, ObservableCollection<Field>> curFields;
-
-    private ITemplateProcessor[] templateProcessor;
     private Dictionary<string, ObservableCollection<Field>>[] fields;
     public string result;
     public int count;
@@ -27,21 +25,14 @@ public class FillViewModel : ViewModelBase
         mem = name;
         this.count = count;
         index = 0;
-        templateProcessor = new ITemplateProcessor[count];
+        templateProcessor = tp;
         fields = new Dictionary<string, ObservableCollection<Field>>[count];
         for (int i = 0; i < count; i++)
         {
-            templateProcessor[i] = tp;
-            templateProcessor[i].Setup(name, "", "");
-            fields[i] = templateProcessor[i].GetFields();
+            templateProcessor.Setup(name, "", "");
+            fields[i] = templateProcessor.GetFields();
         }
-        curTemplate = templateProcessor[index];
         curFields = fields[index];
-    }
-    public ITemplateProcessor CurTemplate
-    {
-        get => curTemplate;
-        set => this.RaiseAndSetIfChanged(ref curTemplate, value);
     }
     public Dictionary<string, ObservableCollection<Field>> CurFields
     {
@@ -52,12 +43,10 @@ public class FillViewModel : ViewModelBase
     {
         for (int i = 0; i < count; i++)
         {
-            templateProcessor[i].Setup(mem, 
+            templateProcessor.Setup(mem, 
                 Path.GetDirectoryName(result), 
                 Path.GetFileNameWithoutExtension(result) + $" ({i+1})" + Path.GetExtension(result));
-            string[] ext1 = result.Split('.');
-            string ext2 = ext1[ext1.Length - 1];
-            templateProcessor[i].Fill(fields[i], ext2);
+            templateProcessor.Fill(fields[i], Path.GetExtension(result));
         }
     }
     public void Next()
@@ -66,7 +55,6 @@ public class FillViewModel : ViewModelBase
         {
             index++; 
             CurFields = fields[index];
-            CurTemplate = templateProcessor[index];
         }
     }
     public void Previous()
@@ -75,7 +63,6 @@ public class FillViewModel : ViewModelBase
         {
             index--;
             CurFields = fields[index];
-            CurTemplate = templateProcessor[index];
         }
     }
 }
