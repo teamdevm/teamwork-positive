@@ -28,7 +28,7 @@
 						HorizontalAlignment="Left"
 						Grid.Column="0">
 				<Button Classes="Back" 
-						Command="{Binding $parent[Window].DataContext.SwitchToPrevious}"
+						Command="{Binding $parent[Window].DataContext.SwitchToCollect}"
 						ToolTip.Tip="Вернуться">
 					<Rectangle Classes="Mask" 
 							   Fill="{DynamicResource ButtonColor}" 
