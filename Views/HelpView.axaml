@@ -1,0 +1,54 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Documently.Views.HelpView">
+	<DockPanel>
+		<DockPanel DockPanel.Dock="Top" 
+				   Background="{DynamicResource PanelBackground}">
+			<DockPanel HorizontalAlignment="Left">
+				<Button Classes="Back"
+						Command="{Binding $parent[Window].DataContext.SwitchToPrevious}"
+						ToolTip.Tip="Вернуться">
+					<Rectangle Classes="Mask"
+							   Fill="{DynamicResource ButtonColor}"
+							   OpacityMask="{DynamicResource Return}"/>
+				</Button>
+			</DockPanel>
+			<DockPanel HorizontalAlignment="Right">
+				<Button Classes="Back"
+						ToolTip.Tip="Переключить тему"
+						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
+					<Image Source="{DynamicResource Theme}" Classes="Icon"/>
+				</Button>
+			</DockPanel>
+		</DockPanel>
+
+		<SplitView IsPaneOpen="True" DisplayMode="Inline">
+			<SplitView.Pane>
+				<ScrollViewer>
+					<StackPanel Background="{DynamicResource FirstBlockBackground}">
+						<TreeView x:Name="tree"
+								  Items="{Binding Items}"
+								  SelectedItem="{Binding SelectedItem}">
+						</TreeView>
+						
+					</StackPanel>
+				</ScrollViewer>
+			</SplitView.Pane>
+
+			<ScrollViewer>
+				<StackPanel Background="{DynamicResource SecondBlockBackground}">
+					<TextBlock Text="{Binding ShowText}"
+							   Margin="32"
+							   TextWrapping="Wrap"/>
+				</StackPanel>
+			</ScrollViewer>
+		</SplitView>
+		
+		
+		
+	</DockPanel>
+</UserControl>
+

@@ -139,7 +139,9 @@
 						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
 					<Image Source="{DynamicResource Theme}" Classes="Icon"/>
 				</Button>
-				<Button Classes="Back" ToolTip.Tip="Помощь">
+				<Button Classes="Back" 
+				 	    Command="{Binding $parent[Window].DataContext.SwitchToHelp}"
+						ToolTip.Tip="Помощь">
 					<Rectangle Classes="Mask" 
 							   Fill="{DynamicResource ButtonColor}" 
 							   OpacityMask="{DynamicResource Help}"/>
