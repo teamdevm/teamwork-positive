@@ -1,21 +1,6 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Avalonia;
-using Avalonia.Controls;
 using ReactiveUI;
-using System;
-using System.Reactive;
-using System.Reactive.Linq;
-using System.ComponentModel;
-using Avalonia;
-using Avalonia.Styling;
-using Avalonia.Controls;
-using Avalonia.Themes.Fluent;
-using System.Threading.Tasks;
 using Documently.Models;
 
 
