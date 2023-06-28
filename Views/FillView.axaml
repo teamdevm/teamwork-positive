@@ -2,88 +2,133 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:md="clr-namespace:Documently.Models"
+			 xmlns:views="clr-namespace:Documently.Views"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Documently.Views.FillView">
-	
+	<UserControl.DataTemplates>
+		<DataTemplate DataType="{x:Type md:TextField}">
+			<StackPanel Margin="0,4">
+				<TextBlock Text="{Binding DisplayName}"/>
+				<TextBox Margin="0,4" Watermark="Введите текст" Text="{Binding Text}"/>
+			</StackPanel>
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type md:CurrentDateField}">
+			<StackPanel Margin="0,4">
+				<TextBlock Text="{Binding DisplayName}"/>
+				<DatePicker Margin="0,4" SelectedDate="{Binding Date}"/>
+			</StackPanel>
+		</DataTemplate>
+	</UserControl.DataTemplates>
 	<DockPanel>
-		<DockPanel DockPanel.Dock="Top">
-			
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-				<Button Classes="Fill" 
-						Command="{Binding $parent[Window].DataContext.SwitchToPrevious}"
+		<Grid DockPanel.Dock="Top"
+			  Background="{DynamicResource PanelBackground}"
+			  ColumnDefinitions="*,*,*">
+			<StackPanel Orientation="Horizontal" 
+						HorizontalAlignment="Left"
+						Grid.Column="0">
+				<Button Classes="Back" 
+						Command="{Binding $parent[Window].DataContext.SwitchToCollect}"
 						ToolTip.Tip="Вернуться">
-					<Image Source="{DynamicResource Return}" Classes="Icon"/>
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Return}"/>
 				</Button>
-				<Button Classes="Fill" 
+				<Rectangle Classes="Sep"/>
+				<Button Classes="Back" ToolTip.Tip="Добавить экземпляр">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource AddRow}"/>
+				</Button>
+				<Button Classes="Back" ToolTip.Tip="Загрузить таблицу">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource AddDataset}"/>
+				</Button>
+				<Button Classes="Back" 
 						Command="{Binding $parent[Window].DataContext.DocSave}"
 						ToolTip.Tip="Сохранить">
-					<Image Source="{DynamicResource Tik}" Classes="Icon"/>
-				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Добавить экземпляр">
-					<Image Source="{DynamicResource AddRow}" Classes="Icon"/>
-				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Загрузить таблицу">
-					<Image Source="{DynamicResource AddDataset}" Classes="Icon"/>
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Download}"/>
 				</Button>
 			</StackPanel>
 
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Classes="Fill" ToolTip.Tip="Предыдущий">
-					<Image Source="{DynamicResource ArrowLeft}" Classes="Icon"/>
+			<StackPanel Orientation="Horizontal" 
+						HorizontalAlignment="Center"
+						Grid.Column="1">
+				<Button Classes="Back" 
+						ToolTip.Tip="Предыдущий"
+						Command="{Binding Previous}"
+						IsEnabled="{Binding !IsFirst}">
+					<Rectangle Classes="Mask"
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource ArrowLeft}"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Следующий">
-					<Image Source="{DynamicResource ArrowRight}" Classes="Icon"/>
-				</Button>
-			</StackPanel>
-			
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-				<Button Classes="Fill"
-						ToolTip.Tip="Переключить тему"
-						IsVisible="{Binding $parent[Window].DataContext.Mode}"
-						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
-					<Image Source="{DynamicResource Light}" Classes="Icon"/>
-				</Button>
-				<Button Classes="Fill"
-						ToolTip.Tip="Переключить тему"
-						IsVisible="{Binding !$parent[Window].DataContext.Mode}"
-						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
-					<Image Source="{DynamicResource Dark}" Classes="Icon"/>
-				</Button>
-
-				<Button Classes="Fill" ToolTip.Tip="Помощь">
-					<Image Source="{DynamicResource Help}" Classes="Icon"/>
-				</Button>
-			</StackPanel>
-			
-		</DockPanel>
-
-		<SplitView IsPaneOpen="True"
-           DisplayMode="Inline"
-           OpenPaneLength="600">
-			<SplitView.Pane>
-				<ScrollViewer>
-				<ItemsRepeater Items="{Binding Fields}">
-					<ItemsRepeater.ItemTemplate>
-						<DataTemplate>
-							<StackPanel Margin="24, 4">
-								<TextBlock Text="{Binding Name}"/>
-								<TextBox Watermark="Введите текст" Text="{Binding Text}"/>
-							</StackPanel>
-						</DataTemplate>
-					</ItemsRepeater.ItemTemplate>
-				</ItemsRepeater>
-				</ScrollViewer>
-			</SplitView.Pane>
-
-			<Grid>
-				<TextBlock Text="Предварительный просмотр"
-						   FontSize="24"
-						   FontFamily="Times New Roman"
+				<TextBlock Text="{Binding Index, StringFormat={}{0}}"
+						   FontWeight="Bold"
 						   VerticalAlignment="Center"
-						   HorizontalAlignment="Center"/>
-			</Grid>
-		</SplitView>
-		
+						   Margin="8,0"/>
+				<Button Classes="Back" 
+						ToolTip.Tip="Следующий"
+						Command="{Binding Next}"
+						IsEnabled="{Binding !IsLast}">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource ArrowRight}"/>
+				</Button>
+			</StackPanel>
+			
+			<StackPanel Orientation="Horizontal" 
+						HorizontalAlignment="Right"
+						Grid.Column="2">
+				<Button Classes="Back"
+						ToolTip.Tip="Переключить тему"
+						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
+					<Image Source="{DynamicResource Theme}" Classes="Icon"/>
+				</Button>
+				<Button Classes="Back" 
+				     	Command="{Binding $parent[Window].DataContext.SwitchToHelp}"
+						ToolTip.Tip="Помощь">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Help}"/>
+				</Button>
+			</StackPanel>
+		</Grid>
+		<Grid Background="{DynamicResource SecondBlockBackground}"
+				ColumnDefinitions="*,*">
+			<ScrollViewer Grid.Column="0">
+				<ItemsControl Items="{Binding CurFields}">
+					<ItemsControl.ItemTemplate>
+						<DataTemplate>
+							<Border BorderBrush="Gray"
+									BorderThickness="1"
+									CornerRadius="4"
+									Padding="12,4"
+									Margin="12">
+								<StackPanel>
+									<TextBlock Text="{Binding Key}"
+											TextAlignment="Center"
+											FontWeight="Bold"/>
+									<ItemsControl Items="{Binding Value}">
+										<ItemsControl.ItemTemplate>
+											<DataTemplate>
+												<ContentControl Content="{Binding}"/>
+											</DataTemplate>
+										</ItemsControl.ItemTemplate>
+									</ItemsControl>
+								</StackPanel>
+							</Border>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
+			</ScrollViewer>
+			<ScrollViewer Grid.Column="1">
+				<Border Background="White" BorderBrush="Gray" BorderThickness="1" Margin="12">
+					<views:DocumentPreview DataContext="{Binding Doc}"/>
+				</Border>
+			</ScrollViewer>
+		</Grid>
 	</DockPanel>
-	
 </UserControl>

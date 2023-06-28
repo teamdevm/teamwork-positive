@@ -1,14 +1,29 @@
 using System.Collections.ObjectModel;
+using ReactiveUI;
 using LiteDB;
 
 namespace Documently.Models;
 
-public class Category
+public class Category : ReactiveObject
 {
+    private string _name;
+    private int _count;
+
     [BsonId]
     public ObjectId Id { get; }
     public ObjectId Parent { get; set; }
-    public string Name { get; set; }
+    public string Name
+    {
+        get => _name;
+        set => this.RaiseAndSetIfChanged(ref _name, value);
+    }
+
+    [BsonIgnore]
+    public int Count
+    {
+        get => _count;
+        set => this.RaiseAndSetIfChanged(ref _count, value);
+    }
 
     [BsonIgnore]
     public ObservableCollection<Category> Children { get; }
@@ -19,7 +34,7 @@ public class Category
     {
         Id = id;
         Parent = parent;
-        Name = name;
+        _name = name;
         Children = new ObservableCollection<Category>();
     }
 
@@ -28,7 +43,7 @@ public class Category
     {
         Id = ObjectId.NewObjectId();
         Parent = ObjectId.Empty;
-        Name = name;
+        _name = name;
         Children = new ObservableCollection<Category>();
     }
 
@@ -36,7 +51,7 @@ public class Category
     {
         Id = ObjectId.NewObjectId();
         Parent = parent.Id;
-        Name = name;
+        _name = name;
         Children = new ObservableCollection<Category>();
 
         /* Automatically attach new category to the tree */

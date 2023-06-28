@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<article lang="">
+  <para>Унифицированная форма № Т-8</para>
+  <para>Утверждена Постановлением Госкомстата Россииот 05.01.04 № 1</para>
+  <informaltable frame="all">
+    <tgroup cols="3"><tbody><row><entry><para/></entry><entry namest="c2" nameend="c3"><para/></entry><entry><para>Код</para></entry></row><row><entry><para/></entry><entry namest="c2" nameend="c3"><para>Форма по ОКУД</para></entry><entry><para>0301006</para></entry></row><row><entry namest="c1" nameend="c2"><para>&lt;НаименованиеОрганизации&gt;</para></entry><entry><para>по ОКПО</para></entry><entry><para>&lt;НомерОКПО&gt;</para></entry></row><row><entry namest="c1" nameend="c2"><para>(наименование организации)</para></entry><entry><para/></entry><entry><para/></entry></row></tbody></tgroup>
+  </informaltable>
+  <para/>
+  <informaltable frame="all">
+    <tgroup cols="3"><tbody><row><entry><para/></entry><entry><para>Номер документа</para></entry><entry><para>Дата составления</para></entry></row><row><entry><para>ПРИКАЗ</para></entry><entry><para>&lt;НомерДокумента&gt;</para></entry><entry><para>&lt;ДатаСоставления:Дата&gt;</para></entry></row></tbody></tgroup>
+  </informaltable>
+  <para>(распоряжение)</para>
+  <para>о прекращении (расторжении) трудового договора с работником (увольнении)</para>
+  <informaltable frame="all">
+    <tgroup cols="5.5"><tbody><row><entry><para>Прекратить действие трудового договора от </para></entry><entry namest="c2" nameend="c3"><para>&lt;ДатаПрекращенияТрудовогоДоговора:Дата&gt;</para></entry><entry><para/></entry><entry namest="c5" nameend="c6"><para> №</para></entry><entry><para>&lt;НомерТрудовогоДоговора&gt;</para></entry><entry><para>,</para></entry></row><row><entry namest="c1" nameend="c2"><para>уволить </para></entry><entry namest="c3" nameend="c5"><para> &lt;ДатаУвольнения:Дата&gt;</para></entry><entry><para/></entry><entry><para/></entry><entry><para/></entry></row></tbody></tgroup>
+  </informaltable>
+  <para/>
+  <informaltable frame="all">
+    <tgroup cols="1.375"><tbody><row><entry><title/></entry><entry><para>Табельный номер</para></entry></row><row><entry><para>&lt;Фамилия:Уволить&gt; &lt;Имя:Уволить&gt; &lt;Отчество:Уволить&gt;</para></entry><entry><para>&lt;ТабельныйНомер&gt;</para></entry></row><row><entry><para>(фамилия, имя, отчество)</para></entry><entry><para/></entry></row><row><entry namest="c1" nameend="c2"><para>&lt;СтруктурноеПодразделение:Уволить&gt;</para></entry></row><row><entry namest="c1" nameend="c2"><para>(структурное подразделение)</para></entry></row><row><entry namest="c1" nameend="c2"><para>&lt;Должность:Уволить<anchor id="_GoBack"/>&gt;,&lt;Разряд:Уволить&gt;,</para></entry></row><row><entry namest="c1" nameend="c2"><para>(должность (специальность, профессия), разряд, класс (категория) квалификации)</para></entry></row><row><entry namest="c1" nameend="c2"><para>&lt;Категория:Уволить&gt;</para></entry></row></tbody></tgroup>
+  </informaltable>
+  <sect1>
+    <title/>
+    <para>&lt;ОснованиеРасторженияТрудовогоДоговора:Уволить&gt;</para>
+    <para>(основание прекращения (расторжения) трудового договора (увольнения))</para>
+    <para/>
+    <para/>
+    <para/>
+    <informaltable frame="all">
+      <tgroup cols="2"><tbody><row><entry><para>Основание:</para></entry><entry><para>&lt;ОснованиеУвольнения:Уволить&gt;</para></entry></row><row><entry><para/></entry><entry><para>(заявление работника, служебная записка, медицинское заключение и т.д.)</para></entry></row></tbody></tgroup>
+    </informaltable>
+    <para/>
+    <informaltable frame="all">
+      <tgroup cols="6"><tbody><row><entry><para>Руководитель организации</para></entry><entry><para>&lt;Должность:Руководитель&gt;</para></entry><entry><para/></entry><entry><para/></entry><entry><para>/</para></entry><entry><para>&lt;РасшифровкаПодписи:Руководитель&gt;</para></entry></row><row><entry><para/></entry><entry><para>(должность)</para></entry><entry><para/></entry><entry><para>(личная подпись)</para></entry><entry><para/></entry><entry><para>(расшифровка подписи)</para></entry></row></tbody></tgroup>
+    </informaltable>
+    <para/>
+    <informaltable frame="all">
+      <tgroup cols="7"><tbody><row><entry><para>С приказом (распоряжением) работник ознакомлен</para></entry><entry><para/></entry><entry><para/></entry><entry namest="c4" nameend="c8"><para>&lt;ДатаОзнакомления:Дата&gt;</para></entry><entry><para/></entry></row><row><entry><para/></entry><entry><para>(личная подпись)</para></entry><entry><para/></entry><entry><para/></entry><entry><para/></entry><entry><para/></entry><entry><para/></entry><entry><para/></entry><entry><para/></entry></row></tbody></tgroup>
+    </informaltable>
+    <para>Мотивированное мнение выборногопрофсоюзного органа в письменной форме</para>
+    <informaltable frame="all">
+      <tgroup cols="3"><colspec colnum="1" colname="c1"/><colspec colnum="2" colname="c2"/><colspec colnum="3" colname="c3"/><tbody><row><entry><para>(от “</para></entry><entry><para/></entry><entry><para>”</para></entry><entry><para/></entry><entry><para>20</para></entry><entry><para/></entry><entry><para>г. №</para></entry><entry><para/></entry><entry><para>) рассмотрено</para></entry></row></tbody></tgroup>
+    </informaltable>
+    <para/>
+  </sect1>
+</article>

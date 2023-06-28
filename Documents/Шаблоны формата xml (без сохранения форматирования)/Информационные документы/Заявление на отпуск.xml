@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<article lang="">
+  <para/>
+  <informaltable frame="all">
+    <tgroup cols="1"><tbody><row><entry><para>&lt;Должность:Кому&gt;</para><para>&lt;НаименованиеОрганизации:Кому&gt; &lt;ФИО:Кому&gt;от &lt;Должность:ОтКого&gt;&lt;ФИО:ОтКого&gt;</para><para/></entry></row></tbody></tgroup>
+  </informaltable>
+  <para> </para>
+  <para> </para>
+  <para>ЗАЯВЛЕНИЕ</para>
+  <para/>
+  <para>Прошу предоставить мне ежегодный оплачиваемый отпуск с &lt;ДатаНачалаОтпуска:Дата&gt; по &lt;ДатаОкончанияОтпуска:Дата&gt; сроком на &lt;КоличествоДнейОтпуска&gt; календарных дней.<anchor id="_GoBack"/></para>
+  <para/>
+  <para>&lt;ФИО:ОтКого&gt;/_______________________</para>
+  <para>                                                                (подпись)</para>
+  <para> </para>
+  <para>&lt;ТекущаяДата:Дата&gt;</para>
+  <para/>
+  <para/>
+  <para/>
+  <para/>
+</article>

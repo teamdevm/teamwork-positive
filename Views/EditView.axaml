@@ -5,43 +5,60 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Documently.Views.EditView">
 
-	<DockPanel>
-		<DockPanel DockPanel.Dock="Top">
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0, 0, 150, 0">
-				<Button Classes="Fill" 
-						Command="{Binding $parent[Window].DataContext.SwitchToPrevious}"
+	<DockPanel Background="{DynamicResource SecondBlockBackground}">
+		<Grid DockPanel.Dock="Top"
+			  Background="{DynamicResource PanelBackground}"
+			  ColumnDefinitions="Auto,*,Auto">
+			<DockPanel HorizontalAlignment="Left" Grid.Column="0">
+				<Button Classes="Back" 
+						Command="{Binding $parent[Window].DataContext.SwitchToCollect}"
 						ToolTip.Tip="Вернуться">
-					<Image Source="{DynamicResource Return}" Classes="Icon"/>
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Return}"/>
 				</Button>
-				<Rectangle Width="1" Fill="Gray"/>
-				<Button Classes="Fill" ToolTip.Tip="Новый">
-					<Image Source="{DynamicResource EmptyFile}" Classes="Icon"/>
+				<Rectangle Classes="Sep"/>
+				<Button Classes="Back" ToolTip.Tip="Новый">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource EmptyFile}"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Сохранить">
-					<Image Source="{DynamicResource Save}" Classes="Icon"/>
+				<Button Classes="Back" ToolTip.Tip="Сохранить">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Save}"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Категории">
-					<Image Source="{DynamicResource Tag}" Classes="Icon"/>
+				<Button Classes="Back" ToolTip.Tip="Категории">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Tag}"/>
 				</Button>
-				<Rectangle Width="1" Fill="Gray"/>
-				<Button Classes="Fill" ToolTip.Tip="Назад">
-					<Image Source="{DynamicResource Undo}" Classes="Icon"/>
+				<Rectangle Classes="Sep"/>
+				<Button Classes="Back" ToolTip.Tip="Назад">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Undo}"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Вперед">
-					<Image Source="{DynamicResource Redo}" Classes="Icon"/>
+				<Button Classes="Back" ToolTip.Tip="Вперед">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Redo}"/>
 				</Button>
-				<Rectangle Width="1" Fill="Gray"/>
-			</StackPanel>
-
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Classes="Fill" ToolTip.Tip="Копировать формат">
-					<Image Source="{DynamicResource FormatPainter}" Classes="Icon"/>
+			</DockPanel>
+			<DockPanel HorizontalAlignment="Center"
+					   Grid.Column="1">
+				<Button Classes="Back" ToolTip.Tip="Копировать формат">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource FormatPainter}"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Очистить формат">
-					<Image Source="{DynamicResource ClearFormat}" Classes="Icon"/>
+				<Button Classes="Back" ToolTip.Tip="Очистить формат">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource ClearFormat}"/>
 				</Button>
-				<Rectangle Width="1" Fill="Gray"/>
-				<Button Classes="Fill" ToolTip.Tip="Полужирный" Margin="4, 4">
+				<Rectangle Classes="Sep"/>
+				<!--<Button Classes="Fill" ToolTip.Tip="Полужирный" Margin="4, 4">
 					<TextBlock Text="B" FontFamily="Consolas" FontWeight="Bold" FontSize="24"/>
 				</Button>
 				<Button Classes="Fill" ToolTip.Tip="Курсив" Margin="4, 4">
@@ -49,62 +66,92 @@
 				</Button>
 				<Button Classes="Fill" ToolTip.Tip="Подчеркнутый" Margin="4, 4">
 					<TextBlock Text="U" FontFamily="Consolas" TextDecorations="Underline" FontSize="24"/>
+				</Button>-->
+				<Button Classes="Back" ToolTip.Tip="Полужирный">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Bold}"/>
 				</Button>
-				<Rectangle Width="1" Fill="Gray"/>
-				<Button Classes="Fill" ToolTip.Tip="Выровнять по левому краю">
-					<Image Source="{DynamicResource LeftAlign}" Classes="Icon"/>
+				<Button Classes="Back" ToolTip.Tip="Курсив">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Italic}"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Выровнять по центру">
-					<Image Source="{DynamicResource CenterAlign}" Classes="Icon"/>
+				<Button Classes="Back" ToolTip.Tip="Подчеркнутый">
+					<Rectangle Classes="Mask"
+							   Fill="{DynamicResource ButtonColor}"
+							   OpacityMask="{DynamicResource Underline}"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Выровнять по правому краю">
-					<Image Source="{DynamicResource RightAlign}" Classes="Icon"/>
+				<Rectangle Classes="Sep"/>
+				<Button Classes="Back" ToolTip.Tip="Выровнять по левому краю">
+					<Rectangle Classes="Mask"
+							   Fill="{DynamicResource ButtonColor}"
+							   OpacityMask="{DynamicResource LeftAlign}"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Выровнять по ширине">
-					<Image Source="{DynamicResource Justify}" Classes="Icon"/>
+				<Button Classes="Back" ToolTip.Tip="Выровнять по центру">
+					<Rectangle Classes="Mask"
+							   Fill="{DynamicResource ButtonColor}"
+							   OpacityMask="{DynamicResource CenterAlign}"/>
 				</Button>
-				<Rectangle Width="1" Fill="Gray"/>
-				<Button Classes="Fill" ToolTip.Tip="Маркированный список">
-					<Image Source="{DynamicResource Ulitem}" Classes="Icon"/>
+				<Button Classes="Back" ToolTip.Tip="Выровнять по правому краю">
+					<Rectangle Classes="Mask"
+							   Fill="{DynamicResource ButtonColor}"
+							   OpacityMask="{DynamicResource RightAlign}"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Нумерованный список">
-					<Image Source="{DynamicResource Orderlist}" Classes="Icon"/>
+				<Button Classes="Back" ToolTip.Tip="Выровнять по ширине">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Justify}"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Уменьшить отступ">
-					<Image Source="{DynamicResource LeftIndent}" Classes="Icon"/>
+				<Rectangle Classes="Sep"/>
+				<Button Classes="Back" ToolTip.Tip="Маркированный список">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Ulitem}"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Увеличить отступ">
-					<Image Source="{DynamicResource RightIndent}" Classes="Icon"/>
+				<Button Classes="Back" ToolTip.Tip="Нумерованный список">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Orderlist}"/>
 				</Button>
-				<Button Classes="Fill" ToolTip.Tip="Интервал">
-					<Image Source="{DynamicResource LineHeight}" Classes="Icon"/>
+				<Rectangle Classes="Sep"/>
+				<Button Classes="Back" ToolTip.Tip="Уменьшить отступ">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource LeftIndent}"/>
 				</Button>
-				
-			</StackPanel>
-			
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-				<Rectangle Width="1" Fill="Gray"/>
-				<Button Classes="Fill"
+				<Button Classes="Back" ToolTip.Tip="Увеличить отступ">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource RightIndent}"/>
+				</Button>
+				<Rectangle Classes="Sep"/>
+				<Button Classes="Back" ToolTip.Tip="Интервал">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource LineHeight}"/>
+				</Button>
+			</DockPanel>
+			<DockPanel HorizontalAlignment="Right"
+					   Grid.Column="2">
+				<Button Classes="Back"
 						ToolTip.Tip="Переключить тему"
-						IsVisible="{Binding $parent[Window].DataContext.Mode}"
 						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
-					<Image Source="{DynamicResource Light}" Classes="Icon"/>
+					<Image Source="{DynamicResource Theme}" Classes="Icon"/>
 				</Button>
-				<Button Classes="Fill"
-						ToolTip.Tip="Переключить тему"
-						IsVisible="{Binding !$parent[Window].DataContext.Mode}"
-						Command="{Binding $parent[Window].DataContext.SwitchTheme}">
-					<Image Source="{DynamicResource Dark}" Classes="Icon"/>
+				<Button Classes="Back" 
+				 	    Command="{Binding $parent[Window].DataContext.SwitchToHelp}"
+						ToolTip.Tip="Помощь">
+					<Rectangle Classes="Mask" 
+							   Fill="{DynamicResource ButtonColor}" 
+							   OpacityMask="{DynamicResource Help}"/>
 				</Button>
-				
-				<Button Classes="Fill" ToolTip.Tip="Помощь">
-					<Image Source="{DynamicResource Help}" Classes="Icon"/>
-				</Button>
-			</StackPanel>
-			
-		</DockPanel>
-		<TextBox AcceptsReturn="True" FontFamily="Times New Roman" FontSize="14"/>
-			
+			</DockPanel>
+		</Grid>
+		<ScrollViewer>
+			<TextBox AcceptsReturn="True" 
+					 FontFamily="Times New Roman" 
+					 FontSize="14"/>
+		</ScrollViewer>
 	</DockPanel>
-	
 </UserControl>
