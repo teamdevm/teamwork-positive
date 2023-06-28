@@ -7,6 +7,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Documently.Models;
+using Aspose.Words;
 
 namespace Documently.ViewModels;
 
@@ -17,6 +18,7 @@ public class FillViewModel : ViewModelBase
     private Dictionary<string, ObservableCollection<Field>>[] fields;
     private bool _isFirst;
     private bool _isLast;
+    private Document _doc;
     public string result;
     public int count;
     public int index;
@@ -28,7 +30,7 @@ public class FillViewModel : ViewModelBase
         this.count = count;
         index = 1;
         templateProcessor = tp;
-        templateProcessor.Setup(name, "", "");
+        Doc = templateProcessor.Setup(name, "", "");
         fields = new Dictionary<string, ObservableCollection<Field>>[count];
         for (int i = 0; i < count; i++)
         {
@@ -37,11 +39,22 @@ public class FillViewModel : ViewModelBase
         curFields = fields[index - 1];
         _isFirst = index == 1;
         _isLast = index == count;
+        UpdatePreview = ReactiveCommand.Create(_UpdatePreview);
     }
     public Dictionary<string, ObservableCollection<Field>> CurFields
     {
         get => curFields;
         set => this.RaiseAndSetIfChanged(ref curFields, value);
+    }
+    public Document Doc
+    {
+        get => _doc;
+        set => this.RaiseAndSetIfChanged(ref _doc, value);
+    }
+    public ReactiveCommand<Unit, Unit> UpdatePreview { get; }
+    private void _UpdatePreview ()
+    {
+        Doc = templateProcessor.Fill(CurFields);
     }
     public void GetTemplate()
     {
@@ -50,7 +63,8 @@ public class FillViewModel : ViewModelBase
             templateProcessor.Setup(mem, 
                 Path.GetDirectoryName(result), 
                 Path.GetFileNameWithoutExtension(result) + $" ({i+1})" + Path.GetExtension(result));
-            templateProcessor.Fill(fields[i], Path.GetExtension(result));
+            Document doc = templateProcessor.Fill(fields[i]); // переделал тут, чтобы протестить, потом, как надо сделаете
+            templateProcessor.Save(doc, Path.GetExtension(result));
         }
     }
     public void Next()
