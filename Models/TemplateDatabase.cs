@@ -83,13 +83,17 @@ public class TemplateDatabase
 
     public void AddTemplate (string path, Category tag)
     {
-        string name = Path.GetFileName(path);
+        string pathToXml = Converter.ToXml(path);
+        string name = Path.GetFileName(pathToXml);
         Template t = new Template(name, "", tag);
         
-        storage.Upload(t.Id, path);
+        storage.Upload(t.Id, pathToXml);
         templates.Insert(t);
 
         tag.Count += 1;
+
+        if (File.Exists(pathToXml))
+            File.Delete(pathToXml);
     }
 
     public void RenameTemplate (Template t, string newname)

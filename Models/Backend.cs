@@ -49,11 +49,12 @@ class Backend : ITemplateProcessor
     }
 
 
-    public void Setup(MemoryStream name, string path, string pattern)
+    public Document Setup(MemoryStream name, string path, string pattern)
     {
         pathPattern = name;
         pathToFolder = path;
         fileName = pattern;
+        return new Document(pathPattern);
     }
 
     public Dictionary<string, ObservableCollection<Field>> GetFields()
@@ -180,7 +181,7 @@ class Backend : ITemplateProcessor
         int counter = 0;
         string counterStr = "";
 
-        while (File.Exists(Path.Join(pathToFolder, name + counterStr + ".docx")))
+        while (File.Exists(Path.Join(pathToFolder, name + counterStr + extension)))
         {
             counter++;
             counterStr = " (" + counter + ")";
