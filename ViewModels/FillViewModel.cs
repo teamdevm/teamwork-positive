@@ -15,6 +15,8 @@ public class FillViewModel : ViewModelBase
     private ITemplateProcessor templateProcessor;
     private Dictionary<string, ObservableCollection<Field>> curFields;
     private Dictionary<string, ObservableCollection<Field>>[] fields;
+    private bool _isFirst;
+    private bool _isLast;
     public string result;
     public int count;
     public int index;
@@ -24,15 +26,17 @@ public class FillViewModel : ViewModelBase
     {
         mem = name;
         this.count = count;
-        index = 0;
+        index = 1;
         templateProcessor = tp;
+        templateProcessor.Setup(name, "", "");
         fields = new Dictionary<string, ObservableCollection<Field>>[count];
         for (int i = 0; i < count; i++)
         {
-            templateProcessor.Setup(name, "", "");
             fields[i] = templateProcessor.GetFields();
         }
-        curFields = fields[index];
+        curFields = fields[index - 1];
+        _isFirst = index == 1;
+        _isLast = index == count;
     }
     public Dictionary<string, ObservableCollection<Field>> CurFields
     {
@@ -51,18 +55,35 @@ public class FillViewModel : ViewModelBase
     }
     public void Next()
     {
-        if (index != count - 1)
+        if (!IsLast)
         {
-            index++; 
-            CurFields = fields[index];
+            CurFields = fields[++Index - 1];
+            IsFirst = index == 1;
+            IsLast = index == count;
         }
     }
     public void Previous()
     {
-        if (index != 0)
+        if (!IsFirst)
         {
-            index--;
-            CurFields = fields[index];
+            CurFields = fields[--Index - 1];
+            IsFirst = index == 1;
+            IsLast = index == count;
         }
+    }
+    public bool IsFirst
+    {
+        get => _isFirst;
+        set => this.RaiseAndSetIfChanged(ref _isFirst, value);
+    }
+    public bool IsLast
+    {
+        get => _isLast;
+        set => this.RaiseAndSetIfChanged(ref _isLast, value);
+    }
+    public int Index
+    {
+        get => index;
+        set => this.RaiseAndSetIfChanged(ref index, value);
     }
 }
