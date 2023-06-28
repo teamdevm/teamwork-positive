@@ -59,14 +59,20 @@
 						Grid.Column="1">
 				<Button Classes="Back" 
 						ToolTip.Tip="Предыдущий"
-						Command="{Binding Previous}">
+						Command="{Binding Previous}"
+						IsEnabled="{Binding !IsFirst}">
 					<Rectangle Classes="Mask"
 							   Fill="{DynamicResource ButtonColor}" 
 							   OpacityMask="{DynamicResource ArrowLeft}"/>
 				</Button>
+				<TextBlock Text="{Binding Index, StringFormat={}{0}}"
+						   FontWeight="Bold"
+						   VerticalAlignment="Center"
+						   Margin="8,0"/>
 				<Button Classes="Back" 
 						ToolTip.Tip="Следующий"
-						Command="{Binding Next}">
+						Command="{Binding Next}"
+						IsEnabled="{Binding !IsLast}">
 					<Rectangle Classes="Mask" 
 							   Fill="{DynamicResource ButtonColor}" 
 							   OpacityMask="{DynamicResource ArrowRight}"/>
