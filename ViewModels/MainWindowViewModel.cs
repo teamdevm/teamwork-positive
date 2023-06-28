@@ -281,7 +281,7 @@ public class MainWindowViewModel : ViewModelBase
         FileDialogFilter Filter = new FileDialogFilter()
         {
             Name = "Текстовые файлы",
-            Extensions = { "docx" }
+            Extensions = { "doc", "docx", "odt", "rtf", "pdf", "html", "txt" }
         };
         string result = await SaveDialogInteraction.Handle(Filter);
         if (string.IsNullOrEmpty(result)) return;

@@ -46,11 +46,35 @@ class DocumentRenderer : ICustomDrawOperation
     {
         if (Target is not null)
         {
-            Target.RenderToSize(
-                0, canvas,
-                (float)Bounds.X, (float)Bounds.Y,
-                (float)Bounds.Width, float.MaxValue
-            );
+            float offX = (float)Bounds.X;
+            float offY = (float)Bounds.Y;
+            float width = (float)Bounds.Width;
+            float offset = 0;
+
+            SKPaint paint = new SKPaint()
+            {
+                Color = new SKColor(128, 128, 128)                
+            };
+
+            for (int i = 0; i < Target.PageCount; ++i)
+            {
+                offset = offY + i * width * MathF.Sqrt(2);
+
+                Target.RenderToSize(
+                    i, canvas,
+                    offX, offset,
+                    width, float.MaxValue
+                );
+
+                if (i > 0)
+                {
+                    canvas.DrawLine(
+                        offX, offset,
+                        offX + width, offset,
+                        paint
+                    );
+                }
+            }
         }
     }
 }
@@ -58,6 +82,7 @@ class DocumentRenderer : ICustomDrawOperation
 public partial class DocumentPreview : UserControl
 {
     private DocumentRenderer renderingLogic;
+    private int pageCount;
 
     public DocumentPreview()
     {
@@ -76,7 +101,7 @@ public partial class DocumentPreview : UserControl
 
     protected override Size MeasureOverride(Size availableSize)
     {
-        return new Size(availableSize.Width, availableSize.Width * Math.Sqrt(2));
+        return new Size(availableSize.Width, pageCount * availableSize.Width * Math.Sqrt(2));
     }
 
     private void UpdateBounds (object? sender, EventArgs args)
@@ -89,6 +114,7 @@ public partial class DocumentPreview : UserControl
         if (DataContext is Document d)
         {
             renderingLogic.Target = d;
+            pageCount = d.PageCount;
         }
     }
 }
