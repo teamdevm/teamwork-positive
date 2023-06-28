@@ -115,6 +115,7 @@ public partial class DocumentPreview : UserControl
         {
             renderingLogic.Target = d;
             pageCount = d.PageCount;
+            InvalidateVisual();
         }
     }
 }

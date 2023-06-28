@@ -35,6 +35,7 @@ public class FillViewModel : ViewModelBase
             fields[i] = templateProcessor.GetFields();
         }
         curFields = fields[index];
+        UpdatePreview = ReactiveCommand.Create(_UpdatePreview);
     }
     public Dictionary<string, ObservableCollection<Field>> CurFields
     {
@@ -46,7 +47,8 @@ public class FillViewModel : ViewModelBase
         get => _doc;
         set => this.RaiseAndSetIfChanged(ref _doc, value);
     }
-    public void UpdatePreview ()
+    public ReactiveCommand<Unit, Unit> UpdatePreview { get; }
+    private void _UpdatePreview ()
     {
         Doc = templateProcessor.Fill(CurFields);
     }
