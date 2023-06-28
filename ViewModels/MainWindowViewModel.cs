@@ -21,6 +21,7 @@ public class MainWindowViewModel : ViewModelBase
     private CollectionViewModel collectionWindow;
     private EditViewModel editWindow;
     private FillViewModel fillWindow;
+    private HelpViewModel helpWindow;
 
     public Interaction<FileDialogFilter, string> OpenDialogInteraction { get; }
     public Interaction<FileDialogFilter, string> SaveDialogInteraction { get; }
@@ -69,6 +70,8 @@ public class MainWindowViewModel : ViewModelBase
         collectionWindow = new CollectionViewModel();
         editWindow = new EditViewModel();
         fillWindow = new FillViewModel();
+        helpWindow = new HelpViewModel();
+
         CurWindow = collectionWindow;
         CurTitle = "Коллекция шаблонов";
         mode = false;
@@ -137,6 +140,13 @@ public class MainWindowViewModel : ViewModelBase
         CurTitle = "Изменить шаблон";
         PrevTitle = "Коллекция шаблонов";
     }
+    public void SwitchToHelp()
+    {
+        PrevWindow = CurWindow;
+        PrevTitle = CurTitle;
+        CurTitle = "Справка";
+        CurWindow = helpWindow;
+    }
 
     //public async Task GetCount()
     //{
@@ -156,7 +166,7 @@ public class MainWindowViewModel : ViewModelBase
     //        await ConfirmDialogInteraction.Handle(msg);
     //    }
     //}
-    
+
     public async Task SwitchToFill()
     {
         MessageBoxViewModel msg;
