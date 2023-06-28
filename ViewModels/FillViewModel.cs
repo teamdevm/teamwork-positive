@@ -46,7 +46,8 @@ public class FillViewModel : ViewModelBase
             templateProcessor.Setup(mem, 
                 Path.GetDirectoryName(result), 
                 Path.GetFileNameWithoutExtension(result) + $" ({i+1})" + Path.GetExtension(result));
-            templateProcessor.Fill(fields[i], Path.GetExtension(result));
+            Aspose.Words.Document doc = templateProcessor.Fill(fields[i]); // переделал тут, чтобы протестить, потом, как надо сделаете
+            templateProcessor.Save(doc, Path.GetExtension(result));
         }
     }
     public void Next()

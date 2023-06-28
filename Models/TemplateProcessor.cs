@@ -28,11 +28,13 @@ public interface ITemplateProcessor
      * Заполнить шаблон
      * record - набор значений для одного экземпляра
      */
-    public void Fill(Dictionary<string, ObservableCollection<Field>> record, string extension);
+    public Aspose.Words.Document Fill(Dictionary<string, ObservableCollection<Field>> record);
 
     /*
      * Освободить ресурсы, занятые процессором
      * Сюда входит какая-либо память, файловые потоки и прочее
      */
     public void Dispose();
+
+    public void Save(Aspose.Words.Document doc, string extension);
 }
