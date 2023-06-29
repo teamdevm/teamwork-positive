@@ -1,5 +1,6 @@
 ﻿using ReactiveUI;
 using System;
+using System.Collections.Generic;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.ComponentModel;
@@ -23,8 +24,8 @@ public class MainWindowViewModel : ViewModelBase
     private FillViewModel fillWindow;
     private HelpViewModel helpWindow;
 
-    public Interaction<FileDialogFilter, string> OpenDialogInteraction { get; }
-    public Interaction<FileDialogFilter, string> SaveDialogInteraction { get; }
+    public Interaction<List<FileDialogFilter>, string> OpenDialogInteraction { get; }
+    public Interaction<List<FileDialogFilter>, string> SaveDialogInteraction { get; }
     public Interaction<MessageBoxViewModel, string> ConfirmDialogInteraction { get; }
     public Interaction<MessageBoxViewModel, string> GetAnswerInteraction { get; }
     public ReactiveCommand<Unit, Unit> ActionFillTemplate { get; }
@@ -83,8 +84,8 @@ public class MainWindowViewModel : ViewModelBase
         Application.Current.Resources["SecondBlockBackground"] = Application.Current.Resources["LightBlueBrush"];
         Application.Current.Resources["ButtonColor"] = Application.Current.Resources["DarkBlueBrush"];
 
-        OpenDialogInteraction = new Interaction<FileDialogFilter, string>();
-        SaveDialogInteraction = new Interaction<FileDialogFilter, string>();
+        OpenDialogInteraction = new Interaction<List<FileDialogFilter>, string>();
+        SaveDialogInteraction = new Interaction<List<FileDialogFilter>, string>();
         //EditDialogInteraction = new Interaction<EditWindowViewModel, Student>();
         ConfirmDialogInteraction = new Interaction<MessageBoxViewModel, string>();
         GetAnswerInteraction = new Interaction<MessageBoxViewModel, string>();
@@ -236,12 +237,13 @@ public class MainWindowViewModel : ViewModelBase
             await ConfirmDialogInteraction.Handle(msg);
             return;
         }
-        FileDialogFilter Filter = new FileDialogFilter()
-        {
-            Name = "Текстовые файлы",
-            Extensions = { "doc", "docx", "dot", "dotx", "odt", "ott", "rtf", "txt" }
-        };
-        string result = await OpenDialogInteraction.Handle(Filter);
+        List<FileDialogFilter> Filters = new List<FileDialogFilter>();
+        Filters.Add(new FileDialogFilter() { Name = "Документ Word 2003", Extensions = { "doc" } });
+        Filters.Add(new FileDialogFilter() { Name = "Документ Word 2007", Extensions = { "docx" } });
+        Filters.Add(new FileDialogFilter() { Name = "Документ ODT", Extensions = { "odt" } });
+        Filters.Add(new FileDialogFilter() { Name = "Документ RTF", Extensions = { "rtf" } });
+        Filters.Add(new FileDialogFilter() { Name = "Обычный текст", Extensions = { "txt" } });
+        string result = await OpenDialogInteraction.Handle(Filters);
         if (string.IsNullOrEmpty(result)) return;
         try
         {
@@ -288,12 +290,15 @@ public class MainWindowViewModel : ViewModelBase
     }
     private async Task DocSaveAs()
     {
-        FileDialogFilter Filter = new FileDialogFilter()
-        {
-            Name = "Текстовые файлы",
-            Extensions = { "doc", "docx", "odt", "rtf", "pdf", "html", "txt" }
-        };
-        string result = await SaveDialogInteraction.Handle(Filter);
+        List<FileDialogFilter> Filters = new List<FileDialogFilter>();
+        Filters.Add(new FileDialogFilter() { Name = "Документ Word 2003", Extensions = { "doc" } });
+        Filters.Add(new FileDialogFilter() { Name = "Документ Word 2007", Extensions = { "docx" } });
+        Filters.Add(new FileDialogFilter() { Name = "Документ ODT", Extensions = { "odt" } });
+        Filters.Add(new FileDialogFilter() { Name = "Документ PDF", Extensions = { "pdf" } });
+        Filters.Add(new FileDialogFilter() { Name = "Документ RTF", Extensions = { "rtf" } });
+        Filters.Add(new FileDialogFilter() { Name = "Документ HTML", Extensions = { "html" } });
+        Filters.Add(new FileDialogFilter() { Name = "Обычный текст", Extensions = { "txt" } });
+        string result = await SaveDialogInteraction.Handle(Filters);
         if (string.IsNullOrEmpty(result)) return;
         workingPath = result;
         fillWindow.result = result;

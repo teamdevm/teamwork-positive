@@ -11,14 +11,16 @@
 			<DockPanel HorizontalAlignment="Left">
 				<Button Classes="Back"
 						Command="{Binding $parent[Window].DataContext.SwitchToCreate}"
-						ToolTip.Tip="Создать шаблон">
+						ToolTip.Tip="Создать шаблон"
+						IsEnabled="False">
 					<Rectangle Classes="Mask" 
 							   Fill="{DynamicResource ButtonColor}" 
 							   OpacityMask="{DynamicResource Create}"/>
 				</Button>
 				<Button Classes="Back"
 						Command="{Binding $parent[Window].DataContext.SwitchToEdit}"
-						ToolTip.Tip="Изменить шаблон">
+						ToolTip.Tip="Изменить шаблон"
+						IsEnabled="False">
 					<Rectangle Classes="Mask" 
 							   Fill="{DynamicResource ButtonColor}" 
 							   OpacityMask="{DynamicResource Edit}"/>
