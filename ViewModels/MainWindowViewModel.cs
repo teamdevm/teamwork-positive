@@ -119,6 +119,7 @@ public class MainWindowViewModel : ViewModelBase
     public void SwitchToCollect()
     {
         CurWindow = collectionWindow;
+        workingPath = String.Empty;
         CurTitle = "Коллекция шаблонов";
     }
     public void SwitchToPrevious()
@@ -285,6 +286,7 @@ public class MainWindowViewModel : ViewModelBase
     {
         if (string.IsNullOrEmpty(workingPath))
             await DocSaveAs();
+        fillWindow.GetTemplate();
     }
     private async Task DocSaveAs()
     {
@@ -356,64 +358,4 @@ public class MainWindowViewModel : ViewModelBase
             collectionWindow.RemoveCategory();
     }
 
-    
-
-    //private async Task FileOpen()
-    //{
-    //    if (!isSaved)
-    //    {
-    //        MessageBoxViewModel msg = new MessageBoxViewModel("Сохранить изменения?", MessageBoxButtons.YesNoCancel);
-    //        MessageBoxResult res = await ConfirmDialogInteraction.Handle(msg);
-    //        switch (res)
-    //        {
-    //            case MessageBoxResult.Yes: await FileSave(); break;
-    //            case MessageBoxResult.Cancel: return;
-    //        }
-    //    }
-
-    //    /* We accept only XML files */
-    //    FileDialogFilter xmlFilter = new FileDialogFilter()
-    //    {
-    //        Name = "Списки студентов",
-    //        Extensions = { "xml" }
-    //    };
-
-    //    /* Show dialog window and retrieve file path */
-    //    string result = await OpenDialogInteraction.Handle(xmlFilter);
-
-    //    /* If no file was selected */
-    //    if (string.IsNullOrEmpty(result)) return;
-
-    //    try
-    //    {
-    //        Content = StudentList.Deserialize(result);
-    //        Selection = Content.First();
-    //        workingPath = result;
-    //        isSaved = true;
-    //        UpdateAll();
-    //    }
-    //    catch
-    //    {
-    //        MessageBoxViewModel msg = new MessageBoxViewModel("Файл имеет некорректный формат", MessageBoxButtons.Ok);
-    //        MessageBoxResult res = await ConfirmDialogInteraction.Handle(msg);
-    //    }
-    //}
-
-
-
-    //public async void ConfirmOnClose(object? sender, CancelEventArgs args)
-    //{
-    //    if (!isSaved)
-    //    {
-    //        args.Cancel = true;
-    //        Window win = (Window)sender!;
-    //        MessageBoxViewModel msg = new MessageBoxViewModel("Сохранить изменения?", MessageBoxButtons.YesNoCancel);
-    //        MessageBoxResult res = await ConfirmDialogInteraction.Handle(msg);
-    //        switch (res)
-    //        {
-    //            case MessageBoxResult.Yes: await FileSave(); win.Close(); break;
-    //            case MessageBoxResult.No: isSaved = true; win.Close(); break;
-    //        }
-    //    }
-    //}
 }
