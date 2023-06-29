@@ -287,6 +287,8 @@ public class MainWindowViewModel : ViewModelBase
         if (string.IsNullOrEmpty(workingPath))
             await DocSaveAs();
         fillWindow.GetTemplate();
+        MessageBoxViewModel msg = new MessageBoxViewModel("Сохранено.", MessageBoxButtons.Ok);
+        await ConfirmDialogInteraction.Handle(msg);
     }
     private async Task DocSaveAs()
     {
