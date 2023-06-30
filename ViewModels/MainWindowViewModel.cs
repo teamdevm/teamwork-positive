@@ -279,12 +279,21 @@ public class MainWindowViewModel : ViewModelBase
     {
         MessageBoxViewModel msg = new MessageBoxViewModel(
                 "Введите название категории:", MessageBoxButtons.TextField);
+
         object res = await GetAnswerInteraction.Handle(msg);
         if (res is string result)
         {
             if (string.IsNullOrEmpty(result)) return;
             //проверка существования категории
-            collectionWindow.AddCategory(result);
+            try
+            {
+                collectionWindow.AddCategory(result);
+            }
+            catch (Exception e)
+            {
+                msg = new MessageBoxViewModel(e.Message, MessageBoxButtons.Ok);
+                await GetAnswerInteraction.Handle(msg);
+            }
         }
     }
     private async Task AddSubCategory()
@@ -298,12 +307,21 @@ public class MainWindowViewModel : ViewModelBase
         }
         msg = new MessageBoxViewModel(
                 "Введите название подкатегории:", MessageBoxButtons.TextField);
+
         object res = await GetAnswerInteraction.Handle(msg);
         if (res is string result)
         {
             if (string.IsNullOrEmpty(result)) return;
             //проверка существования категории
-            collectionWindow.AddSubCategory(result);
+            try
+            {
+                collectionWindow.AddSubCategory(result);
+            }
+            catch (Exception e)
+            {
+                msg = new MessageBoxViewModel(e.Message, MessageBoxButtons.Ok);
+                await GetAnswerInteraction.Handle(msg);
+            }
         }
     }
     private async Task RenameCategory()
@@ -322,7 +340,15 @@ public class MainWindowViewModel : ViewModelBase
         {
             if (string.IsNullOrEmpty(result)) return;
             //проверка существования категории
-            collectionWindow.RenameCategory(result);
+            try
+            {
+                collectionWindow.AddSubCategory(result);
+            }
+            catch (Exception e)
+            {
+                msg = new MessageBoxViewModel(e.Message, MessageBoxButtons.Ok);
+                await GetAnswerInteraction.Handle(msg);
+            }
         }
     }
     private async Task RemoveCategory()
@@ -339,9 +365,16 @@ public class MainWindowViewModel : ViewModelBase
         if (res is string result)
         {
             if (string.IsNullOrEmpty(result)) return;
-            if (result == "Yes")
+            if (result != "Yes") return;
+            try
+            {
                 collectionWindow.RemoveCategory();
+            }
+            catch (Exception e)
+            {
+                msg = new MessageBoxViewModel(e.Message, MessageBoxButtons.Ok);
+                await GetAnswerInteraction.Handle(msg);
+            }
         }
     }
-
 }
