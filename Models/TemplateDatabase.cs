@@ -20,6 +20,14 @@ public class TemplateDatabase
         get => root.Children;
     }
 
+    public List<Category> CategoriesAsList
+    {
+        get => categories.Query()
+            .Where(x => x.Parent != ObjectId.Empty)
+            .OrderBy(x => x.Name)
+            .ToList();
+    }
+
     public TemplateDatabase (string path)
     {
         db = new LiteDatabase(path);
@@ -93,8 +101,17 @@ public class TemplateDatabase
 
     public void RenameCategory (Category target, string newname)
     {
-        target.Name = newname;
-        categories.Update(target);
+        Category a = categories.FindOne(x => x.Name == newname);
+
+        if (a is null)
+        {
+            target.Name = newname;
+            categories.Update(target);
+        }
+        else
+        {
+            throw new ArgumentException($"Категория с именем '{newname}' уже существует");
+        }
     }
 
     public void RemoveCategory (Category target)
