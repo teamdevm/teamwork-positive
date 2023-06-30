@@ -342,7 +342,7 @@ public class MainWindowViewModel : ViewModelBase
             //проверка существования категории
             try
             {
-                collectionWindow.AddSubCategory(result);
+                collectionWindow.RenameCategory(result);
             }
             catch (Exception e)
             {
