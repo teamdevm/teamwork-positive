@@ -1,14 +1,14 @@
-﻿using ReactiveUI;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Reactive;
 using System.Reactive.Linq;
-using System.ComponentModel;
-using Avalonia;
-using Avalonia.Styling;
-using Avalonia.Controls;
-using Avalonia.Themes.Fluent;
 using System.Threading.Tasks;
+using ReactiveUI;
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Styling;
+using Avalonia.Themes.Fluent;
 using Documently.Models;
 namespace Documently.ViewModels;
 public class MainWindowViewModel : ViewModelBase
@@ -17,8 +17,10 @@ public class MainWindowViewModel : ViewModelBase
     private ViewModelBase prevWindow;
     private string curTitle;
     private string prevTitle;
+
     private bool mode;
     private string workingPath;
+
     private CollectionViewModel collectionWindow;
     private EditViewModel editWindow;
     private FillViewModel fillWindow;
@@ -35,10 +37,8 @@ public class MainWindowViewModel : ViewModelBase
     public ReactiveCommand<Unit, Unit> ActionNewSubCategory { get; }
     public ReactiveCommand<Unit, Unit> ActionRenameCategory { get; }
     public ReactiveCommand<Unit, Unit> ActionRemoveCategory { get; }
-
     public ReactiveCommand<Unit, Unit> ActionDocSave { get; }
     public ReactiveCommand<Unit, Unit> ActionDocSaveAs { get; }
-    //public ReactiveCommand<Unit, Unit> ActionGetCount { get; }
     public ViewModelBase CurWindow 
     { 
         get => curWindow; 
@@ -54,16 +54,15 @@ public class MainWindowViewModel : ViewModelBase
         get => curTitle;
         set => this.RaiseAndSetIfChanged(ref curTitle, value);
     }
-    public bool Mode
-    {
-        get => mode;
-        set => this.RaiseAndSetIfChanged(ref mode, value);
-    }
-    
     public string PrevTitle
     {
         get => prevTitle;
         set => this.RaiseAndSetIfChanged(ref prevTitle, value);
+    }
+    public bool Mode
+    {
+        get => mode;
+        set => this.RaiseAndSetIfChanged(ref mode, value);
     }
     
     public MainWindowViewModel() 
@@ -75,6 +74,7 @@ public class MainWindowViewModel : ViewModelBase
 
         CurWindow = collectionWindow;
         CurTitle = "Коллекция шаблонов";
+
         mode = false;
         workingPath = String.Empty;
         
@@ -86,12 +86,9 @@ public class MainWindowViewModel : ViewModelBase
 
         OpenDialogInteraction = new Interaction<List<FileDialogFilter>, string>();
         SaveDialogInteraction = new Interaction<List<FileDialogFilter>, string>();
-        //EditDialogInteraction = new Interaction<EditWindowViewModel, Student>();
         ConfirmDialogInteraction = new Interaction<MessageBoxViewModel, string>();
         GetAnswerInteraction = new Interaction<MessageBoxViewModel, string>();
-        //CountTemplatesInteraction = new Interaction<MessageBoxViewModel, int>();
-
-        //ActionFileNew = ReactiveCommand.CreateFromTask(FileNew);
+        
         ActionFillTemplate = ReactiveCommand.CreateFromTask(FillTemplate);
         ActionUploadTemplate = ReactiveCommand.CreateFromTask(UploadTemplate);
         ActionRemoveTemplate = ReactiveCommand.CreateFromTask(RemoveTemplate);
@@ -101,32 +98,22 @@ public class MainWindowViewModel : ViewModelBase
         ActionRemoveCategory = ReactiveCommand.CreateFromTask(RemoveCategory);
         ActionDocSave = ReactiveCommand.CreateFromTask(DocSave);
         ActionDocSaveAs = ReactiveCommand.CreateFromTask(DocSaveAs);
-        //ActionGetCount = ReactiveCommand.CreateFromTask(GetCount);
-
-        //ActionFileSaveAs = ReactiveCommand.CreateFromTask(FileSaveAs);
-        //ActionViewNext = ReactiveCommand.Create(ViewNext);
-        //ActionViewPrev = ReactiveCommand.Create(ViewPrev);
-        //ActionViewFirst = ReactiveCommand.Create(ViewFirst);
-        //ActionViewLast = ReactiveCommand.Create(ViewLast);
-        //ActionNew = ReactiveCommand.CreateFromTask(New);
-        //ActionEdit = ReactiveCommand.CreateFromTask(Edit);
-        //ActionRemove = ReactiveCommand.Create(Remove);
     }
     public void OnWindowClose (object? sender, CancelEventArgs args)
     {
         // Close the database here
         collectionWindow.db.Close();
     }
+    public void SwitchToPrevious()
+    {
+        CurWindow = PrevWindow;
+        CurTitle = PrevTitle;
+    }
     public void SwitchToCollect()
     {
         CurWindow = collectionWindow;
         workingPath = String.Empty;
         CurTitle = "Коллекция шаблонов";
-    }
-    public void SwitchToPrevious()
-    {
-        CurWindow = PrevWindow;
-        CurTitle = PrevTitle;
     }
     public void SwitchToCreate()
     {
@@ -149,25 +136,6 @@ public class MainWindowViewModel : ViewModelBase
         CurTitle = "Справка";
         CurWindow = helpWindow;
     }
-
-    //public async Task GetCount()
-    //{
-    //    MessageBoxViewModel msg;
-    //    if (collectionWindow.SelectedTemplate is null)
-    //    {
-    //        msg = new MessageBoxViewModel("Шаблон не выбран.", MessageBoxButtons.Ok);
-    //        await ConfirmDialogInteraction.Handle(msg);
-    //        return;
-    //    }
-    //    msg = new MessageBoxViewModel("Введите количество экземпляров:", MessageBoxButtons.TextField);
-    //    string result = await GetAnswerInteraction.Handle(msg);
-    //    if (string.IsNullOrEmpty(result)) return;
-    //    if (!int.TryParse(result, out fillWindow.count))
-    //    {
-    //        msg = new MessageBoxViewModel("Введите число.", MessageBoxButtons.Ok);
-    //        await ConfirmDialogInteraction.Handle(msg);
-    //    }
-    //}
 
     public async Task SwitchToFill()
     {
@@ -196,7 +164,6 @@ public class MainWindowViewModel : ViewModelBase
         CurTitle = "Заполнить шаблон";
         PrevTitle = "Коллекция шаблонов";
     }
-
     public void SwitchTheme()
     {
         foreach (IStyle s in Application.Current.Styles)
@@ -228,7 +195,6 @@ public class MainWindowViewModel : ViewModelBase
             }
         }
     }
-
     private async Task UploadTemplate()
     {
         MessageBoxViewModel msg;

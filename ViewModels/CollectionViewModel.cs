@@ -54,6 +54,7 @@ public class CollectionViewModel : ViewModelBase
     public void RemoveCategory()
     {
         db.RemoveCategory(SelectedCategory);
+        selectedCategory = null!;
     }
     public void UploadTemplate(string path)
     {
