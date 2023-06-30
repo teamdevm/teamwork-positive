@@ -20,6 +20,14 @@ public class TemplateDatabase
         get => root.Children;
     }
 
+    public List<Category> CategoriesAsList
+    {
+        get => categories.Query()
+            .Where(x => x.Parent != ObjectId.Empty)
+            .OrderBy(x => x.Name)
+            .ToList();
+    }
+
     public TemplateDatabase (string path)
     {
         db = new LiteDatabase(path);
