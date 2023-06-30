@@ -20,8 +20,8 @@ public class FillViewModel : ViewModelBase
     private bool _isLast;
     private Document _doc;
     public string result;
-    public int count;
-    public int index;
+    private int count;
+    private int index;
     MemoryStream mem;
     public FillViewModel () { }
     public FillViewModel (ITemplateProcessor tp, MemoryStream name, int count)

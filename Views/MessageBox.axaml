@@ -15,7 +15,14 @@
 				 Margin="32,8" 
 				 Width="300" 
 				 Text="{Binding Field}" 
-				 IsVisible="{Binding IsVisible}"/>
+				 IsVisible="{Binding IsVisibleText}"/>
+		<NumericUpDown Width="150"
+					   Margin="32,8"
+					   Value="{Binding DResult}"
+					   AllowSpin="True"
+					   Minimum="1"
+					   Maximum="999"
+					   IsVisible="{Binding IsVisibleNum}"/>
 		<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Name="Buttons">
             <StackPanel.Styles>
                 <Style Selector="Button">

@@ -20,11 +20,11 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
         this.Closing += m.OnWindowClose;
         DataContext = m;
     }
-    private async Task ShowMessage(InteractionContext<MessageBoxViewModel, string> i)
+    private async Task ShowMessage(InteractionContext<MessageBoxViewModel, object> i)
     {
         MessageBox dialog = new MessageBox();
         dialog.DataContext = i.Input;
-        string result = await dialog.ShowAsync(this);
+        object result = await dialog.ShowAsync(this);
         i.SetOutput(result);
     }
     private async Task ShowOpenFileWindow(InteractionContext<List<FileDialogFilter>, string> i)
