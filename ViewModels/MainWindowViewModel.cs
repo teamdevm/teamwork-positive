@@ -28,8 +28,8 @@ public class MainWindowViewModel : ViewModelBase
 
     public Interaction<List<FileDialogFilter>, string> OpenDialogInteraction { get; }
     public Interaction<List<FileDialogFilter>, string> SaveDialogInteraction { get; }
-    public Interaction<MessageBoxViewModel, string> ConfirmDialogInteraction { get; }
-    public Interaction<MessageBoxViewModel, string> GetAnswerInteraction { get; }
+    public Interaction<MessageBoxViewModel, object> ConfirmDialogInteraction { get; }
+    public Interaction<MessageBoxViewModel, object> GetAnswerInteraction { get; }
     public ReactiveCommand<Unit, Unit> ActionFillTemplate { get; }
     public ReactiveCommand<Unit, Unit> ActionUploadTemplate { get; }
     public ReactiveCommand<Unit, Unit> ActionRemoveTemplate { get; }
@@ -86,8 +86,8 @@ public class MainWindowViewModel : ViewModelBase
 
         OpenDialogInteraction = new Interaction<List<FileDialogFilter>, string>();
         SaveDialogInteraction = new Interaction<List<FileDialogFilter>, string>();
-        ConfirmDialogInteraction = new Interaction<MessageBoxViewModel, string>();
-        GetAnswerInteraction = new Interaction<MessageBoxViewModel, string>();
+        ConfirmDialogInteraction = new Interaction<MessageBoxViewModel, object>();
+        GetAnswerInteraction = new Interaction<MessageBoxViewModel, object>();
         
         ActionFillTemplate = ReactiveCommand.CreateFromTask(FillTemplate);
         ActionUploadTemplate = ReactiveCommand.CreateFromTask(UploadTemplate);
@@ -139,30 +139,28 @@ public class MainWindowViewModel : ViewModelBase
 
     public async Task SwitchToFill()
     {
-        MessageBoxViewModel msg;
-        if (collectionWindow.SelectedTemplate is null)
+        MessageBoxViewModel msg = new MessageBoxViewModel("Введите количество экземпляров:", MessageBoxButtons.NumField);
+        object res = await GetAnswerInteraction.Handle(msg);
+        if (res is double result)
         {
-            msg = new MessageBoxViewModel("Шаблон не выбран.", MessageBoxButtons.Ok);
-            await ConfirmDialogInteraction.Handle(msg);
-            return;
-        }
-        msg = new MessageBoxViewModel("Введите количество экземпляров:", MessageBoxButtons.TextField);
-        string result = await GetAnswerInteraction.Handle(msg);
-        if (string.IsNullOrEmpty(result)) return;
+            if (result == 0) return;
+            try
+            {
+                fillWindow = new FillViewModel(new Backend(), 
+                    collectionWindow.db.FetchTemplate(collectionWindow.SelectedTemplate),
+                    (int)result);
 
-        if (!int.TryParse(result, out fillWindow.count))
-        {
-            msg = new MessageBoxViewModel("Введите число.", MessageBoxButtons.Ok);
-            await ConfirmDialogInteraction.Handle(msg);
+                CurWindow = fillWindow;
+                PrevWindow = collectionWindow;
+                CurTitle = "Заполнить шаблон";
+                PrevTitle = "Коллекция шаблонов";
+            }
+            catch (Exception ex)
+            {
+                msg = new MessageBoxViewModel(ex.Message, MessageBoxButtons.Ok);
+                await ConfirmDialogInteraction.Handle(msg);
+            }
         }
-        fillWindow = new FillViewModel(new Backend(), 
-            collectionWindow.db.FetchTemplate(collectionWindow.SelectedTemplate),
-            fillWindow.count);
-
-        CurWindow = fillWindow;
-        PrevWindow = collectionWindow;
-        CurTitle = "Заполнить шаблон";
-        PrevTitle = "Коллекция шаблонов";
     }
     public void SwitchTheme()
     {
@@ -245,10 +243,13 @@ public class MainWindowViewModel : ViewModelBase
             return;
         }
         msg = new MessageBoxViewModel("Удалить шаблон?", MessageBoxButtons.YesNo);
-        string result = await ConfirmDialogInteraction.Handle(msg);
-        if (string.IsNullOrEmpty(result)) return;
-        if (result == "Yes")
-            collectionWindow.RemoveTemplate();
+        object res = await ConfirmDialogInteraction.Handle(msg);
+        if (res is string result)
+        {
+            if (string.IsNullOrEmpty(result)) return;
+            if (result == "Yes")
+                collectionWindow.RemoveTemplate();
+        }
     }
     private async Task DocSave()
     {
@@ -278,10 +279,13 @@ public class MainWindowViewModel : ViewModelBase
     {
         MessageBoxViewModel msg = new MessageBoxViewModel(
                 "Введите название категории:", MessageBoxButtons.TextField);
-        string result = await GetAnswerInteraction.Handle(msg);
-        if (string.IsNullOrEmpty(result)) return;
-        //проверка существования категории
-        collectionWindow.AddCategory(result);
+        object res = await GetAnswerInteraction.Handle(msg);
+        if (res is string result)
+        {
+            if (string.IsNullOrEmpty(result)) return;
+            //проверка существования категории
+            collectionWindow.AddCategory(result);
+        }
     }
     private async Task AddSubCategory()
     {
@@ -294,10 +298,13 @@ public class MainWindowViewModel : ViewModelBase
         }
         msg = new MessageBoxViewModel(
                 "Введите название подкатегории:", MessageBoxButtons.TextField);
-        string result = await GetAnswerInteraction.Handle(msg);
-        if (string.IsNullOrEmpty(result)) return;
-        //проверка существования категории
-        collectionWindow.AddSubCategory(result);
+        object res = await GetAnswerInteraction.Handle(msg);
+        if (res is string result)
+        {
+            if (string.IsNullOrEmpty(result)) return;
+            //проверка существования категории
+            collectionWindow.AddSubCategory(result);
+        }
     }
     private async Task RenameCategory()
     {
@@ -310,10 +317,13 @@ public class MainWindowViewModel : ViewModelBase
         }
         msg = new MessageBoxViewModel(
                 "Введите название категории:", MessageBoxButtons.TextField);
-        string result = await GetAnswerInteraction.Handle(msg);
-        if (string.IsNullOrEmpty(result)) return;
-        //проверка существования категории
-        collectionWindow.RenameCategory(result);
+        object res = await GetAnswerInteraction.Handle(msg);
+        if (res is string result)
+        {
+            if (string.IsNullOrEmpty(result)) return;
+            //проверка существования категории
+            collectionWindow.RenameCategory(result);
+        }
     }
     private async Task RemoveCategory()
     {
@@ -325,10 +335,13 @@ public class MainWindowViewModel : ViewModelBase
             return;
         }
         msg = new MessageBoxViewModel("Удалить категорию?", MessageBoxButtons.YesNo);
-        string result = await ConfirmDialogInteraction.Handle(msg);
-        if (string.IsNullOrEmpty(result)) return;
-        if (result == "Yes")
-            collectionWindow.RemoveCategory();
+        object res = await GetAnswerInteraction.Handle(msg);
+        if (res is string result)
+        {
+            if (string.IsNullOrEmpty(result)) return;
+            if (result == "Yes")
+                collectionWindow.RemoveCategory();
+        }
     }
 
 }
