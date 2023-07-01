@@ -15,11 +15,12 @@ public partial class MessageBox : ReactiveWindow<MessageBoxViewModel>
         AvaloniaXamlLoader.Load(this);
     }
 
-    public Task<string> ShowAsync (Window parent)
+    public Task<object> ShowAsync (Window parent)
     {
         if (ViewModel!.Buttons == MessageBoxButtons.Ok || 
             ViewModel!.Buttons == MessageBoxButtons.OkCancel || 
-            ViewModel!.Buttons == MessageBoxButtons.TextField)
+            ViewModel!.Buttons == MessageBoxButtons.TextField ||
+            ViewModel!.Buttons == MessageBoxButtons.NumField)
         {
             AddButton("Ok");
         }
@@ -31,20 +32,29 @@ public partial class MessageBox : ReactiveWindow<MessageBoxViewModel>
         }
         if (ViewModel!.Buttons == MessageBoxButtons.OkCancel || 
             ViewModel!.Buttons == MessageBoxButtons.YesNoCancel ||
-            ViewModel!.Buttons == MessageBoxButtons.TextField)
+            ViewModel!.Buttons == MessageBoxButtons.TextField ||
+            ViewModel!.Buttons == MessageBoxButtons.NumField)
         {
             AddButton("Cancel");
         }
 
-
-        TaskCompletionSource<string> tcs = new TaskCompletionSource<string>();
+        TaskCompletionSource<object> tcs = new TaskCompletionSource<object>();
 
         Closed += (send, args) => {
             if (ViewModel!.Buttons == MessageBoxButtons.TextField)
+            {
                 if (ViewModel!.Result == "Cancel")
                     tcs.TrySetResult(string.Empty);
                 else
                     tcs.TrySetResult(ViewModel!.Field);
+            }
+            else if (ViewModel!.Buttons == MessageBoxButtons.NumField)
+            {
+                if (ViewModel!.Result == "Cancel")
+                    tcs.TrySetResult(0);
+                else
+                    tcs.TrySetResult(ViewModel!.DResult);
+            }
             else
                 tcs.TrySetResult(ViewModel!.Result);
         };

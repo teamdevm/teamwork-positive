@@ -13,10 +13,19 @@ public class TemplateDatabase
     private ILiteCollection<Template> templates;
     private ILiteStorage<ObjectId> storage;
     private Category root;
+    private Category none;
 
     public ObservableCollection<Category> Categories
     {
         get => root.Children;
+    }
+
+    public List<Category> CategoriesAsList
+    {
+        get => categories.Query()
+            .Where(x => x.Parent != ObjectId.Empty)
+            .OrderBy(x => x.Name)
+            .ToList();
     }
 
     public TemplateDatabase (string path)
@@ -26,23 +35,41 @@ public class TemplateDatabase
         templates = db.GetCollection<Template>("templates");
         storage = db.GetStorage<ObjectId>();
 
-        if (categories.Count() == 0)
-        {
-            /* The collection has just been created */
-            root = new Category("root");
+        /* Setup indexes for faster lookup */
+        categories.EnsureIndex(x => x.Parent);
+        categories.EnsureIndex(x => x.Name);
 
-            categories.EnsureIndex(x => x.Parent);
-            categories.EnsureIndex(x => x.Name);
+        /* Setup the system category 'root' */
+
+        root = categories.FindOne(
+            x => (x.Parent == ObjectId.Empty) && (x.Name == "root")
+        );
+
+        if (root is null)
+        {
+            root = new Category("root");
             categories.Insert(root);
         }
-        else
-        {
-            /* Take advantage of the created index */
-            root = categories.FindOne(x => x.Parent == ObjectId.Empty);
 
-            /* Internal representation of the tree is a little tricky */
-            DeserializeCategoryTree(root);
+        /* Setup the system category 'none' */
+
+        none = categories.FindOne(
+            x => (x.Parent == ObjectId.Empty) && (x.Name != "root")
+        );
+
+        if (none is null)
+        {
+            none = new Category("none");
+            categories.Insert(none);
         }
+
+        /* Internal representation of the tree is a little tricky */
+        DeserializeCategoryTree(root);
+
+        /* 'none' category should be shown on the UI */
+        root.Children.Add(none);
+        /* Templates in 'none' category should be counted separately */
+        none.Count = templates.Query().Where(x => x.Category == none.Id).Count();
     }
 
     public void Close ()
@@ -54,6 +81,11 @@ public class TemplateDatabase
 
     public void AddSubCategory (Category target, string name)
     {
+        if (target == none)
+        {
+            throw new ArgumentException("Для данной категории не поддерживается добавление дочерних категорий");
+        }
+
         Category a = categories.FindOne(x => x.Name == name);
 
         if (a is null)
@@ -69,17 +101,31 @@ public class TemplateDatabase
 
     public void RenameCategory (Category target, string newname)
     {
-        target.Name = newname;
-        categories.Update(target);
+        Category a = categories.FindOne(x => x.Name == newname);
+
+        if (a is null)
+        {
+            target.Name = newname;
+            categories.Update(target);
+        }
+        else
+        {
+            throw new ArgumentException($"Категория с именем '{newname}' уже существует");
+        }
     }
 
     public void RemoveCategory (Category target)
     {
+        if (target.Parent == ObjectId.Empty)
+        {
+            throw new ArgumentException("Удаление системных категорий недопустимо");
+        }
+
         DFSRemoveCategory(root, target);
         categories.Delete(target.Id);
     }
 
-    public void AddTemplate (string path) => AddTemplate(path, root);
+    public void AddTemplate (string path) => AddTemplate(path, none);
 
     public void AddTemplate (string path, Category tag)
     {
@@ -93,7 +139,9 @@ public class TemplateDatabase
         tag.Count += 1;
 
         if (File.Exists(pathToXml))
+        {
             File.Delete(pathToXml);
+        }
     }
 
     public void RenameTemplate (Template t, string newname)
@@ -119,6 +167,13 @@ public class TemplateDatabase
             .Where(x => x.Category == c.Id)
             .OrderBy(x => x.Name)
             .ToList();
+    }
+
+    public void SetTemplateCategory (Template t, Category c)
+    {
+        t.Category = c.Id;
+        c.Count += 1;
+        templates.Update(t);
     }
 
     public LiteFileInfo<ObjectId> GetTemplateFileInfo (Template t)
@@ -149,7 +204,8 @@ public class TemplateDatabase
     {
         foreach (Template t in GetTemplates(c))
         {
-            t.Category = root.Id;
+            t.Category = none.Id;
+            none.Count += 1;
             templates.Update(t);
         }
     }

@@ -35,12 +35,12 @@
 							   OpacityMask="{DynamicResource Return}"/>
 				</Button>
 				<Rectangle Classes="Sep"/>
-				<Button Classes="Back" ToolTip.Tip="Добавить экземпляр">
+				<Button Classes="Back" ToolTip.Tip="Добавить экземпляр" IsEnabled="False">
 					<Rectangle Classes="Mask" 
 							   Fill="{DynamicResource ButtonColor}" 
 							   OpacityMask="{DynamicResource AddRow}"/>
 				</Button>
-				<Button Classes="Back" ToolTip.Tip="Загрузить таблицу">
+				<Button Classes="Back" ToolTip.Tip="Загрузить таблицу" IsEnabled="False">
 					<Rectangle Classes="Mask" 
 							   Fill="{DynamicResource ButtonColor}" 
 							   OpacityMask="{DynamicResource AddDataset}"/>

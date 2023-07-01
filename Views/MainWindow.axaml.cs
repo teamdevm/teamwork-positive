@@ -20,27 +20,27 @@ public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
         this.Closing += m.OnWindowClose;
         DataContext = m;
     }
-    private async Task ShowMessage(InteractionContext<MessageBoxViewModel, string> i)
+    private async Task ShowMessage(InteractionContext<MessageBoxViewModel, object> i)
     {
         MessageBox dialog = new MessageBox();
         dialog.DataContext = i.Input;
-        string result = await dialog.ShowAsync(this);
+        object result = await dialog.ShowAsync(this);
         i.SetOutput(result);
     }
-    private async Task ShowOpenFileWindow(InteractionContext<FileDialogFilter, string> i)
+    private async Task ShowOpenFileWindow(InteractionContext<List<FileDialogFilter>, string> i)
     {
         OpenFileDialog dialog = new OpenFileDialog();
-        dialog.Filters = new List<FileDialogFilter>() { i.Input };
+        dialog.Filters = i.Input;
         string[]? result = await dialog.ShowAsync(this);
         if (result is null)
             i.SetOutput(string.Empty);
         else
             i.SetOutput(result[0]);
     }
-    private async Task ShowSaveFileWindow(InteractionContext<FileDialogFilter, string> i)
+    private async Task ShowSaveFileWindow(InteractionContext<List<FileDialogFilter>, string> i)
     {
         SaveFileDialog dialog = new SaveFileDialog();
-        dialog.Filters = new List<FileDialogFilter>() { i.Input };
+        dialog.Filters = i.Input;
         string? result = await dialog.ShowAsync(this);
         if (result is null)
             i.SetOutput(string.Empty);
